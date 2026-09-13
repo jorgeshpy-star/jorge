@@ -1,0 +1,73 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{% endstyle %}
+
+<section class="nb-section nb-faq">
+  <div class="nb-container nb-faq-container">
+    <div class="nb-faq-head nb-reveal">
+      {%- if section.settings.eyebrow != blank -%}<span class="nb-eyebrow">{{ section.settings.eyebrow }}</span>{%- endif -%}
+      {%- if section.settings.titular != blank -%}<h2 class="nb-h2">{{ section.settings.titular }}</h2>{%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="nb-faq-list nb-reveal">
+        {%- for block in section.blocks -%}
+          <div class="nb-faq-item" data-open="false" {{ block.shopify_attributes }}>
+            <button type="button" class="nb-faq-q" aria-expanded="false" aria-controls="nb-faq-a-{{ block.id }}">
+              <span>{{ block.settings.pregunta }}</span>
+              <span class="nb-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="nb-faq-a" id="nb-faq-a-{{ block.id }}">
+              <div class="nb-faq-a-inner">
+                <p>{{ block.settings.respuesta }}</p>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Nubbi – Preguntas",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Texto pequeño superior", "default": "Preguntas frecuentes" },
+    { "type": "text", "id": "titular", "label": "Título", "default": "Todo lo que quieras saber antes de comprar" },
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#FBF6EE" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 }
+  ],
+  "blocks": [
+    {
+      "type": "pregunta",
+      "name": "Pregunta",
+      "settings": [
+        { "type": "text", "id": "pregunta", "label": "Pregunta", "default": "¿Nubbi sustituye la silla de coche o el cinturón de seguridad?" },
+        { "type": "textarea", "id": "respuesta", "label": "Respuesta", "default": "No. Nubbi es un accesorio de confort para la cabeza y el cuello; el sistema de retención infantil debe colocarse y ajustarse siempre según sus instrucciones." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nubbi – Preguntas",
+      "blocks": [
+        { "type": "pregunta", "settings": { "pregunta": "¿Nubbi sustituye la silla de coche o el cinturón de seguridad?", "respuesta": "No. Nubbi es un accesorio de confort para la cabeza y el cuello; el sistema de retención infantil debe colocarse y ajustarse siempre según sus instrucciones." } },
+        { "type": "pregunta", "settings": { "pregunta": "¿Solo sirve para el coche?", "respuesta": "Es igual de práctico en avión, tren o en el cochecito: cualquier trayecto largo en el que tu peque quiera descansar." } },
+        { "type": "pregunta", "settings": { "pregunta": "¿Qué diseños hay disponibles?", "respuesta": "Panda, Conejo rosa y Mapache gris. Puedes elegir 1 cojín o el pack de 2 (ahorras 9,95 €) para tener uno de repuesto o para dos hermanos." } },
+        { "type": "pregunta", "settings": { "pregunta": "¿Cómo se limpia?", "respuesta": "Te recomendamos seguir la etiqueta de cuidado del producto para conservar su suavidad el mayor tiempo posible." } },
+        { "type": "pregunta", "settings": { "pregunta": "¿Cuánto tarda el envío?", "respuesta": "Entre 24 y 48 horas laborables desde que confirmas tu pedido." } },
+        { "type": "pregunta", "settings": { "pregunta": "¿Y si no queda satisfecho?", "respuesta": "Tienes 30 días desde la recepción para devolverlo si no cumple tus expectativas." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

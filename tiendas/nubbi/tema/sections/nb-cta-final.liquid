@@ -1,0 +1,43 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  #shopify-section-{{ section.id }} .nb-cta-box {
+    background: {{ section.settings.color_fondo }};
+    color: {{ section.settings.color_texto }};
+  }
+  #shopify-section-{{ section.id }} .nb-cta-box .nb-body { color: {{ section.settings.color_texto }}; opacity: 0.92; }
+{% endstyle %}
+
+<section class="nb-section nb-cta-final">
+  <div class="nb-container">
+    <div class="nb-cta-box nb-reveal">
+      {%- if section.settings.titular != blank -%}<h2 class="nb-h2" style="color: {{ section.settings.color_texto }};">{{ section.settings.titular }}</h2>{%- endif -%}
+      {%- if section.settings.subtitulo != blank -%}<p class="nb-body">{{ section.settings.subtitulo }}</p>{%- endif -%}
+      {%- if section.settings.cta_texto != blank -%}
+        <a href="{{ section.settings.cta_enlace | default: '#' }}" class="nb-btn nb-cta-btn">{{ section.settings.cta_texto }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Nubbi – CTA final",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "titular", "label": "Título", "default": "Dale a tu peque un viaje más tranquilo" },
+    { "type": "textarea", "id": "subtitulo", "label": "Subtítulo", "default": "Elige su diseño favorito y que el próximo trayecto largo sea distinto." },
+    { "type": "text", "id": "cta_texto", "label": "Texto del botón", "default": "Comprar Nubbi ahora" },
+    { "type": "url", "id": "cta_enlace", "label": "Enlace del botón" },
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo", "default": "#46617A" },
+    { "type": "color", "id": "color_texto", "label": "Texto", "default": "#FBF6EE" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 24 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 96 }
+  ],
+  "presets": [ { "name": "Nubbi – CTA final" } ]
+}
+{% endschema %}

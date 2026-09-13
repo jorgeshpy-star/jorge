@@ -1,0 +1,392 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-information",
+      "blocks": {
+        "media-gallery": {
+          "type": "_product-media-gallery",
+          "static": true,
+          "settings": {
+            "media_presentation": "carousel",
+            "media_columns": "two",
+            "image_gap": 4,
+            "large_first_image": false,
+            "slideshow_controls_style": "counter",
+            "slideshow_mobile_controls_style": "dots",
+            "thumbnail_position": "below",
+            "thumbnail_width": 44,
+            "thumbnail_radius": 12,
+            "aspect_ratio": "adapt",
+            "constrain_to_viewport": true,
+            "media_fit": "contain",
+            "media_radius": 20,
+            "extend_media": false,
+            "zoom": true,
+            "video_loop": false,
+            "hide_variants": true,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "product-details": {
+          "type": "_product-details",
+          "static": true,
+          "settings": {
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "details_position": "flex-start",
+            "gap": 24,
+            "sticky_details_desktop": true,
+            "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 24,
+            "padding-block-end": 24,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "grupo_titulo": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 10,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "titulo": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<h1>{{ closest.product.title }}</h1>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h3",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "precio": {
+                  "type": "price",
+                  "settings": {
+                    "show_sale_price_first": true,
+                    "show_installments": false,
+                    "show_tax_info": false,
+                    "type_preset": "h5",
+                    "width": "100%",
+                    "alignment": "left",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "text_color": "",
+                    "padding-block-start": 2,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": ["titulo", "precio"]
+            },
+            "gancho": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Apoyo suave para la cabeza y el cuello de tu peque en cada viaje largo, para que descanse de verdad, sin caídas incómodas.</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1.05rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "separador": {
+              "type": "_divider",
+              "settings": {
+                "thickness": 1,
+                "corner_radius": "square",
+                "divider_color": "{{ settings.color_palette.color2 }}",
+                "width_percent": 100,
+                "padding-block-start": 0,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
+            "selector": {
+              "type": "variant-picker",
+              "settings": {
+                "variant_style": "buttons",
+                "show_swatches": false,
+                "option_label_text_color": "",
+                "variant_style_class": "default",
+                "custom_variant_background": "{{ settings.color_palette.background }}",
+                "custom_variant_text": "{{ settings.color_palette.foreground }}",
+                "custom_variant_border": "{{ settings.color_palette.foreground }}",
+                "selected_variant_style_class": "default",
+                "custom_selected_variant_background": "{{ settings.color_palette.foreground }}",
+                "custom_selected_variant_text": "{{ settings.color_palette.background }}",
+                "custom_selected_variant_border": "{{ settings.color_palette.foreground }}",
+                "alignment": "left",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "botones": {
+              "type": "buy-buttons",
+              "settings": {
+                "stacking": true,
+                "text_color": "",
+                "show_pickup_availability": false,
+                "gift_card_form": true,
+                "recipient_button_style": "default",
+                "recipient_button_background": "{{ settings.color_palette.background }}",
+                "recipient_button_text": "{{ settings.color_palette.foreground }}",
+                "recipient_button_border": "{{ settings.color_palette.foreground }}",
+                "selected_recipient_button_style": "default",
+                "selected_recipient_button_background": "{{ settings.color_palette.foreground }}",
+                "selected_recipient_button_text": "{{ settings.color_palette.background }}",
+                "selected_recipient_button_border": "{{ settings.color_palette.foreground }}",
+                "input_style": "default",
+                "input_background_color": "{{ settings.color_palette.background }}",
+                "input_text_color": "{{ settings.color_palette.foreground }}",
+                "input_border_color": "{{ settings.color_palette.foreground }}",
+                "border_width": 1,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "static": true,
+                  "settings": {
+                    "input_style": "default",
+                    "input_background_color": "{{ settings.color_palette.background }}",
+                    "input_text_color": "{{ settings.color_palette.foreground }}",
+                    "input_border_color": "{{ settings.color_palette.foreground }}",
+                    "border_width": 1,
+                    "border_radius": 0
+                  },
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "static": true,
+                  "settings": {
+                    "style_class": "button",
+                    "custom_button_background": "{{ settings.color_palette.foreground }}",
+                    "custom_button_text": "{{ settings.color_palette.background }}",
+                    "custom_button_border": "{{ settings.color_palette.background }}"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": []
+            },
+            "garantias": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Envío en 24/48h &nbsp;·&nbsp; 30 días de garantía &nbsp;·&nbsp; Pago 100% seguro</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "0.85rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "descripcion": {
+              "type": "text",
+              "settings": {
+                "text": "{{ closest.product.description }}",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": ["grupo_titulo", "gancho", "separador", "selector", "botones", "garantias", "descripcion"]
+        }
+      },
+      "settings": {
+        "content_width": "content-center-aligned",
+        "desktop_media_position": "left",
+        "equal_columns": false,
+        "limit_details_width": false,
+        "gap": 48,
+        "enable_sticky_add_to_cart": true,
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "nb_caracteristicas": {
+      "type": "nb-caracteristicas",
+      "blocks": {
+        "f1": { "type": "fila", "settings": { "campo": "Medidas", "valor": "56 x 42 cm" } },
+        "f2": { "type": "fila", "settings": { "campo": "Material", "valor": "Textil suave, agradable al tacto" } },
+        "f3": { "type": "fila", "settings": { "campo": "Diseños disponibles", "valor": "Panda, Conejo rosa, Mapache gris" } },
+        "f4": { "type": "fila", "settings": { "campo": "Dónde usarlo", "valor": "Coche, avión, tren y cochecito" } },
+        "f5": { "type": "fila", "settings": { "campo": "Qué incluye", "valor": "Según el pack elegido: 1 o 2 cojines Nubbi™" } },
+        "f6": { "type": "fila", "settings": { "campo": "Compatibilidad", "valor": "Se usa junto al sistema de retención infantil, sin sustituirlo" } }
+      },
+      "block_order": ["f1", "f2", "f3", "f4", "f5", "f6"],
+      "settings": {}
+    },
+    "nb_como_se_usa": {
+      "type": "nb-como-se-usa",
+      "blocks": {
+        "p1": { "type": "paso", "settings": { "titulo": "Colócalo bien", "texto": "Ajusta Nubbi™ alrededor de la cabeza y el cuello de tu peque, antes de arrancar." } },
+        "p2": { "type": "paso", "settings": { "titulo": "Abrocha su sistema de retención", "texto": "Comprueba que la silla o el cinturón queda colocado y ajustado según sus instrucciones, igual que siempre." } },
+        "p3": { "type": "paso", "settings": { "titulo": "Que disfrute del viaje", "texto": "Con la cabeza bien apoyada, los trayectos largos se hacen mucho más llevaderos, para él y para ti." } }
+      },
+      "block_order": ["p1", "p2", "p3"],
+      "settings": { "color_fondo": "#FFFFFF" }
+    },
+    "nb_confianza": {
+      "type": "nb-confianza",
+      "blocks": {
+        "c1": { "type": "garantia", "settings": { "icono": "shield", "titulo": "Pago 100% seguro", "texto": "Compra con tarjeta, PayPal o Bizum. Tus datos siempre protegidos." } },
+        "c2": { "type": "garantia", "settings": { "icono": "truck", "titulo": "Envío rápido", "texto": "Preparamos y enviamos tu pedido en 24/48 horas laborables." } },
+        "c3": { "type": "garantia", "settings": { "icono": "return", "titulo": "30 días para decidir", "texto": "Si no os convence, te devolvemos el importe sin complicaciones." } },
+        "c4": { "type": "garantia", "settings": { "icono": "chat", "titulo": "Atención cercana", "texto": "¿Dudas antes de comprar? Escríbenos y te responde una persona, no un robot." } }
+      },
+      "block_order": ["c1", "c2", "c3", "c4"],
+      "settings": {}
+    },
+    "nb_resenas": {
+      "type": "nb-resenas",
+      "blocks": {
+        "r1": { "type": "resena", "settings": { "estrellas": 5, "nombre": "Marta S.", "iniciales": "MS", "detalle": "Mamá de una niña de 3 años", "texto": "Mi hija se queda dormida en cuanto arrancamos y antes se despertaba con el cuello torcido. Con Nubbi ya no pasa." } },
+        "r2": { "type": "resena", "settings": { "estrellas": 5, "nombre": "Carlos R.", "iniciales": "CR", "detalle": "Papá de un niño de 4 años", "texto": "Lo compré para mi hijo y ahora no hay quien se lo quite ni en casa. Se ve blandito pero resistente a la vez." } },
+        "r3": { "type": "resena", "settings": { "estrellas": 4, "nombre": "Elena M.", "iniciales": "EM", "detalle": "", "texto": "Buena calidad y llegó rápido. Muy contenta con la compra." } },
+        "r4": { "type": "resena", "settings": { "estrellas": 5, "nombre": "Andrea P.", "iniciales": "AP", "detalle": "Mamá de gemelos", "texto": "Compramos dos, uno para cada peque, y un viaje de 6 horas se nos hizo mucho más corto." } }
+      },
+      "block_order": ["r1", "r2", "r3", "r4"],
+      "settings": { "color_fondo": "#FFFFFF" }
+    },
+    "nb_faq": {
+      "type": "nb-faq",
+      "blocks": {
+        "q1": { "type": "pregunta", "settings": { "pregunta": "¿Nubbi sustituye la silla de coche o el cinturón de seguridad?", "respuesta": "No. Nubbi es un accesorio de confort para la cabeza y el cuello; el sistema de retención infantil debe colocarse y ajustarse siempre según sus instrucciones." } },
+        "q2": { "type": "pregunta", "settings": { "pregunta": "¿Qué diseños hay disponibles?", "respuesta": "Panda, Conejo rosa y Mapache gris. Puedes elegir 1 cojín o el pack de 2 (ahorras 9,95 €)." } },
+        "q3": { "type": "pregunta", "settings": { "pregunta": "¿Cuánto tarda el envío?", "respuesta": "Entre 24 y 48 horas laborables desde que confirmas tu pedido." } },
+        "q4": { "type": "pregunta", "settings": { "pregunta": "¿Y si no queda satisfecho?", "respuesta": "Tienes 30 días desde la recepción para devolverlo si no cumple tus expectativas." } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"],
+      "settings": {}
+    }
+  },
+  "order": ["main", "nb_caracteristicas", "nb_como_se_usa", "nb_confianza", "nb_resenas", "nb_faq"]
+}

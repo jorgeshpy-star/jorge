@@ -1,0 +1,78 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{% endstyle %}
+
+<section class="nb-section nb-galeria">
+  <div class="nb-container">
+    <div class="nb-galeria-head nb-reveal">
+      {%- if section.settings.eyebrow != blank -%}<span class="nb-eyebrow">{{ section.settings.eyebrow }}</span>{%- endif -%}
+      {%- if section.settings.titular != blank -%}<h2 class="nb-h2">{{ section.settings.titular }}</h2>{%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="nb-grid nb-grid-3 nb-galeria-grid nb-reveal-stagger">
+        {%- for block in section.blocks -%}
+          <figure class="nb-galeria-item" {{ block.shopify_attributes }}>
+            <div class="nb-ratio nb-galeria-ratio">
+              {%- if block.settings.imagen != blank -%}
+                <img
+                  src="{{ block.settings.imagen | image_url: width: 900 }}"
+                  srcset="{{ block.settings.imagen | image_url: width: 500 }} 500w, {{ block.settings.imagen | image_url: width: 900 }} 900w"
+                  sizes="(max-width: 749px) 100vw, 33vw"
+                  alt="{{ block.settings.imagen.alt | escape }}"
+                  class="nb-img-cover"
+                  width="{{ block.settings.imagen.width }}"
+                  height="{{ block.settings.imagen.height }}"
+                  loading="lazy"
+                >
+              {%- endif -%}
+            </div>
+            {%- if block.settings.texto != blank -%}
+              <figcaption class="nb-body">{{ block.settings.texto }}</figcaption>
+            {%- endif -%}
+          </figure>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Nubbi – Momentos",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Texto pequeño superior", "default": "Momentos Nubbi" },
+    { "type": "text", "id": "titular", "label": "Título", "default": "Se nota en cada viaje" },
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#FFFFFF" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 }
+  ],
+  "blocks": [
+    {
+      "type": "momento",
+      "name": "Foto",
+      "settings": [
+        { "type": "image_picker", "id": "imagen", "label": "Imagen" },
+        { "type": "text", "id": "texto", "label": "Texto debajo" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nubbi – Momentos",
+      "blocks": [
+        { "type": "momento", "settings": { "texto": "Se queda dormido antes de lo que esperabas" } },
+        { "type": "momento", "settings": { "texto": "Bordados suaves, pensados para acariciar, no para molestar" } },
+        { "type": "momento", "settings": { "texto": "Cada peque con su compañero de viaje favorito" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

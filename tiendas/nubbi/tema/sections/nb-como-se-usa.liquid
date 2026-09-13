@@ -1,0 +1,76 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{% endstyle %}
+
+<section class="nb-section nb-pasos">
+  <div class="nb-container">
+    <div class="nb-pasos-head nb-reveal">
+      {%- if section.settings.eyebrow != blank -%}<span class="nb-eyebrow">{{ section.settings.eyebrow }}</span>{%- endif -%}
+      {%- if section.settings.titular != blank -%}<h2 class="nb-h2">{{ section.settings.titular }}</h2>{%- endif -%}
+      {%- if section.settings.subtitulo != blank -%}<p class="nb-body nb-muted">{{ section.settings.subtitulo }}</p>{%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="nb-grid nb-grid-3 nb-pasos-grid nb-reveal-stagger">
+        {%- for block in section.blocks -%}
+          <div class="nb-paso" {{ block.shopify_attributes }}>
+            <span class="nb-paso-num">{{ forloop.index }}</span>
+            <h3 class="nb-h4-like">{{ block.settings.titulo }}</h3>
+            <p class="nb-body nb-muted">{{ block.settings.texto }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.mostrar_aviso and section.settings.aviso_texto != blank -%}
+      <div class="nb-aviso nb-reveal">
+        {% render 'nb-icon', icon: 'shield' %}
+        <p>{{ section.settings.aviso_texto }}</p>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Nubbi – Cómo se usa",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Texto pequeño superior", "default": "En 3 pasos" },
+    { "type": "text", "id": "titular", "label": "Título", "default": "Así de fácil de colocar" },
+    { "type": "textarea", "id": "subtitulo", "label": "Subtítulo" },
+    { "type": "header", "content": "Aviso importante" },
+    { "type": "checkbox", "id": "mostrar_aviso", "label": "Mostrar aviso", "default": true },
+    { "type": "textarea", "id": "aviso_texto", "label": "Texto del aviso", "default": "Importante: Nubbi™ es un accesorio de confort y apoyo. No sustituye ni modifica el sistema de retención infantil, que debe usarse siempre según sus instrucciones." },
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#FBF6EE" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 }
+  ],
+  "blocks": [
+    {
+      "type": "paso",
+      "name": "Paso",
+      "settings": [
+        { "type": "text", "id": "titulo", "label": "Título", "default": "Colócalo bien" },
+        { "type": "textarea", "id": "texto", "label": "Texto", "default": "Ajusta Nubbi™ alrededor de la cabeza y el cuello de tu peque, antes de arrancar." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nubbi – Cómo se usa",
+      "blocks": [
+        { "type": "paso", "settings": { "titulo": "Colócalo bien", "texto": "Ajusta Nubbi™ alrededor de la cabeza y el cuello de tu peque, antes de arrancar." } },
+        { "type": "paso", "settings": { "titulo": "Abrocha su sistema de retención", "texto": "Comprueba que la silla o el cinturón queda colocado y ajustado según sus instrucciones, igual que siempre." } },
+        { "type": "paso", "settings": { "titulo": "Que disfrute del viaje", "texto": "Con la cabeza bien apoyada, los trayectos largos se hacen mucho más llevaderos — para él y para ti." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

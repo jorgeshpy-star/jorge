@@ -1,0 +1,80 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  #shopify-section-{{ section.id }} .nb-beneficios-head { text-align: {{ section.settings.text_align }}; }
+{% endstyle %}
+
+<section class="nb-section nb-beneficios">
+  <div class="nb-container">
+    <div class="nb-beneficios-head nb-reveal">
+      {%- if section.settings.eyebrow != blank -%}<span class="nb-eyebrow">{{ section.settings.eyebrow }}</span>{%- endif -%}
+      {%- if section.settings.titular != blank -%}<h2 class="nb-h2">{{ section.settings.titular }}</h2>{%- endif -%}
+      {%- if section.settings.subtitulo != blank -%}<p class="nb-body nb-muted nb-beneficios-sub">{{ section.settings.subtitulo }}</p>{%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="nb-grid nb-grid-4 nb-beneficios-grid nb-reveal-stagger">
+        {%- for block in section.blocks -%}
+          <div class="nb-card nb-beneficio-card" {{ block.shopify_attributes }}>
+            <div class="nb-trust-icon nb-beneficio-icon">{% render 'nb-icon', icon: block.settings.icono %}</div>
+            <h3 class="nb-h4-like">{{ block.settings.titulo }}</h3>
+            <p class="nb-body nb-muted">{{ block.settings.texto }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Nubbi – Beneficios",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Texto pequeño superior", "default": "Por qué Nubbi" },
+    { "type": "text", "id": "titular", "label": "Título", "default": "Pensado para que descanse de verdad" },
+    { "type": "textarea", "id": "subtitulo", "label": "Subtítulo" },
+    { "type": "select", "id": "text_align", "label": "Alineación del título", "options": [ {"value":"left","label":"Izquierda"}, {"value":"center","label":"Centro"} ], "default": "center" },
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#FFFFFF" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 }
+  ],
+  "blocks": [
+    {
+      "type": "beneficio",
+      "name": "Beneficio",
+      "settings": [
+        { "type": "select", "id": "icono", "label": "Icono",
+          "options": [
+            {"value":"cushion","label":"Cojín / apoyo"},
+            {"value":"shield","label":"Escudo / seguridad"},
+            {"value":"feather","label":"Ligereza"},
+            {"value":"smile","label":"Sonrisa"},
+            {"value":"moon","label":"Descanso"},
+            {"value":"check","label":"Check"},
+            {"value":"truck","label":"Envío"},
+            {"value":"chat","label":"Conversación"}
+          ], "default": "cushion" },
+        { "type": "text", "id": "titulo", "label": "Título", "default": "Apoyo que de verdad sujeta" },
+        { "type": "textarea", "id": "texto", "label": "Texto", "default": "Rodea con suavidad la cabeza y el cuello para reducir las caídas hacia delante o hacia un lado cuando se queda dormido." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nubbi – Beneficios",
+      "blocks": [
+        { "type": "beneficio", "settings": { "icono": "cushion", "titulo": "Apoyo que de verdad sujeta", "texto": "Rodea con suavidad la cabeza y el cuello para reducir las caídas hacia delante o hacia un lado cuando se queda dormido." } },
+        { "type": "beneficio", "settings": { "icono": "shield", "titulo": "Compatible con su sistema de retención", "texto": "Se coloca junto al cinturón o la silla infantil sin interferir en su ajuste ni su seguridad." } },
+        { "type": "beneficio", "settings": { "icono": "feather", "titulo": "Ligero y fácil de llevar", "texto": "Cabe en cualquier bolso de viaje y se coloca en segundos, en el coche o donde lo necesites." } },
+        { "type": "beneficio", "settings": { "icono": "smile", "titulo": "Un diseño que les encanta", "texto": "Panda, Conejo rosa o Mapache gris: elige el compañero de viaje favorito de tu peque." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

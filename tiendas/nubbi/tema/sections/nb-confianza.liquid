@@ -1,0 +1,82 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{% endstyle %}
+
+<section class="nb-section nb-confianza">
+  <div class="nb-container">
+    <div class="nb-confianza-head nb-reveal">
+      {%- if section.settings.eyebrow != blank -%}<span class="nb-eyebrow">{{ section.settings.eyebrow }}</span>{%- endif -%}
+      {%- if section.settings.titular != blank -%}<h2 class="nb-h2">{{ section.settings.titular }}</h2>{%- endif -%}
+      {%- if section.settings.subtitulo != blank -%}<p class="nb-body nb-muted">{{ section.settings.subtitulo }}</p>{%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="nb-grid nb-grid-4 nb-confianza-grid nb-reveal-stagger">
+        {%- for block in section.blocks -%}
+          <div class="nb-trust-item" {{ block.shopify_attributes }}>
+            <div class="nb-trust-icon">{% render 'nb-icon', icon: block.settings.icono %}</div>
+            <div>
+              <h3 class="nb-h4-like">{{ block.settings.titulo }}</h3>
+              <p class="nb-body nb-muted">{{ block.settings.texto }}</p>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.pie != blank -%}
+      <p class="nb-confianza-pie nb-body nb-reveal">{{ section.settings.pie }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Nubbi – Confianza",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Texto pequeño superior", "default": "Compra tranquilo" },
+    { "type": "text", "id": "titular", "label": "Título", "default": "Cuidamos cada pedido al detalle" },
+    { "type": "textarea", "id": "subtitulo", "label": "Subtítulo" },
+    { "type": "textarea", "id": "pie", "label": "Texto final (opcional)", "default": "¿Alguna duda antes de comprar? Escríbenos y te respondemos en menos de 24 horas." },
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#F3EBDB" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 }
+  ],
+  "blocks": [
+    {
+      "type": "garantia",
+      "name": "Garantía",
+      "settings": [
+        { "type": "select", "id": "icono", "label": "Icono",
+          "options": [
+            {"value":"shield","label":"Escudo"},
+            {"value":"truck","label":"Envío"},
+            {"value":"return","label":"Devolución"},
+            {"value":"chat","label":"Conversación"},
+            {"value":"check","label":"Check"}
+          ], "default": "shield" },
+        { "type": "text", "id": "titulo", "label": "Título", "default": "Pago 100% seguro" },
+        { "type": "textarea", "id": "texto", "label": "Texto", "default": "Compra con tarjeta, PayPal o Bizum. Tus datos siempre protegidos." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nubbi – Confianza",
+      "blocks": [
+        { "type": "garantia", "settings": { "icono": "shield", "titulo": "Pago 100% seguro", "texto": "Compra con tarjeta, PayPal o Bizum. Tus datos siempre protegidos." } },
+        { "type": "garantia", "settings": { "icono": "truck", "titulo": "Envío rápido", "texto": "Preparamos y enviamos tu pedido en 24/48 horas laborables." } },
+        { "type": "garantia", "settings": { "icono": "return", "titulo": "30 días para decidir", "texto": "Si no os convence, te devolvemos el importe sin complicaciones." } },
+        { "type": "garantia", "settings": { "icono": "chat", "titulo": "Atención cercana", "texto": "¿Dudas antes de comprar? Escríbenos y te responde una persona, no un robot." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

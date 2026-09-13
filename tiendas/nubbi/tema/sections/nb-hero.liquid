@@ -1,0 +1,83 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  #shopify-section-{{ section.id }} .nb-hero-headline { font-size: {{ section.settings.headline_size }}px; }
+  #shopify-section-{{ section.id }} .nb-hero-copy .nb-body { font-size: {{ section.settings.body_size }}px; }
+{% endstyle %}
+
+<section class="nb-section nb-hero">
+  <div class="nb-container nb-hero-grid" data-img-pos="{{ section.settings.posicion_imagen }}">
+    <div class="nb-hero-copy nb-reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="nb-eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h1 class="nb-h2 nb-hero-headline">{{ section.settings.headline | newline_to_br }}</h1>
+      {%- if section.settings.subheadline != blank -%}
+        <p class="nb-body nb-hero-sub">{{ section.settings.subheadline | newline_to_br }}</p>
+      {%- endif -%}
+      {%- if section.settings.cta_texto != blank -%}
+        <a href="{{ section.settings.cta_enlace | default: '#' }}" class="nb-btn nb-btn-primary nb-hero-cta">{{ section.settings.cta_texto }}</a>
+      {%- endif -%}
+      {%- if section.settings.mostrar_confianza -%}
+        <ul class="nb-hero-trust">
+          {%- if section.settings.confianza_1 != blank -%}<li>{% render 'nb-icon', icon: 'truck' %}<span>{{ section.settings.confianza_1 }}</span></li>{%- endif -%}
+          {%- if section.settings.confianza_2 != blank -%}<li>{% render 'nb-icon', icon: 'return' %}<span>{{ section.settings.confianza_2 }}</span></li>{%- endif -%}
+          {%- if section.settings.confianza_3 != blank -%}<li>{% render 'nb-icon', icon: 'shield' %}<span>{{ section.settings.confianza_3 }}</span></li>{%- endif -%}
+        </ul>
+      {%- endif -%}
+    </div>
+    <div class="nb-hero-media nb-reveal">
+      {%- if section.settings.imagen != blank -%}
+        <div class="nb-ratio nb-hero-ratio">
+          <img
+            src="{{ section.settings.imagen | image_url: width: 1400 }}"
+            srcset="{{ section.settings.imagen | image_url: width: 700 }} 700w, {{ section.settings.imagen | image_url: width: 1000 }} 1000w, {{ section.settings.imagen | image_url: width: 1400 }} 1400w"
+            sizes="(max-width: 749px) 100vw, 50vw"
+            alt="{{ section.settings.imagen.alt | escape }}"
+            class="nb-img-cover"
+            width="{{ section.settings.imagen.width }}"
+            height="{{ section.settings.imagen.height }}"
+            loading="eager"
+            fetchpriority="high"
+          >
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Nubbi – Portada principal",
+  "tag": "section",
+  "settings": [
+    { "type": "select", "id": "posicion_imagen", "label": "Posición de la imagen",
+      "options": [ {"value": "right", "label": "Derecha"}, {"value": "left", "label": "Izquierda"} ],
+      "default": "right" },
+    { "type": "text", "id": "eyebrow", "label": "Texto pequeño superior", "default": "Viajes largos, sueño tranquilo" },
+    { "type": "textarea", "id": "headline", "label": "Titular", "default": "Que se le cierren los ojos en el coche, no las ganas de viajar" },
+    { "type": "textarea", "id": "subheadline", "label": "Texto debajo del titular", "default": "Nubbi™ es un cojín de apoyo para la cabeza y el cuello que ayuda a tu peque a descansar de verdad en los trayectos largos, sin caídas incómodas de cabeza." },
+    { "type": "text", "id": "cta_texto", "label": "Texto del botón", "default": "Descubrir Nubbi" },
+    { "type": "url", "id": "cta_enlace", "label": "Enlace del botón" },
+    { "type": "header", "content": "Imagen" },
+    { "type": "image_picker", "id": "imagen", "label": "Imagen principal" },
+    { "type": "header", "content": "Fila de confianza" },
+    { "type": "checkbox", "id": "mostrar_confianza", "label": "Mostrar fila de confianza", "default": true },
+    { "type": "text", "id": "confianza_1", "label": "Mensaje 1", "default": "Envío en 24/48h" },
+    { "type": "text", "id": "confianza_2", "label": "Mensaje 2", "default": "Devolución 30 días" },
+    { "type": "text", "id": "confianza_3", "label": "Mensaje 3", "default": "Pago 100% seguro" },
+    { "type": "header", "content": "Tipografía" },
+    { "type": "range", "id": "headline_size", "label": "Tamaño del titular (px)", "min": 28, "max": 72, "step": 2, "unit": "px", "default": 48 },
+    { "type": "range", "id": "body_size", "label": "Tamaño del texto (px)", "min": 14, "max": 24, "step": 1, "unit": "px", "default": 18 },
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#FBF6EE" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 48 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 64 }
+  ],
+  "presets": [ { "name": "Nubbi – Portada principal" } ]
+}
+{% endschema %}

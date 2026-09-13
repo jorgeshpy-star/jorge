@@ -1,0 +1,66 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{% endstyle %}
+
+<section class="nb-section nb-caracteristicas">
+  <div class="nb-container nb-caracteristicas-container">
+    <div class="nb-reveal">
+      {%- if section.settings.eyebrow != blank -%}<span class="nb-eyebrow">{{ section.settings.eyebrow }}</span>{%- endif -%}
+      {%- if section.settings.titular != blank -%}<h2 class="nb-h2 nb-caracteristicas-titulo">{{ section.settings.titular }}</h2>{%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="nb-specs nb-reveal">
+        {%- for block in section.blocks -%}
+          <div class="nb-specs-row" {{ block.shopify_attributes }}>
+            <span class="nb-specs-label">{{ block.settings.campo }}</span>
+            <span class="nb-specs-value">{{ block.settings.valor }}</span>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Nubbi – Características",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Texto pequeño superior", "default": "Ficha técnica" },
+    { "type": "text", "id": "titular", "label": "Título", "default": "Las características, sin letra pequeña" },
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#F3EBDB" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 64 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 64 }
+  ],
+  "blocks": [
+    {
+      "type": "fila",
+      "name": "Fila",
+      "settings": [
+        { "type": "text", "id": "campo", "label": "Campo", "default": "Medidas" },
+        { "type": "text", "id": "valor", "label": "Valor", "default": "56 x 42 cm" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nubbi – Características",
+      "blocks": [
+        { "type": "fila", "settings": { "campo": "Medidas", "valor": "56 x 42 cm" } },
+        { "type": "fila", "settings": { "campo": "Material", "valor": "Textil suave, agradable al tacto" } },
+        { "type": "fila", "settings": { "campo": "Diseños disponibles", "valor": "Panda, Conejo rosa, Mapache gris" } },
+        { "type": "fila", "settings": { "campo": "Dónde usarlo", "valor": "Coche, avión, tren y cochecito" } },
+        { "type": "fila", "settings": { "campo": "Qué incluye", "valor": "1 cojín Nubbi™ (2 en el pack doble)" } },
+        { "type": "fila", "settings": { "campo": "Compatibilidad", "valor": "Se usa junto al sistema de retención infantil, sin sustituirlo" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
