@@ -13,7 +13,7 @@
         "b1": { "type": "beneficio", "settings": { "icono": "cushion", "titulo": "Apoyo que de verdad sujeta", "texto": "Rodea con suavidad la cabeza y el cuello para reducir las caídas hacia delante o hacia un lado cuando se queda dormido." } },
         "b2": { "type": "beneficio", "settings": { "icono": "shield", "titulo": "Compatible con su sistema de retención", "texto": "Se coloca junto al cinturón o la silla infantil sin interferir en su ajuste ni su seguridad." } },
         "b3": { "type": "beneficio", "settings": { "icono": "feather", "titulo": "Ligero y fácil de llevar", "texto": "Cabe en cualquier bolso de viaje y se coloca en segundos, en el coche o donde lo necesites." } },
-        "b4": { "type": "beneficio", "settings": { "icono": "smile", "titulo": "Un diseño que les encanta", "texto": "Panda, Conejo rosa o Mapache gris: elige el compañero de viaje favorito de tu peque." } }
+        "b4": { "type": "beneficio", "settings": { "icono": "smile", "titulo": "Un diseño que les encanta", "texto": "Panda, Capibara o Mapache gris: elige el compañero de viaje favorito de tu peque." } }
       },
       "block_order": ["b1", "b2", "b3", "b4"],
       "settings": {}
@@ -66,7 +66,7 @@
       "blocks": {
         "q1": { "type": "pregunta", "settings": { "pregunta": "¿Nubbi sustituye la silla de coche o el cinturón de seguridad?", "respuesta": "No. Nubbi es un accesorio de confort para la cabeza y el cuello; el sistema de retención infantil debe colocarse y ajustarse siempre según sus instrucciones." } },
         "q2": { "type": "pregunta", "settings": { "pregunta": "¿Solo sirve para el coche?", "respuesta": "Es igual de práctico en avión, tren o en el cochecito: cualquier trayecto largo en el que tu peque quiera descansar." } },
-        "q3": { "type": "pregunta", "settings": { "pregunta": "¿Qué diseños hay disponibles?", "respuesta": "Panda, Conejo rosa y Mapache gris. Puedes elegir 1 cojín o el pack de 2 (ahorras 9,95 €) para tener uno de repuesto o para dos hermanos." } },
+        "q3": { "type": "pregunta", "settings": { "pregunta": "¿Qué diseños hay disponibles?", "respuesta": "Panda, Capibara y Mapache gris. Puedes elegir 1 cojín o el pack de 2 (ahorras 9,95 €) para tener uno de repuesto o para dos hermanos." } },
         "q4": { "type": "pregunta", "settings": { "pregunta": "¿Cómo se limpia?", "respuesta": "Te recomendamos seguir la etiqueta de cuidado del producto para conservar su suavidad el mayor tiempo posible." } },
         "q5": { "type": "pregunta", "settings": { "pregunta": "¿Cuánto tarda el envío?", "respuesta": "Entre 24 y 48 horas laborables desde que confirmas tu pedido." } },
         "q6": { "type": "pregunta", "settings": { "pregunta": "¿Y si no queda satisfecho?", "respuesta": "Tienes 30 días desde la recepción para devolverlo si no cumple tus expectativas." } }

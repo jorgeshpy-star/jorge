@@ -336,7 +336,7 @@
       "blocks": {
         "f1": { "type": "fila", "settings": { "campo": "Medidas", "valor": "56 x 42 cm" } },
         "f2": { "type": "fila", "settings": { "campo": "Material", "valor": "Textil suave, agradable al tacto" } },
-        "f3": { "type": "fila", "settings": { "campo": "Diseños disponibles", "valor": "Panda, Conejo rosa, Mapache gris" } },
+        "f3": { "type": "fila", "settings": { "campo": "Diseños disponibles", "valor": "Panda, Capibara, Mapache gris" } },
         "f4": { "type": "fila", "settings": { "campo": "Dónde usarlo", "valor": "Coche, avión, tren y cochecito" } },
         "f5": { "type": "fila", "settings": { "campo": "Qué incluye", "valor": "Según el pack elegido: 1 o 2 cojines Nubbi™" } },
         "f6": { "type": "fila", "settings": { "campo": "Compatibilidad", "valor": "Se usa junto al sistema de retención infantil, sin sustituirlo" } }
@@ -380,7 +380,7 @@
       "type": "nb-faq",
       "blocks": {
         "q1": { "type": "pregunta", "settings": { "pregunta": "¿Nubbi sustituye la silla de coche o el cinturón de seguridad?", "respuesta": "No. Nubbi es un accesorio de confort para la cabeza y el cuello; el sistema de retención infantil debe colocarse y ajustarse siempre según sus instrucciones." } },
-        "q2": { "type": "pregunta", "settings": { "pregunta": "¿Qué diseños hay disponibles?", "respuesta": "Panda, Conejo rosa y Mapache gris. Puedes elegir 1 cojín o el pack de 2 (ahorras 9,95 €)." } },
+        "q2": { "type": "pregunta", "settings": { "pregunta": "¿Qué diseños hay disponibles?", "respuesta": "Panda, Capibara y Mapache gris. Puedes elegir 1 cojín o el pack de 2 (ahorras 9,95 €)." } },
         "q3": { "type": "pregunta", "settings": { "pregunta": "¿Cuánto tarda el envío?", "respuesta": "Entre 24 y 48 horas laborables desde que confirmas tu pedido." } },
         "q4": { "type": "pregunta", "settings": { "pregunta": "¿Y si no queda satisfecho?", "respuesta": "Tienes 30 días desde la recepción para devolverlo si no cumple tus expectativas." } }
       },
