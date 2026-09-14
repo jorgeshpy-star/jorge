@@ -374,6 +374,25 @@
 .nb-confianza-head { max-width: 640px; margin: 0 auto 44px; text-align: center; display: flex; flex-direction: column; gap: 12px; align-items: center; }
 .nb-confianza-grid .nb-trust-item { align-items: flex-start; }
 .nb-confianza-pie { text-align: center; margin: 40px auto 0; max-width: 520px; color: var(--nb-text-muted); }
+.nb-confianza-badge { display: flex; flex-direction: column; align-items: center; gap: 12px; margin: 0 auto 40px; }
+.nb-badge-circle {
+  width: 104px; height: 104px;
+  border-radius: 50%;
+  background: var(--nb-accent);
+  color: var(--nb-white);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  box-shadow: var(--nb-shadow-md);
+}
+.nb-badge-num { font-family: var(--nb-font-heading); font-size: 34px; font-weight: 700; line-height: 1; }
+.nb-badge-unit { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.nb-badge-label { font-weight: 700; color: var(--nb-text); }
+
+/* ---------- Acordeón de confianza (ficha de compra) ---------- */
+.nb-acordeon-container { max-width: 640px; }
+.nb-buybox-acc { margin-top: 4px; }
+.nb-buybox-acc .nb-faq-q { padding: 14px 2px; font-size: 15px; }
+.nb-buybox-acc .nb-faq-a-inner { padding: 0 2px 14px; }
+.nb-buybox-acc .nb-faq-icon { width: 18px; height: 18px; }
 
 /* ---------- Reseñas ---------- */
 .nb-resenas-head {

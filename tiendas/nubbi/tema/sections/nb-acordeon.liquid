@@ -1,0 +1,63 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{% endstyle %}
+
+<section class="nb-section nb-acordeon">
+  <div class="nb-container nb-acordeon-container">
+    {%- if section.blocks.size > 0 -%}
+      <div class="nb-faq-list nb-buybox-acc">
+        {%- for block in section.blocks -%}
+          <div class="nb-faq-item" data-open="false" {{ block.shopify_attributes }}>
+            <button type="button" class="nb-faq-q" aria-expanded="false" aria-controls="nb-acc-a-{{ block.id }}">
+              <span>{{ block.settings.pregunta }}</span>
+              <span class="nb-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="nb-faq-a" id="nb-acc-a-{{ block.id }}">
+              <div class="nb-faq-a-inner">
+                <p>{{ block.settings.respuesta }}</p>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Nubbi – Acordeón",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#FFFFFF" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 8 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 40 }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Pregunta",
+      "settings": [
+        { "type": "text", "id": "pregunta", "label": "Pregunta", "default": "¿Cómo se usa?" },
+        { "type": "textarea", "id": "respuesta", "label": "Respuesta", "default": "Se coloca alrededor de la cabeza y el cuello antes de arrancar." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nubbi – Acordeón",
+      "blocks": [
+        { "type": "item", "settings": { "pregunta": "¿Cómo se usa?", "respuesta": "Se coloca alrededor de la cabeza y el cuello antes de arrancar, junto a su sistema de retención infantil habitual, sin sustituirlo." } },
+        { "type": "item", "settings": { "pregunta": "Nuestra garantía", "respuesta": "30 días desde la recepción para devolverlo si no os convence, sin complicaciones." } },
+        { "type": "item", "settings": { "pregunta": "Envío y entrega", "respuesta": "Preparamos y enviamos tu pedido en 24/48 horas laborables." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

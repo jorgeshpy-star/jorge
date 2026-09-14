@@ -40,9 +40,10 @@ function initFaqAccordion() {
 
     btn.addEventListener('click', function () {
       var isOpen = item.getAttribute('data-open') === 'true';
+      var group = item.closest('.nb-faq-list');
 
       items.forEach(function (other) {
-        if (other !== item) {
+        if (other !== item && other.closest('.nb-faq-list') === group) {
           other.setAttribute('data-open', 'false');
           other.querySelector('.nb-faq-q').setAttribute('aria-expanded', 'false');
           var otherPanel = other.querySelector('.nb-faq-a');

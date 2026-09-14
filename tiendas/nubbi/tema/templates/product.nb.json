@@ -331,6 +331,16 @@
         "padding-block-end": 0
       }
     },
+    "nb_acordeon": {
+      "type": "nb-acordeon",
+      "blocks": {
+        "a1": { "type": "item", "settings": { "pregunta": "¿Cómo se usa?", "respuesta": "Se coloca alrededor de la cabeza y el cuello antes de arrancar, junto a su sistema de retención infantil habitual, sin sustituirlo." } },
+        "a2": { "type": "item", "settings": { "pregunta": "Nuestra garantía", "respuesta": "30 días desde la recepción para devolverlo si no os convence, sin complicaciones." } },
+        "a3": { "type": "item", "settings": { "pregunta": "Envío y entrega", "respuesta": "Preparamos y enviamos tu pedido en 24/48 horas laborables." } }
+      },
+      "block_order": ["a1", "a2", "a3"],
+      "settings": {}
+    },
     "nb_problema": {
       "type": "nb-historia",
       "settings": {
@@ -411,5 +421,5 @@
       "settings": {}
     }
   },
-  "order": ["main", "nb_problema", "nb_agitacion", "nb_faq", "nb_solucion", "nb_confianza", "nb_resenas"]
+  "order": ["main", "nb_acordeon", "nb_problema", "nb_agitacion", "nb_faq", "nb_solucion", "nb_confianza", "nb_resenas"]
 }

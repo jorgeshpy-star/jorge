@@ -8,6 +8,16 @@
 
 <section class="nb-section nb-confianza">
   <div class="nb-container">
+    {%- if section.settings.mostrar_insignia -%}
+      <div class="nb-confianza-badge nb-reveal">
+        <div class="nb-badge-circle">
+          <span class="nb-badge-num">{{ section.settings.insignia_numero }}</span>
+          <span class="nb-badge-unit">{{ section.settings.insignia_unidad }}</span>
+        </div>
+        <span class="nb-badge-label">{{ section.settings.insignia_texto }}</span>
+      </div>
+    {%- endif -%}
+
     <div class="nb-confianza-head nb-reveal">
       {%- if section.settings.eyebrow != blank -%}<span class="nb-eyebrow">{{ section.settings.eyebrow }}</span>{%- endif -%}
       {%- if section.settings.titular != blank -%}<h2 class="nb-h2">{{ section.settings.titular }}</h2>{%- endif -%}
@@ -43,6 +53,11 @@
     { "type": "text", "id": "titular", "label": "Título", "default": "Cuidamos cada pedido al detalle" },
     { "type": "textarea", "id": "subtitulo", "label": "Subtítulo" },
     { "type": "textarea", "id": "pie", "label": "Texto final (opcional)", "default": "¿Alguna duda antes de comprar? Escríbenos y te respondemos en menos de 24 horas." },
+    { "type": "header", "content": "Insignia de garantía" },
+    { "type": "checkbox", "id": "mostrar_insignia", "label": "Mostrar insignia circular", "default": true },
+    { "type": "text", "id": "insignia_numero", "label": "Número", "default": "30" },
+    { "type": "text", "id": "insignia_unidad", "label": "Unidad", "default": "DÍAS" },
+    { "type": "text", "id": "insignia_texto", "label": "Texto debajo", "default": "Garantía de confianza" },
     { "type": "header", "content": "Color" },
     { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#F3EBDB" },
     { "type": "header", "content": "Espaciado" },
