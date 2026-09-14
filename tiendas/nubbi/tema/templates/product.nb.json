@@ -331,28 +331,51 @@
         "padding-block-end": 0
       }
     },
-    "nb_caracteristicas": {
-      "type": "nb-caracteristicas",
-      "blocks": {
-        "f1": { "type": "fila", "settings": { "campo": "Medidas", "valor": "56 x 42 cm" } },
-        "f2": { "type": "fila", "settings": { "campo": "Material", "valor": "Textil suave, agradable al tacto" } },
-        "f3": { "type": "fila", "settings": { "campo": "Diseños disponibles", "valor": "Panda, Capibara, Mapache gris" } },
-        "f4": { "type": "fila", "settings": { "campo": "Dónde usarlo", "valor": "Coche, avión, tren y cochecito" } },
-        "f5": { "type": "fila", "settings": { "campo": "Qué incluye", "valor": "Según el pack elegido: 1 o 2 cojines Nubbi™" } },
-        "f6": { "type": "fila", "settings": { "campo": "Compatibilidad", "valor": "Se usa junto al sistema de retención infantil, sin sustituirlo" } }
-      },
-      "block_order": ["f1", "f2", "f3", "f4", "f5", "f6"],
-      "settings": {}
+    "nb_problema": {
+      "type": "nb-historia",
+      "settings": {
+        "posicion_imagen": "right",
+        "eyebrow": "El problema",
+        "titular": "Cuando se queda dormido, la cabeza no para de caer",
+        "texto": "En los trayectos largos, sin nada que le sujete la cabeza, se le va hacia delante o hacia un lado cada pocos minutos. Se despierta con el cuello resentido y tú, más pendiente del retrovisor que de la carretera.",
+        "icono": "alert",
+        "color_fondo": "#FFFFFF",
+        "color_acento": "#B5643F",
+        "color_acento_fondo": "#F6E8E1",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
     },
-    "nb_como_se_usa": {
-      "type": "nb-como-se-usa",
-      "blocks": {
-        "p1": { "type": "paso", "settings": { "titulo": "Colócalo bien", "texto": "Ajusta Nubbi™ alrededor de la cabeza y el cuello de tu peque, antes de arrancar." } },
-        "p2": { "type": "paso", "settings": { "titulo": "Abrocha su sistema de retención", "texto": "Comprueba que la silla o el cinturón queda colocado y ajustado según sus instrucciones, igual que siempre." } },
-        "p3": { "type": "paso", "settings": { "titulo": "Que disfrute del viaje", "texto": "Con la cabeza bien apoyada, los trayectos largos se hacen mucho más llevaderos, para él y para ti." } }
-      },
-      "block_order": ["p1", "p2", "p3"],
-      "settings": { "color_fondo": "#FFFFFF" }
+    "nb_agitacion": {
+      "type": "nb-historia",
+      "settings": {
+        "posicion_imagen": "left",
+        "eyebrow": "No es solo esta vez",
+        "titular": "Pasa en cada viaje largo, no una vez suelta",
+        "texto": "El cuello torcido, el despertar de golpe, el ratito de llanto hasta que se le pasa... y así en cada trayecto de más de una hora. No es solo un mal rato: es la parte del viaje que menos os gusta, viaje tras viaje.",
+        "icono": "repeat",
+        "color_fondo": "#FBF6EE",
+        "color_acento": "#B8862B",
+        "color_acento_fondo": "#FBF0DD",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "nb_solucion": {
+      "type": "nb-historia",
+      "settings": {
+        "posicion_imagen": "right",
+        "eyebrow": "La solución",
+        "titular": "Con Nubbi™, esos viajes cambian",
+        "texto": "Nubbi rodea con suavidad la cabeza y el cuello, sujetándolo justo donde antes se le iba. Se coloca en segundos junto a su sistema de retención infantil, sin sustituirlo ni interferir en su ajuste. El resultado: se duerme y se despierta igual, sin caídas ni cuello torcido.",
+        "imagen": "shopify://shop_images/nubbi-lifestyle-coche.jpg",
+        "icono": "cushion",
+        "color_fondo": "#FFFFFF",
+        "color_acento": "#5C7C93",
+        "color_acento_fondo": "#E7EDF0",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
     },
     "nb_confianza": {
       "type": "nb-confianza",
@@ -388,5 +411,5 @@
       "settings": {}
     }
   },
-  "order": ["main", "nb_caracteristicas", "nb_como_se_usa", "nb_confianza", "nb_resenas", "nb_faq"]
+  "order": ["main", "nb_problema", "nb_agitacion", "nb_faq", "nb_solucion", "nb_confianza", "nb_resenas"]
 }

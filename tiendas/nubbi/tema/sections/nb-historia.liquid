@@ -1,0 +1,86 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  #shopify-section-{{ section.id }} .nb-historia-eyebrow {
+    color: {{ section.settings.color_acento }};
+    background: {{ section.settings.color_acento_fondo }};
+  }
+  #shopify-section-{{ section.id }} .nb-historia-copy {
+    border-color: {{ section.settings.color_acento }};
+  }
+  #shopify-section-{{ section.id }} .nb-historia-icon-badge {
+    background: {{ section.settings.color_acento_fondo }};
+    color: {{ section.settings.color_acento }};
+  }
+{% endstyle %}
+
+<section class="nb-section nb-historia">
+  <div class="nb-container nb-historia-grid" data-img-pos="{{ section.settings.posicion_imagen }}">
+    <div class="nb-historia-copy nb-reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="nb-eyebrow nb-historia-eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      {%- if section.settings.titular != blank -%}<h2 class="nb-h2 nb-historia-headline">{{ section.settings.titular }}</h2>{%- endif -%}
+      {%- if section.settings.texto != blank -%}<p class="nb-body nb-muted nb-historia-texto">{{ section.settings.texto }}</p>{%- endif -%}
+    </div>
+    <div class="nb-historia-media nb-reveal">
+      {%- if section.settings.imagen != blank -%}
+        <div class="nb-ratio nb-historia-ratio">
+          <img
+            src="{{ section.settings.imagen | image_url: width: 1400 }}"
+            srcset="{{ section.settings.imagen | image_url: width: 700 }} 700w, {{ section.settings.imagen | image_url: width: 1000 }} 1000w, {{ section.settings.imagen | image_url: width: 1400 }} 1400w"
+            sizes="(max-width: 749px) 100vw, 50vw"
+            alt="{{ section.settings.imagen.alt | escape }}"
+            class="nb-img-cover"
+            width="{{ section.settings.imagen.width }}"
+            height="{{ section.settings.imagen.height }}"
+            loading="lazy"
+          >
+        </div>
+      {%- else -%}
+        <div class="nb-ratio nb-historia-ratio nb-historia-icon-badge">
+          {% render 'nb-icon', icon: section.settings.icono %}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Nubbi – Historia",
+  "tag": "section",
+  "settings": [
+    { "type": "select", "id": "posicion_imagen", "label": "Posición de la imagen",
+      "options": [ {"value": "right", "label": "Derecha"}, {"value": "left", "label": "Izquierda"} ],
+      "default": "right" },
+    { "type": "text", "id": "eyebrow", "label": "Texto pequeño superior", "default": "El problema" },
+    { "type": "text", "id": "titular", "label": "Título", "default": "Cuando se queda dormido, la cabeza no para de caer" },
+    { "type": "textarea", "id": "texto", "label": "Texto", "default": "En los trayectos largos, sin nada que le sujete la cabeza, se le va hacia delante o hacia un lado cada pocos minutos." },
+    { "type": "header", "content": "Imagen" },
+    { "type": "image_picker", "id": "imagen", "label": "Imagen (si se deja vacío, se muestra un icono)" },
+    { "type": "select", "id": "icono", "label": "Icono (solo si no hay imagen)",
+      "options": [
+        {"value":"alert","label":"Aviso"},
+        {"value":"repeat","label":"Repetición"},
+        {"value":"cushion","label":"Cojín / apoyo"},
+        {"value":"shield","label":"Escudo / seguridad"},
+        {"value":"moon","label":"Descanso"},
+        {"value":"smile","label":"Sonrisa"}
+      ], "default": "alert" },
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#FFFFFF" },
+    { "type": "color", "id": "color_acento", "label": "Color de acento (etiqueta, borde e icono)", "default": "#B5643F" },
+    { "type": "color", "id": "color_acento_fondo", "label": "Color de acento (fondo etiqueta e icono)", "default": "#F6E8E1" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 }
+  ],
+  "presets": [
+    { "name": "Nubbi – Historia" }
+  ]
+}
+{% endschema %}

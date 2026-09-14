@@ -7,36 +7,64 @@
         "cta_enlace": "/products/cojin-nubbi-para-el-cinturon-confort-en-viajes-largos"
       }
     },
-    "nb_beneficios": {
-      "type": "nb-beneficios",
+    "nb_problema": {
+      "type": "nb-historia",
+      "settings": {
+        "posicion_imagen": "right",
+        "eyebrow": "El problema",
+        "titular": "Cuando se queda dormido, la cabeza no para de caer",
+        "texto": "En los trayectos largos, sin nada que le sujete la cabeza, se le va hacia delante o hacia un lado cada pocos minutos. Se despierta con el cuello resentido y tú, más pendiente del retrovisor que de la carretera.",
+        "icono": "alert",
+        "color_fondo": "#FFFFFF",
+        "color_acento": "#B5643F",
+        "color_acento_fondo": "#F6E8E1",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "nb_agitacion": {
+      "type": "nb-historia",
+      "settings": {
+        "posicion_imagen": "left",
+        "eyebrow": "No es solo esta vez",
+        "titular": "Pasa en cada viaje largo, no una vez suelta",
+        "texto": "El cuello torcido, el despertar de golpe, el ratito de llanto hasta que se le pasa... y así en cada trayecto de más de una hora. No es solo un mal rato: es la parte del viaje que menos os gusta, viaje tras viaje.",
+        "icono": "repeat",
+        "color_fondo": "#FBF6EE",
+        "color_acento": "#B8862B",
+        "color_acento_fondo": "#FBF0DD",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "nb_faq": {
+      "type": "nb-faq",
       "blocks": {
-        "b1": { "type": "beneficio", "settings": { "icono": "cushion", "titulo": "Apoyo que de verdad sujeta", "texto": "Rodea con suavidad la cabeza y el cuello para reducir las caídas hacia delante o hacia un lado cuando se queda dormido." } },
-        "b2": { "type": "beneficio", "settings": { "icono": "shield", "titulo": "Compatible con su sistema de retención", "texto": "Se coloca junto al cinturón o la silla infantil sin interferir en su ajuste ni su seguridad." } },
-        "b3": { "type": "beneficio", "settings": { "icono": "feather", "titulo": "Ligero y fácil de llevar", "texto": "Cabe en cualquier bolso de viaje y se coloca en segundos, en el coche o donde lo necesites." } },
-        "b4": { "type": "beneficio", "settings": { "icono": "smile", "titulo": "Un diseño que les encanta", "texto": "Panda, Capibara o Mapache gris: elige el compañero de viaje favorito de tu peque." } }
+        "q1": { "type": "pregunta", "settings": { "pregunta": "¿Nubbi sustituye la silla de coche o el cinturón de seguridad?", "respuesta": "No. Nubbi es un accesorio de confort para la cabeza y el cuello; el sistema de retención infantil debe colocarse y ajustarse siempre según sus instrucciones." } },
+        "q2": { "type": "pregunta", "settings": { "pregunta": "¿Solo sirve para el coche?", "respuesta": "Es igual de práctico en avión, tren o en el cochecito: cualquier trayecto largo en el que tu peque quiera descansar." } },
+        "q3": { "type": "pregunta", "settings": { "pregunta": "¿Qué diseños hay disponibles?", "respuesta": "Panda, Capibara y Mapache gris. Puedes elegir 1 cojín o el pack de 2 (ahorras 9,95 €) para tener uno de repuesto o para dos hermanos." } },
+        "q4": { "type": "pregunta", "settings": { "pregunta": "¿Cómo se limpia?", "respuesta": "Te recomendamos seguir la etiqueta de cuidado del producto para conservar su suavidad el mayor tiempo posible." } },
+        "q5": { "type": "pregunta", "settings": { "pregunta": "¿Cuánto tarda el envío?", "respuesta": "Entre 24 y 48 horas laborables desde que confirmas tu pedido." } },
+        "q6": { "type": "pregunta", "settings": { "pregunta": "¿Y si no queda satisfecho?", "respuesta": "Tienes 30 días desde la recepción para devolverlo si no cumple tus expectativas." } }
       },
-      "block_order": ["b1", "b2", "b3", "b4"],
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6"],
       "settings": {}
     },
-    "nb_como_se_usa": {
-      "type": "nb-como-se-usa",
-      "blocks": {
-        "p1": { "type": "paso", "settings": { "titulo": "Colócalo bien", "texto": "Ajusta Nubbi™ alrededor de la cabeza y el cuello de tu peque, antes de arrancar." } },
-        "p2": { "type": "paso", "settings": { "titulo": "Abrocha su sistema de retención", "texto": "Comprueba que la silla o el cinturón queda colocado y ajustado según sus instrucciones, igual que siempre." } },
-        "p3": { "type": "paso", "settings": { "titulo": "Que disfrute del viaje", "texto": "Con la cabeza bien apoyada, los trayectos largos se hacen mucho más llevaderos, para él y para ti." } }
-      },
-      "block_order": ["p1", "p2", "p3"],
-      "settings": {}
-    },
-    "nb_galeria": {
-      "type": "nb-galeria",
-      "blocks": {
-        "g1": { "type": "momento", "settings": { "imagen": "shopify://shop_images/nubbi-lifestyle-coche.jpg", "texto": "Se queda dormido antes de lo que esperabas" } },
-        "g2": { "type": "momento", "settings": { "imagen": "shopify://shop_images/nubbi-detalle-cara.jpg", "texto": "Bordados suaves, pensados para acariciar, no para molestar" } },
-        "g3": { "type": "momento", "settings": { "imagen": "shopify://shop_images/ba195c3bdafd2d73039382a34e438e0f_b1c13ce1-a223-45d6-a07f-983e91c8be93.jpg", "texto": "Cada peque con su compañero de viaje favorito" } }
-      },
-      "block_order": ["g1", "g2", "g3"],
-      "settings": {}
+    "nb_solucion": {
+      "type": "nb-historia",
+      "settings": {
+        "posicion_imagen": "right",
+        "eyebrow": "La solución",
+        "titular": "Con Nubbi™, esos viajes cambian",
+        "texto": "Nubbi rodea con suavidad la cabeza y el cuello, sujetándolo justo donde antes se le iba. Se coloca en segundos junto a su sistema de retención infantil, sin sustituirlo ni interferir en su ajuste. El resultado: se duerme y se despierta igual, sin caídas ni cuello torcido.",
+        "imagen": "shopify://shop_images/nubbi-lifestyle-coche.jpg",
+        "icono": "cushion",
+        "color_fondo": "#FFFFFF",
+        "color_acento": "#5C7C93",
+        "color_acento_fondo": "#E7EDF0",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
     },
     "nb_confianza": {
       "type": "nb-confianza",
@@ -61,19 +89,6 @@
       "block_order": ["r1", "r2", "r3", "r4", "r5"],
       "settings": {}
     },
-    "nb_faq": {
-      "type": "nb-faq",
-      "blocks": {
-        "q1": { "type": "pregunta", "settings": { "pregunta": "¿Nubbi sustituye la silla de coche o el cinturón de seguridad?", "respuesta": "No. Nubbi es un accesorio de confort para la cabeza y el cuello; el sistema de retención infantil debe colocarse y ajustarse siempre según sus instrucciones." } },
-        "q2": { "type": "pregunta", "settings": { "pregunta": "¿Solo sirve para el coche?", "respuesta": "Es igual de práctico en avión, tren o en el cochecito: cualquier trayecto largo en el que tu peque quiera descansar." } },
-        "q3": { "type": "pregunta", "settings": { "pregunta": "¿Qué diseños hay disponibles?", "respuesta": "Panda, Capibara y Mapache gris. Puedes elegir 1 cojín o el pack de 2 (ahorras 9,95 €) para tener uno de repuesto o para dos hermanos." } },
-        "q4": { "type": "pregunta", "settings": { "pregunta": "¿Cómo se limpia?", "respuesta": "Te recomendamos seguir la etiqueta de cuidado del producto para conservar su suavidad el mayor tiempo posible." } },
-        "q5": { "type": "pregunta", "settings": { "pregunta": "¿Cuánto tarda el envío?", "respuesta": "Entre 24 y 48 horas laborables desde que confirmas tu pedido." } },
-        "q6": { "type": "pregunta", "settings": { "pregunta": "¿Y si no queda satisfecho?", "respuesta": "Tienes 30 días desde la recepción para devolverlo si no cumple tus expectativas." } }
-      },
-      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6"],
-      "settings": {}
-    },
     "nb_cta_final": {
       "type": "nb-cta-final",
       "settings": {
@@ -83,12 +98,12 @@
   },
   "order": [
     "nb_hero",
-    "nb_beneficios",
-    "nb_como_se_usa",
-    "nb_galeria",
+    "nb_problema",
+    "nb_agitacion",
+    "nb_faq",
+    "nb_solucion",
     "nb_confianza",
     "nb_resenas",
-    "nb_faq",
     "nb_cta_final"
   ]
 }

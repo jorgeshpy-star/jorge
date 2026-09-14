@@ -299,6 +299,35 @@
   .nb-hero-ratio { aspect-ratio: 4 / 3; }
 }
 
+/* ---------- Historia (Problema / Agitación / Solución) ---------- */
+.nb-historia-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.nb-historia-grid[data-img-pos="left"] { direction: rtl; }
+.nb-historia-grid[data-img-pos="left"] > * { direction: ltr; }
+.nb-historia-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding-left: 26px;
+  border-left: 3px solid;
+}
+.nb-historia-headline { margin: 0; }
+.nb-historia-texto { margin: 0; max-width: 46ch; }
+.nb-historia-ratio { aspect-ratio: 4 / 5; border-radius: var(--nb-radius-lg); }
+.nb-historia-icon-badge { display: flex; align-items: center; justify-content: center; }
+.nb-historia-icon-badge svg { width: 96px; height: 96px; }
+@media (max-width: 989px) {
+  .nb-historia-grid { grid-template-columns: 1fr; gap: 32px; }
+  .nb-historia-grid[data-img-pos="left"] .nb-historia-media { order: -1; }
+  .nb-historia-ratio { aspect-ratio: 4 / 3; }
+  .nb-historia-copy { padding-left: 18px; }
+}
+
 /* ---------- Beneficios ---------- */
 .nb-beneficios-head { max-width: 640px; margin: 0 auto 44px; display: flex; flex-direction: column; gap: 12px; }
 .nb-beneficios-head[style*="text-align: left"] { margin-left: 0; margin-right: auto; align-items: flex-start; }
