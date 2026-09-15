@@ -75,7 +75,7 @@
                 "text_color": "#B5643F",
                 "background": true,
                 "background_color": "#F6E8E1",
-                "corner_radius": 999,
+                "corner_radius": 50,
                 "padding-block-start": 8,
                 "padding-block-end": 8,
                 "padding-inline-start": 16,
