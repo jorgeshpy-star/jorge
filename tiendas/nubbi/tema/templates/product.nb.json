@@ -339,59 +339,9 @@
                 }
               },
               "block_order": []
-            },
-            "garantias": {
-              "type": "text",
-              "settings": {
-                "text": "<p>Envío en 24/48h &nbsp;·&nbsp; 30 días de garantía &nbsp;·&nbsp; Pago 100% seguro</p>",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "0.85rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "descripcion": {
-              "type": "text",
-              "settings": {
-                "text": "{{ closest.product.description }}",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
             }
           },
-          "block_order": ["banner", "valoracion", "grupo_titulo", "gancho", "vinetas", "separador", "selector", "botones", "garantias", "descripcion"]
+          "block_order": ["banner", "valoracion", "grupo_titulo", "gancho", "vinetas", "separador", "selector", "botones"]
         }
       },
       "settings": {
@@ -522,22 +472,6 @@
       },
       "block_order": ["q1", "q2", "q3", "q4"],
       "settings": {}
-    },
-    "nb_solucion": {
-      "type": "nb-historia",
-      "settings": {
-        "posicion_imagen": "right",
-        "eyebrow": "La solución",
-        "titular": "Con Nubbi™, esos viajes cambian",
-        "texto": "Nubbi rodea con suavidad la cabeza y el cuello, sujetándolo justo donde antes se le iba. Se coloca en segundos junto a su sistema de retención infantil, sin sustituirlo ni interferir en su ajuste. El resultado: se duerme y se despierta igual, sin caídas ni cuello torcido.",
-        "imagen": "shopify://shop_images/nubbi-lifestyle-coche.jpg",
-        "icono": "cushion",
-        "color_fondo": "#FFFFFF",
-        "color_acento": "#5C7C93",
-        "color_acento_fondo": "#E7EDF0",
-        "padding_top": 72,
-        "padding_bottom": 72
-      }
     },
     "nb_comparativa": {
       "type": "nb-comparativa",
