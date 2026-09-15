@@ -58,6 +58,31 @@
             "padding-inline-end": 0
           },
           "blocks": {
+            "banner": {
+              "type": "text",
+              "settings": {
+                "text": "<p>🚚 Envío 24/48h &nbsp;·&nbsp; 🛡️ Garantía 30 días &nbsp;·&nbsp; 🔒 Pago seguro</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "0.8rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#B5643F",
+                "background": true,
+                "background_color": "#F6E8E1",
+                "corner_radius": 999,
+                "padding-block-start": 8,
+                "padding-block-end": 8,
+                "padding-inline-start": 16,
+                "padding-inline-end": 16
+              },
+              "blocks": {}
+            },
             "grupo_titulo": {
               "type": "group",
               "settings": {
@@ -366,7 +391,7 @@
               "blocks": {}
             }
           },
-          "block_order": ["grupo_titulo", "valoracion", "gancho", "vinetas", "separador", "selector", "botones", "garantias", "descripcion"]
+          "block_order": ["banner", "valoracion", "grupo_titulo", "gancho", "vinetas", "separador", "selector", "botones", "garantias", "descripcion"]
         }
       },
       "settings": {
