@@ -54,6 +54,7 @@
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
+                "text_color": "#FBF6EE",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -78,6 +79,7 @@
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
+                "text_color": "#FBF6EE",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -129,7 +131,7 @@
             "text_ayuda_h": {
               "type": "text",
               "settings": {
-                "text": "<h2>Ayuda</h2>",
+                "text": "<h2>Información</h2>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -140,6 +142,7 @@
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
+                "text_color": "#FBF6EE",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -153,7 +156,7 @@
             "text_ayuda_links": {
               "type": "text",
               "settings": {
-                "text": "<ul><li><a href=\"/pages/contacto-nubbi\">Contacto</a></li><li><a href=\"/pages/devoluciones-nubbi\">Devoluciones y garantía</a></li><li><a href=\"/pages/quienes-somos-nubbi\">Quiénes somos</a></li></ul>",
+                "text": "<ul><li><a href=\"/pages/contacto-nubbi\">Contacto</a></li><li><a href=\"/pages/devoluciones-nubbi\">Política de reembolso</a></li><li><a href=\"/policies/privacy-policy\">Política de privacidad</a></li><li><a href=\"/policies/terms-of-service\">Términos del servicio</a></li><li><a href=\"/pages/quienes-somos-nubbi\">Quiénes somos</a></li></ul>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -164,6 +167,7 @@
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
+                "text_color": "#FBF6EE",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -183,9 +187,9 @@
       "settings": {
         "section_width": "page-width",
         "gap": 20,
-        "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 30,
-        "padding-block-end": 30
+        "background_color": "#5C7C93",
+        "padding-block-start": 40,
+        "padding-block-end": 40
       }
     },
     "footer_utilities_jLGE8U": {

@@ -435,6 +435,61 @@
 .nb-caracteristicas-container { max-width: 760px; }
 .nb-caracteristicas-titulo { margin-bottom: 28px; }
 
+/* ---------- Franja de información del pie (footer) ---------- */
+#shopify-section-footer_m9NzUG a { color: #FBF6EE; text-decoration: underline; text-underline-offset: 2px; }
+#shopify-section-footer_m9NzUG a:hover { color: #FFFFFF; }
+#shopify-section-footer_m9NzUG ul { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-direction: column; gap: 10px; }
+#shopify-section-footer_m9NzUG li { margin: 0; }
+
+/* ---------- Escaparate (portada) ---------- */
+.nb-hero-teaser-media { width: 100%; aspect-ratio: 1 / 1; overflow: hidden; }
+@media (min-width: 750px) { .nb-hero-teaser-media { aspect-ratio: 16 / 9; } }
+.nb-hero-teaser-copy {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-top: 40px;
+  max-width: 640px;
+}
+.nb-hero-teaser-titulo { margin: 0; }
+.nb-hero-teaser-cta { align-self: center; }
+
+/* ---------- Comparativa ---------- */
+.nb-comparativa-container { max-width: 720px; }
+.nb-comparativa-head { text-align: center; margin-bottom: 36px; display: flex; flex-direction: column; gap: 12px; align-items: center; }
+.nb-comparativa-table { border: 1px solid var(--nb-border); border-radius: var(--nb-radius-md); overflow: hidden; }
+.nb-comparativa-row {
+  display: grid;
+  grid-template-columns: 1fr 84px 84px;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--nb-border);
+}
+.nb-comparativa-row:last-child { border-bottom: none; }
+.nb-comparativa-row-head { background: var(--nb-bg-soft); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
+.nb-comparativa-criterio { font-weight: 600; }
+.nb-comparativa-col { display: flex; justify-content: center; color: var(--nb-text-muted); }
+.nb-comparativa-col-nubbi { color: var(--nb-accent-dark); font-weight: 700; }
+.nb-comparativa-row-head .nb-comparativa-col-nubbi { color: var(--nb-accent-dark); }
+.nb-comparativa-table svg { width: 20px; height: 20px; }
+.nb-comparativa-col-nubbi svg { color: #3E9A5C; }
+.nb-comparativa-col:not(.nb-comparativa-col-nubbi) svg { color: #C4573F; }
+@media (max-width: 599px) {
+  .nb-comparativa-row { grid-template-columns: 1fr 56px 56px; padding: 14px 12px; gap: 6px; font-size: 14px; }
+}
+
+/* ---------- Reseñas: comilla decorativa ---------- */
+.nb-review-top { display: flex; align-items: flex-start; justify-content: space-between; }
+.nb-review-quote {
+  font-family: var(--nb-font-heading);
+  font-size: 40px;
+  line-height: 1;
+  color: var(--nb-border);
+}
+
 /* ---------- Tabla de características (utilidades compartidas) ---------- */
 .nb-specs-row {
   display: flex;

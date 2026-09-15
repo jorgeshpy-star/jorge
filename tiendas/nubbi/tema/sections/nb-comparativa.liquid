@@ -1,0 +1,70 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{% endstyle %}
+
+<section class="nb-section nb-comparativa">
+  <div class="nb-container nb-comparativa-container">
+    <div class="nb-comparativa-head nb-reveal">
+      {%- if section.settings.eyebrow != blank -%}<span class="nb-eyebrow">{{ section.settings.eyebrow }}</span>{%- endif -%}
+      {%- if section.settings.titular != blank -%}<h2 class="nb-h2">{{ section.settings.titular }}</h2>{%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="nb-comparativa-table nb-reveal">
+        <div class="nb-comparativa-row nb-comparativa-row-head">
+          <span></span>
+          <span class="nb-comparativa-col nb-comparativa-col-nubbi">{{ section.settings.columna_nubbi }}</span>
+          <span class="nb-comparativa-col">{{ section.settings.columna_otros }}</span>
+        </div>
+        {%- for block in section.blocks -%}
+          <div class="nb-comparativa-row" {{ block.shopify_attributes }}>
+            <span class="nb-comparativa-criterio">{{ block.settings.criterio }}</span>
+            <span class="nb-comparativa-col nb-comparativa-col-nubbi">{% render 'nb-icon', icon: 'check' %}</span>
+            <span class="nb-comparativa-col">{% render 'nb-icon', icon: 'cross' %}</span>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Nubbi – Comparativa",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Texto pequeño superior", "default": "La diferencia se nota" },
+    { "type": "text", "id": "titular", "label": "Título", "default": "¿Por qué elegir Nubbi?" },
+    { "type": "text", "id": "columna_nubbi", "label": "Nombre columna Nubbi", "default": "Nubbi" },
+    { "type": "text", "id": "columna_otros", "label": "Nombre columna otros", "default": "Otros" },
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#FFFFFF" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 }
+  ],
+  "blocks": [
+    {
+      "type": "criterio",
+      "name": "Criterio",
+      "settings": [
+        { "type": "text", "id": "criterio", "label": "Criterio", "default": "Cabeza sujeta todo el viaje" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nubbi – Comparativa",
+      "blocks": [
+        { "type": "criterio", "settings": { "criterio": "Cabeza sujeta todo el viaje" } },
+        { "type": "criterio", "settings": { "criterio": "Compatible con el cinturón, sin molestar" } },
+        { "type": "criterio", "settings": { "criterio": "Vale para coche, avión y tren" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

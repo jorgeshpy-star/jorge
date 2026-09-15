@@ -1,8 +1,10 @@
 {%- comment -%}
   Icono de línea propio de Nubbi. Uso: {% render 'nb-icon', icon: 'shield' %}
-  Iconos disponibles: shield, truck, return, chat, cushion, feather, moon, smile, check, star, alert, repeat
+  Iconos disponibles: shield, truck, return, chat, cushion, feather, moon, smile, check, star, alert, repeat, cross
 {%- endcomment -%}
 {%- case icon -%}
+  {%- when 'cross' -%}
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
   {%- when 'alert' -%}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4L2.5 20h19L12 4z"/><path d="M12 10.5v4"/><path d="M12 17.5h.01"/></svg>
   {%- when 'repeat' -%}

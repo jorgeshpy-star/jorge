@@ -1,0 +1,50 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{% endstyle %}
+
+<section class="nb-section nb-hero-teaser">
+  <div class="nb-hero-teaser-media">
+    {%- if section.settings.imagen != blank -%}
+      <img
+        src="{{ section.settings.imagen | image_url: width: 1400 }}"
+        srcset="{{ section.settings.imagen | image_url: width: 700 }} 700w, {{ section.settings.imagen | image_url: width: 1000 }} 1000w, {{ section.settings.imagen | image_url: width: 1400 }} 1400w"
+        sizes="100vw"
+        alt="{{ section.settings.imagen.alt | escape }}"
+        class="nb-img-cover"
+        width="{{ section.settings.imagen.width }}"
+        height="{{ section.settings.imagen.height }}"
+        loading="eager"
+        fetchpriority="high"
+      >
+    {%- endif -%}
+  </div>
+  <div class="nb-container nb-hero-teaser-copy">
+    {%- if section.settings.titular != blank -%}<h1 class="nb-h2 nb-hero-teaser-titulo">{{ section.settings.titular | newline_to_br }}</h1>{%- endif -%}
+    {%- if section.settings.cta_texto != blank -%}
+      <a href="{{ section.settings.cta_enlace | default: '#' }}" class="nb-btn nb-btn-primary nb-hero-teaser-cta">{{ section.settings.cta_texto }}</a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Nubbi – Escaparate",
+  "tag": "section",
+  "settings": [
+    { "type": "image_picker", "id": "imagen", "label": "Imagen principal" },
+    { "type": "textarea", "id": "titular", "label": "Titular", "default": "Descubre por qué duermen mejor en cada viaje" },
+    { "type": "text", "id": "cta_texto", "label": "Texto del botón", "default": "Ver más" },
+    { "type": "url", "id": "cta_enlace", "label": "Enlace del botón" },
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#FBF6EE" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 120, "step": 8, "unit": "px", "default": 56 }
+  ],
+  "presets": [ { "name": "Nubbi – Escaparate" } ]
+}
+{% endschema %}

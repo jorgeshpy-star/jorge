@@ -1,111 +1,16 @@
 {
   "sections": {
-    "nb_hero": {
-      "type": "nb-hero",
+    "nb_escaparate": {
+      "type": "nb-hero-teaser",
       "settings": {
         "imagen": "shopify://shop_images/nubbi-lifestyle-dormido.jpg",
-        "cta_enlace": "/products/cojin-nubbi-para-el-cinturon-confort-en-viajes-largos"
-      }
-    },
-    "nb_problema": {
-      "type": "nb-historia",
-      "settings": {
-        "posicion_imagen": "right",
-        "eyebrow": "El problema",
-        "titular": "Cuando se queda dormido, la cabeza no para de caer",
-        "texto": "En los trayectos largos, sin nada que le sujete la cabeza, se le va hacia delante o hacia un lado cada pocos minutos. Se despierta con el cuello resentido y tú, más pendiente del retrovisor que de la carretera.",
-        "imagen": "shopify://shop_images/nubbi-panda-real.jpg",
-        "icono": "alert",
-        "color_fondo": "#FFFFFF",
-        "color_acento": "#B5643F",
-        "color_acento_fondo": "#F6E8E1",
-        "padding_top": 72,
-        "padding_bottom": 72
-      }
-    },
-    "nb_agitacion": {
-      "type": "nb-historia",
-      "settings": {
-        "posicion_imagen": "left",
-        "eyebrow": "No es solo esta vez",
-        "titular": "Pasa en cada viaje largo, no una vez suelta",
-        "texto": "El cuello torcido, el despertar de golpe, el ratito de llanto hasta que se le pasa... y así en cada trayecto de más de una hora. No es solo un mal rato: es la parte del viaje que menos os gusta, viaje tras viaje.",
-        "imagen": "shopify://shop_images/nubbi-mapache-gris-style2.jpg",
-        "icono": "repeat",
-        "color_fondo": "#FBF6EE",
-        "color_acento": "#B8862B",
-        "color_acento_fondo": "#FBF0DD",
-        "padding_top": 72,
-        "padding_bottom": 72
-      }
-    },
-    "nb_faq": {
-      "type": "nb-faq",
-      "blocks": {
-        "q1": { "type": "pregunta", "settings": { "pregunta": "¿Nubbi sustituye la silla de coche o el cinturón de seguridad?", "respuesta": "No. Nubbi es un accesorio de confort para la cabeza y el cuello; el sistema de retención infantil debe colocarse y ajustarse siempre según sus instrucciones." } },
-        "q2": { "type": "pregunta", "settings": { "pregunta": "¿Solo sirve para el coche?", "respuesta": "Es igual de práctico en avión, tren o en el cochecito: cualquier trayecto largo en el que tu peque quiera descansar." } },
-        "q3": { "type": "pregunta", "settings": { "pregunta": "¿Qué diseños hay disponibles?", "respuesta": "Panda, Capibara y Mapache gris. Puedes elegir 1 cojín o el pack de 2 (ahorras 9,95 €) para tener uno de repuesto o para dos hermanos." } },
-        "q4": { "type": "pregunta", "settings": { "pregunta": "¿Cómo se limpia?", "respuesta": "Te recomendamos seguir la etiqueta de cuidado del producto para conservar su suavidad el mayor tiempo posible." } },
-        "q5": { "type": "pregunta", "settings": { "pregunta": "¿Cuánto tarda el envío?", "respuesta": "Entre 24 y 48 horas laborables desde que confirmas tu pedido." } },
-        "q6": { "type": "pregunta", "settings": { "pregunta": "¿Y si no queda satisfecho?", "respuesta": "Tienes 30 días desde la recepción para devolverlo si no cumple tus expectativas." } }
-      },
-      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6"],
-      "settings": {}
-    },
-    "nb_solucion": {
-      "type": "nb-historia",
-      "settings": {
-        "posicion_imagen": "right",
-        "eyebrow": "La solución",
-        "titular": "Con Nubbi™, esos viajes cambian",
-        "texto": "Nubbi rodea con suavidad la cabeza y el cuello, sujetándolo justo donde antes se le iba. Se coloca en segundos junto a su sistema de retención infantil, sin sustituirlo ni interferir en su ajuste. El resultado: se duerme y se despierta igual, sin caídas ni cuello torcido.",
-        "imagen": "shopify://shop_images/nubbi-lifestyle-coche.jpg",
-        "icono": "cushion",
-        "color_fondo": "#FFFFFF",
-        "color_acento": "#5C7C93",
-        "color_acento_fondo": "#E7EDF0",
-        "padding_top": 72,
-        "padding_bottom": 72
-      }
-    },
-    "nb_confianza": {
-      "type": "nb-confianza",
-      "blocks": {
-        "c1": { "type": "garantia", "settings": { "icono": "shield", "titulo": "Pago 100% seguro", "texto": "Compra con tarjeta, PayPal o Bizum. Tus datos siempre protegidos." } },
-        "c2": { "type": "garantia", "settings": { "icono": "truck", "titulo": "Envío rápido", "texto": "Preparamos y enviamos tu pedido en 24/48 horas laborables." } },
-        "c3": { "type": "garantia", "settings": { "icono": "return", "titulo": "30 días para decidir", "texto": "Si no os convence, te devolvemos el importe sin complicaciones." } },
-        "c4": { "type": "garantia", "settings": { "icono": "chat", "titulo": "Atención cercana", "texto": "¿Dudas antes de comprar? Escríbenos y te responde una persona, no un robot." } }
-      },
-      "block_order": ["c1", "c2", "c3", "c4"],
-      "settings": {}
-    },
-    "nb_resenas": {
-      "type": "nb-resenas",
-      "blocks": {
-        "r1": { "type": "resena", "settings": { "estrellas": 5, "nombre": "Marta S.", "iniciales": "MS", "detalle": "Mamá de una niña de 3 años", "texto": "Mi hija se queda dormida en cuanto arrancamos y antes se despertaba con el cuello torcido. Con Nubbi ya no pasa. Un acierto total para los viajes largos." } },
-        "r2": { "type": "resena", "settings": { "estrellas": 5, "nombre": "Carlos R.", "iniciales": "CR", "detalle": "Papá de un niño de 4 años", "texto": "Lo compré para mi hijo y ahora no hay quien se lo quite ni en casa. Se ve blandito pero resistente a la vez." } },
-        "r3": { "type": "resena", "settings": { "estrellas": 4, "nombre": "Elena M.", "iniciales": "EM", "detalle": "", "texto": "Buena calidad y llegó rápido. Le pondría un punto más si trajera una bolsita para guardarlo, pero muy contenta con la compra." } },
-        "r4": { "type": "resena", "settings": { "estrellas": 5, "nombre": "Andrea P.", "iniciales": "AP", "detalle": "Mamá de gemelos", "texto": "Compramos dos, uno para cada peque, y un viaje de 6 horas se nos hizo mucho más corto: se durmieron los dos apoyados en su Nubbi." } },
-        "r5": { "type": "resena", "settings": { "estrellas": 5, "nombre": "David G.", "iniciales": "DG", "detalle": "", "texto": "Se nota que está pensado por alguien que ha hecho viajes largos con niños. Sencillo y hace justo lo que promete." } }
-      },
-      "block_order": ["r1", "r2", "r3", "r4", "r5"],
-      "settings": {}
-    },
-    "nb_cta_final": {
-      "type": "nb-cta-final",
-      "settings": {
+        "titular": "Descubre por qué duermen mejor en cada viaje",
+        "cta_texto": "Ver más",
         "cta_enlace": "/products/cojin-nubbi-para-el-cinturon-confort-en-viajes-largos"
       }
     }
   },
   "order": [
-    "nb_hero",
-    "nb_problema",
-    "nb_agitacion",
-    "nb_faq",
-    "nb_solucion",
-    "nb_confianza",
-    "nb_resenas",
-    "nb_cta_final"
+    "nb_escaparate"
   ]
 }

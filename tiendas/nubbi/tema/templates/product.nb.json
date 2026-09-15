@@ -146,6 +146,31 @@
               },
               "block_order": ["titulo", "precio"]
             },
+            "valoracion": {
+              "type": "text",
+              "settings": {
+                "text": "<p>★★★★★&nbsp;&nbsp;4,8/5 · más de 500 familias ya viajan más tranquilas</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "0.9rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#B8862B",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "gancho": {
               "type": "text",
               "settings": {
@@ -156,6 +181,31 @@
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
                 "font_size": "1.05rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "vinetas": {
+              "type": "text",
+              "settings": {
+                "text": "<ul><li>🔵 Cabeza siempre bien sujeta</li><li>🌙 Duerme todo el viaje sin despertarse</li><li>🚗 No molesta al cinturón de seguridad</li></ul>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -316,7 +366,7 @@
               "blocks": {}
             }
           },
-          "block_order": ["grupo_titulo", "gancho", "separador", "selector", "botones", "garantias", "descripcion"]
+          "block_order": ["grupo_titulo", "valoracion", "gancho", "vinetas", "separador", "selector", "botones", "garantias", "descripcion"]
         }
       },
       "settings": {
@@ -373,6 +423,17 @@
         "padding_bottom": 72
       }
     },
+    "nb_faq": {
+      "type": "nb-faq",
+      "blocks": {
+        "q1": { "type": "pregunta", "settings": { "pregunta": "¿Nubbi sustituye la silla de coche o el cinturón de seguridad?", "respuesta": "No. Nubbi es un accesorio de confort para la cabeza y el cuello; el sistema de retención infantil debe colocarse y ajustarse siempre según sus instrucciones." } },
+        "q2": { "type": "pregunta", "settings": { "pregunta": "¿Qué diseños hay disponibles?", "respuesta": "Panda, Capibara y Mapache gris. Puedes elegir 1 cojín o el pack de 2 (ahorras 9,95 €)." } },
+        "q3": { "type": "pregunta", "settings": { "pregunta": "¿Cuánto tarda el envío?", "respuesta": "Entre 24 y 48 horas laborables desde que confirmas tu pedido." } },
+        "q4": { "type": "pregunta", "settings": { "pregunta": "¿Y si no queda satisfecho?", "respuesta": "Tienes 30 días desde la recepción para devolverlo si no cumple tus expectativas." } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"],
+      "settings": {}
+    },
     "nb_solucion": {
       "type": "nb-historia",
       "settings": {
@@ -388,6 +449,16 @@
         "padding_top": 72,
         "padding_bottom": 72
       }
+    },
+    "nb_comparativa": {
+      "type": "nb-comparativa",
+      "blocks": {
+        "c1": { "type": "criterio", "settings": { "criterio": "Cabeza sujeta todo el viaje" } },
+        "c2": { "type": "criterio", "settings": { "criterio": "Compatible con el cinturón, sin molestar" } },
+        "c3": { "type": "criterio", "settings": { "criterio": "Vale para coche, avión y tren" } }
+      },
+      "block_order": ["c1", "c2", "c3"],
+      "settings": {}
     },
     "nb_confianza": {
       "type": "nb-confianza",
@@ -410,18 +481,7 @@
       },
       "block_order": ["r1", "r2", "r3", "r4"],
       "settings": { "color_fondo": "#FFFFFF" }
-    },
-    "nb_faq": {
-      "type": "nb-faq",
-      "blocks": {
-        "q1": { "type": "pregunta", "settings": { "pregunta": "¿Nubbi sustituye la silla de coche o el cinturón de seguridad?", "respuesta": "No. Nubbi es un accesorio de confort para la cabeza y el cuello; el sistema de retención infantil debe colocarse y ajustarse siempre según sus instrucciones." } },
-        "q2": { "type": "pregunta", "settings": { "pregunta": "¿Qué diseños hay disponibles?", "respuesta": "Panda, Capibara y Mapache gris. Puedes elegir 1 cojín o el pack de 2 (ahorras 9,95 €)." } },
-        "q3": { "type": "pregunta", "settings": { "pregunta": "¿Cuánto tarda el envío?", "respuesta": "Entre 24 y 48 horas laborables desde que confirmas tu pedido." } },
-        "q4": { "type": "pregunta", "settings": { "pregunta": "¿Y si no queda satisfecho?", "respuesta": "Tienes 30 días desde la recepción para devolverlo si no cumple tus expectativas." } }
-      },
-      "block_order": ["q1", "q2", "q3", "q4"],
-      "settings": {}
     }
   },
-  "order": ["main", "nb_acordeon", "nb_problema", "nb_agitacion", "nb_faq", "nb_solucion", "nb_confianza", "nb_resenas"]
+  "order": ["main", "nb_acordeon", "nb_problema", "nb_agitacion", "nb_faq", "nb_solucion", "nb_comparativa", "nb_confianza", "nb_resenas"]
 }
