@@ -12,7 +12,7 @@
       <img
         src="{{ section.settings.imagen | image_url: width: 1400 }}"
         srcset="{{ section.settings.imagen | image_url: width: 700 }} 700w, {{ section.settings.imagen | image_url: width: 1000 }} 1000w, {{ section.settings.imagen | image_url: width: 1400 }} 1400w"
-        sizes="100vw"
+        sizes="(min-width: 900px) 900px, 100vw"
         alt="{{ section.settings.imagen.alt | escape }}"
         class="nb-img-cover"
         width="{{ section.settings.imagen.width }}"

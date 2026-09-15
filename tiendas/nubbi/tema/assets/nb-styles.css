@@ -442,8 +442,9 @@
 #shopify-section-footer_m9NzUG li { margin: 0; }
 
 /* ---------- Escaparate (portada) ---------- */
-.nb-hero-teaser-media { width: 100%; aspect-ratio: 1 / 1; overflow: hidden; }
-@media (min-width: 750px) { .nb-hero-teaser-media { aspect-ratio: 16 / 9; } }
+/* max-width y aspect-ratio 3/4 igualan el tamaño real de la foto (720x960)
+   para que el navegador no la estire de más y se vea nítida */
+.nb-hero-teaser-media { width: 100%; max-width: 900px; margin: 0 auto; aspect-ratio: 3 / 4; overflow: hidden; }
 .nb-hero-teaser-copy {
   text-align: center;
   display: flex;
