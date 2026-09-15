@@ -402,7 +402,7 @@
         "color_fondo": "#FBF0DD",
         "color_titular": "#2E2620",
         "color_acento": "#B8862B",
-        "color_acento_fondo": "#FBF6EE",
+        "color_acento_fondo": "#FFFFFF",
         "padding_top": 64,
         "padding_bottom": 32
       }
