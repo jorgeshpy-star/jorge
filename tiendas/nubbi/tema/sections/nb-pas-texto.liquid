@@ -1,0 +1,45 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  #shopify-section-{{ section.id }} .nb-pas-texto-eyebrow {
+    color: {{ section.settings.color_acento }};
+    background: {{ section.settings.color_acento_fondo }};
+  }
+  #shopify-section-{{ section.id }} .nb-pas-texto-headline {
+    color: {{ section.settings.color_titular }};
+  }
+{% endstyle %}
+
+<section class="nb-section nb-pas-texto">
+  <div class="nb-container nb-pas-texto-inner nb-reveal">
+    {%- if section.settings.eyebrow != blank -%}
+      <span class="nb-eyebrow nb-pas-texto-eyebrow">{{ section.settings.eyebrow }}</span>
+    {%- endif -%}
+    {%- if section.settings.titular != blank -%}<h2 class="nb-h2 nb-pas-texto-headline">{{ section.settings.titular }}</h2>{%- endif -%}
+    {%- if section.settings.texto != blank -%}<p class="nb-body nb-pas-texto-texto">{{ section.settings.texto }}</p>{%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Nubbi – PAS texto",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Texto pequeño superior" },
+    { "type": "text", "id": "titular", "label": "Título", "default": "Titular de la etapa" },
+    { "type": "textarea", "id": "texto", "label": "Texto", "default": "Texto de la etapa." },
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#FFFFFF" },
+    { "type": "color", "id": "color_titular", "label": "Color del título", "default": "#2E2620" },
+    { "type": "color", "id": "color_acento", "label": "Color de acento (etiqueta)", "default": "#B5643F" },
+    { "type": "color", "id": "color_acento_fondo", "label": "Color de acento (fondo etiqueta)", "default": "#F6E8E1" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 56 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 40 }
+  ],
+  "presets": [ { "name": "Nubbi – PAS texto" } ]
+}
+{% endschema %}

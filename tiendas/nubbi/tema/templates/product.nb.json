@@ -416,37 +416,101 @@
       "block_order": ["a1", "a2", "a3"],
       "settings": {}
     },
-    "nb_problema": {
-      "type": "nb-historia",
+    "nb_problema_texto": {
+      "type": "nb-pas-texto",
       "settings": {
-        "posicion_imagen": "right",
         "eyebrow": "El problema",
         "titular": "Cuando se queda dormido, la cabeza no para de caer",
         "texto": "En los trayectos largos, sin nada que le sujete la cabeza, se le va hacia delante o hacia un lado cada pocos minutos. Se despierta con el cuello resentido y tú, más pendiente del retrovisor que de la carretera.",
-        "imagen": "shopify://shop_images/nubbi-panda-real.jpg",
-        "icono": "alert",
         "color_fondo": "#FFFFFF",
+        "color_titular": "#2E2620",
         "color_acento": "#B5643F",
         "color_acento_fondo": "#F6E8E1",
-        "padding_top": 72,
-        "padding_bottom": 72
+        "padding_top": 64,
+        "padding_bottom": 32
       }
     },
-    "nb_agitacion": {
-      "type": "nb-historia",
+    "nb_problema_info": {
+      "type": "nb-infografia",
       "settings": {
-        "posicion_imagen": "left",
+        "imagen": "shopify://shop_images/nubbi-panda-real.jpg",
+        "color_fondo": "#FFFFFF",
+        "padding_top": 0,
+        "padding_bottom": 64
+      }
+    },
+    "nb_divider_1": {
+      "type": "nb-divider",
+      "settings": { "color_fondo": "#FFFFFF", "color_linea": "#ECE2D0" }
+    },
+    "nb_agitacion_texto": {
+      "type": "nb-pas-texto",
+      "settings": {
         "eyebrow": "No es solo esta vez",
         "titular": "Pasa en cada viaje largo, no una vez suelta",
         "texto": "El cuello torcido, el despertar de golpe, el ratito de llanto hasta que se le pasa... y así en cada trayecto de más de una hora. No es solo un mal rato: es la parte del viaje que menos os gusta, viaje tras viaje.",
-        "imagen": "shopify://shop_images/nubbi-mapache-gris-style2.jpg",
-        "icono": "repeat",
-        "color_fondo": "#FBF6EE",
+        "color_fondo": "#FBF0DD",
+        "color_titular": "#2E2620",
         "color_acento": "#B8862B",
-        "color_acento_fondo": "#FBF0DD",
-        "padding_top": 72,
-        "padding_bottom": 72
+        "color_acento_fondo": "#FBF6EE",
+        "padding_top": 64,
+        "padding_bottom": 32
       }
+    },
+    "nb_divider_2": {
+      "type": "nb-divider",
+      "settings": { "color_fondo": "#FBF0DD", "color_linea": "#EAD9AE" }
+    },
+    "nb_agitacion_info": {
+      "type": "nb-infografia",
+      "settings": {
+        "imagen": "shopify://shop_images/nubbi-mapache-gris-style2.jpg",
+        "color_fondo": "#FBF0DD",
+        "padding_top": 32,
+        "padding_bottom": 64
+      }
+    },
+    "nb_solucion_texto": {
+      "type": "nb-pas-texto",
+      "settings": {
+        "eyebrow": "La solución",
+        "titular": "Con Nubbi™, esos viajes cambian",
+        "texto": "Nubbi rodea con suavidad la cabeza y el cuello, sujetándolo justo donde antes se le iba. Se coloca en segundos junto a su sistema de retención infantil, sin sustituirlo ni interferir en su ajuste. El resultado: se duerme y se despierta igual, sin caídas ni cuello torcido.",
+        "color_fondo": "#E7EDF0",
+        "color_titular": "#2E2620",
+        "color_acento": "#5C7C93",
+        "color_acento_fondo": "#FFFFFF",
+        "padding_top": 64,
+        "padding_bottom": 32
+      }
+    },
+    "nb_solucion_info": {
+      "type": "nb-infografia",
+      "settings": {
+        "imagen": "shopify://shop_images/nubbi-lifestyle-coche.jpg",
+        "color_fondo": "#E7EDF0",
+        "padding_top": 0,
+        "padding_bottom": 64
+      }
+    },
+    "nb_divider_3": {
+      "type": "nb-divider",
+      "settings": { "color_fondo": "#E7EDF0", "color_linea": "#C9D6DC" }
+    },
+    "nb_ticker": {
+      "type": "nb-ticker",
+      "settings": {
+        "texto": "🚗 Más de 500 familias ya viajan con Nubbi ✦ Envío 24/48h ✦ Garantía 30 días ✦ Pago 100% seguro ✦",
+        "velocidad": 22,
+        "color_fondo": "#2E2620",
+        "color_texto": "#FBF6EE",
+        "padding_top": 14,
+        "padding_bottom": 14
+      }
+    },
+    "nb_divider_4": {
+      "type": "nb-divider",
+      "settings": { "color_fondo": "#FFFFFF", "color_linea": "#ECE2D0" }
     },
     "nb_faq": {
       "type": "nb-faq",
@@ -508,5 +572,23 @@
       "settings": { "color_fondo": "#FFFFFF" }
     }
   },
-  "order": ["main", "nb_acordeon", "nb_problema", "nb_agitacion", "nb_faq", "nb_solucion", "nb_comparativa", "nb_confianza", "nb_resenas"]
+  "order": [
+    "main",
+    "nb_acordeon",
+    "nb_problema_texto",
+    "nb_problema_info",
+    "nb_divider_1",
+    "nb_agitacion_texto",
+    "nb_divider_2",
+    "nb_agitacion_info",
+    "nb_solucion_texto",
+    "nb_solucion_info",
+    "nb_divider_3",
+    "nb_ticker",
+    "nb_divider_4",
+    "nb_comparativa",
+    "nb_resenas",
+    "nb_confianza",
+    "nb_faq"
+  ]
 }

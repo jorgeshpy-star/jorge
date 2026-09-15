@@ -506,3 +506,41 @@
   .nb-specs-row { flex-direction: column; gap: 4px; }
   .nb-specs-value { text-align: left; }
 }
+
+/* ---------- PAS: etapa de texto (Problema / Agitación / Solución) ---------- */
+.nb-pas-texto-inner { max-width: 640px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.nb-pas-texto-headline { margin: 0; }
+.nb-pas-texto-texto { color: var(--nb-text-muted); }
+
+/* ---------- PAS: infografía (imagen suelta entre etapas) ---------- */
+.nb-infografia-media { width: 100%; max-width: 900px; margin: 0 auto; }
+.nb-infografia-ratio { aspect-ratio: 3 / 4; border-radius: var(--nb-radius-lg); overflow: hidden; }
+.nb-infografia-caption { text-align: center; max-width: 640px; margin: 12px auto 0; }
+
+/* ---------- Ticker horizontal ---------- */
+.nb-ticker-viewport { overflow: hidden; width: 100%; }
+.nb-ticker-track {
+  display: flex;
+  width: max-content;
+  animation-name: nb-ticker-scroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.nb-ticker-item {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 0 28px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+@keyframes nb-ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nb-ticker-track { animation: none; }
+}
+
+/* ---------- Separador ---------- */
+.nb-divider-line { border: none; border-top: 1px solid var(--nb-border); margin: 0; }
