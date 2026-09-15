@@ -444,7 +444,7 @@
 /* ---------- Escaparate (portada) ---------- */
 /* max-width y aspect-ratio 3/4 igualan el tamaño real de la foto (720x960)
    para que el navegador no la estire de más y se vea nítida */
-.nb-hero-teaser-media { width: 100%; max-width: 720px; margin: 0 auto; aspect-ratio: 3 / 4; overflow: hidden; }
+.nb-hero-teaser-media { width: 100%; max-width: 560px; margin: 0 auto; aspect-ratio: 3 / 4; overflow: hidden; }
 .nb-hero-teaser-copy {
   text-align: center;
   display: flex;
