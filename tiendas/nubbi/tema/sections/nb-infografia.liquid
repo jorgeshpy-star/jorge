@@ -4,6 +4,12 @@
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
   }
+  #shopify-section-{{ section.id }} .nb-infografia-media {
+    max-width: {{ section.settings.max_width }}px;
+  }
+  #shopify-section-{{ section.id }} .nb-infografia-ratio {
+    aspect-ratio: {{ section.settings.aspect_ratio }};
+  }
 {% endstyle %}
 
 <section class="nb-section nb-infografia">
@@ -11,9 +17,9 @@
     {%- if section.settings.imagen != blank -%}
       <div class="nb-ratio nb-infografia-ratio">
         <img
-          src="{{ section.settings.imagen | image_url: width: 1400 }}"
-          srcset="{{ section.settings.imagen | image_url: width: 700 }} 700w, {{ section.settings.imagen | image_url: width: 900 }} 900w, {{ section.settings.imagen | image_url: width: 1400 }} 1400w"
-          sizes="(min-width: 900px) 900px, 100vw"
+          src="{{ section.settings.imagen | image_url: width: section.settings.max_width }}"
+          srcset="{{ section.settings.imagen | image_url: width: 500 }} 500w, {{ section.settings.imagen | image_url: width: section.settings.max_width }} {{ section.settings.max_width }}w"
+          sizes="(min-width: {{ section.settings.max_width }}px) {{ section.settings.max_width }}px, 100vw"
           alt="{{ section.settings.imagen.alt | escape }}"
           class="nb-img-cover"
           width="{{ section.settings.imagen.width }}"
@@ -35,6 +41,16 @@
   "settings": [
     { "type": "image_picker", "id": "imagen", "label": "Imagen" },
     { "type": "text", "id": "caption", "label": "Pie de foto (opcional)" },
+    { "type": "header", "content": "Tamaño (ajústalo a la resolución real de la imagen para que no se vea borrosa)" },
+    { "type": "select", "id": "aspect_ratio", "label": "Proporción de la imagen",
+      "options": [
+        {"value":"1 / 1","label":"Cuadrada (1:1)"},
+        {"value":"3 / 4","label":"Vertical (3:4)"},
+        {"value":"4 / 5","label":"Vertical (4:5)"},
+        {"value":"4 / 3","label":"Horizontal (4:3)"},
+        {"value":"16 / 9","label":"Horizontal (16:9)"}
+      ], "default": "1 / 1" },
+    { "type": "range", "id": "max_width", "label": "Ancho máximo (px) — usa el ancho real de la imagen", "min": 400, "max": 1200, "step": 20, "default": 800 },
     { "type": "header", "content": "Color" },
     { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#FFFFFF" },
     { "type": "header", "content": "Espaciado" },
