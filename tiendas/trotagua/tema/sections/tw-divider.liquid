@@ -1,0 +1,30 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  #shopify-section-{{ section.id }} .tw-divider-line {
+    border-color: {{ section.settings.color_linea }};
+  }
+{% endstyle %}
+
+<section class="tw-section tw-divider">
+  <div class="tw-container">
+    <hr class="tw-divider-line">
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trotagua – Separador",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#FFFFFF" },
+    { "type": "color", "id": "color_linea", "label": "Color de la línea", "default": "#DEDCC5" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 0 }
+  ],
+  "presets": [ { "name": "Trotagua – Separador" } ]
+}
+{% endschema %}

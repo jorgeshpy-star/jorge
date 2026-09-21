@@ -1,0 +1,70 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{% endstyle %}
+
+<section class="tw-section tw-comparativa">
+  <div class="tw-container tw-comparativa-container">
+    <div class="tw-comparativa-head tw-reveal">
+      {%- if section.settings.eyebrow != blank -%}<span class="tw-eyebrow">{{ section.settings.eyebrow }}</span>{%- endif -%}
+      {%- if section.settings.titular != blank -%}<h2 class="tw-h2">{{ section.settings.titular }}</h2>{%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="tw-comparativa-table tw-reveal">
+        <div class="tw-comparativa-row tw-comparativa-row-head">
+          <span></span>
+          <span class="tw-comparativa-col tw-comparativa-col-trotagua">{{ section.settings.columna_trotagua }}</span>
+          <span class="tw-comparativa-col">{{ section.settings.columna_otros }}</span>
+        </div>
+        {%- for block in section.blocks -%}
+          <div class="tw-comparativa-row" {{ block.shopify_attributes }}>
+            <span class="tw-comparativa-criterio">{{ block.settings.criterio }}</span>
+            <span class="tw-comparativa-col tw-comparativa-col-trotagua">{% render 'tw-icon', icon: 'check' %}</span>
+            <span class="tw-comparativa-col">{% render 'tw-icon', icon: 'cross' %}</span>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trotagua – Comparativa",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Texto pequeño superior", "default": "La diferencia se nota" },
+    { "type": "text", "id": "titular", "label": "Título", "default": "¿Por qué elegir Trotagua?" },
+    { "type": "text", "id": "columna_trotagua", "label": "Nombre columna Trotagua", "default": "Trotagua" },
+    { "type": "text", "id": "columna_otros", "label": "Nombre columna otros", "default": "Otros" },
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#FFFFFF" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 }
+  ],
+  "blocks": [
+    {
+      "type": "criterio",
+      "name": "Criterio",
+      "settings": [
+        { "type": "text", "id": "criterio", "label": "Criterio", "default": "Cero fugas durante todo el paseo" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trotagua – Comparativa",
+      "blocks": [
+        { "type": "criterio", "settings": { "criterio": "Cero fugas durante todo el paseo" } },
+        { "type": "criterio", "settings": { "criterio": "Se engancha a la correa sin molestar" } },
+        { "type": "criterio", "settings": { "criterio": "Vale para paseo, monte y coche" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

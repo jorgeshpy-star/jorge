@@ -1,0 +1,63 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{% endstyle %}
+
+<section class="tw-section tw-acordeon">
+  <div class="tw-container tw-acordeon-container">
+    {%- if section.blocks.size > 0 -%}
+      <div class="tw-faq-list tw-buybox-acc">
+        {%- for block in section.blocks -%}
+          <div class="tw-faq-item" data-open="false" {{ block.shopify_attributes }}>
+            <button type="button" class="tw-faq-q" aria-expanded="false" aria-controls="tw-acc-a-{{ block.id }}">
+              <span>{{ block.settings.pregunta }}</span>
+              <span class="tw-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="tw-faq-a" id="tw-acc-a-{{ block.id }}">
+              <div class="tw-faq-a-inner">
+                <p>{{ block.settings.respuesta }}</p>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trotagua – Acordeón",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#FFFFFF" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 8 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 40 }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Pregunta",
+      "settings": [
+        { "type": "text", "id": "pregunta", "label": "Pregunta", "default": "¿Cómo se usa?" },
+        { "type": "textarea", "id": "respuesta", "label": "Respuesta", "default": "Se rellena de agua y se engancha a la correa o la mochila para usarlo en cualquier paseo." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trotagua – Acordeón",
+      "blocks": [
+        { "type": "item", "settings": { "pregunta": "¿Cómo se usa?", "respuesta": "Se rellena de agua, se engancha a la correa o la mochila con el mosquetón, y se abre con una mano para que tu perro beba directamente." } },
+        { "type": "item", "settings": { "pregunta": "Nuestra garantía", "respuesta": "30 días desde la recepción para devolverlo si no os convence, sin complicaciones." } },
+        { "type": "item", "settings": { "pregunta": "Envío y entrega", "respuesta": "Preparamos y enviamos tu pedido en 24/48 horas laborables." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

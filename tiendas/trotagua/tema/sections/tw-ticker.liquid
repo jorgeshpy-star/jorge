@@ -1,0 +1,39 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  #shopify-section-{{ section.id }} .tw-ticker-track {
+    color: {{ section.settings.color_texto }};
+    animation-duration: {{ section.settings.velocidad }}s;
+  }
+{% endstyle %}
+
+<section class="tw-section tw-ticker">
+  <div class="tw-ticker-viewport">
+    <div class="tw-ticker-track">
+      {%- for i in (1..2) -%}
+        <span class="tw-ticker-item">{{ section.settings.texto }}</span>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trotagua – Ticker",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "texto", "label": "Texto (se repite en bucle)", "default": "🐾 Más de 500 perros ya beben con Trotagua ✦ Envío 24/48h ✦ Garantía 30 días ✦ Pago 100% seguro ✦" },
+    { "type": "range", "id": "velocidad", "label": "Velocidad (segundos por vuelta)", "min": 10, "max": 60, "step": 1, "default": 22 },
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#242A1F" },
+    { "type": "color", "id": "color_texto", "label": "Color del texto", "default": "#F6F5EC" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 60, "step": 4, "unit": "px", "default": 12 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 60, "step": 4, "unit": "px", "default": 12 }
+  ],
+  "presets": [ { "name": "Trotagua – Ticker" } ]
+}
+{% endschema %}

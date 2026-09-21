@@ -1,0 +1,97 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{% endstyle %}
+
+<section class="tw-section tw-confianza">
+  <div class="tw-container">
+    {%- if section.settings.mostrar_insignia -%}
+      <div class="tw-confianza-badge tw-reveal">
+        <div class="tw-badge-circle">
+          <span class="tw-badge-num">{{ section.settings.insignia_numero }}</span>
+          <span class="tw-badge-unit">{{ section.settings.insignia_unidad }}</span>
+        </div>
+        <span class="tw-badge-label">{{ section.settings.insignia_texto }}</span>
+      </div>
+    {%- endif -%}
+
+    <div class="tw-confianza-head tw-reveal">
+      {%- if section.settings.eyebrow != blank -%}<span class="tw-eyebrow">{{ section.settings.eyebrow }}</span>{%- endif -%}
+      {%- if section.settings.titular != blank -%}<h2 class="tw-h2">{{ section.settings.titular }}</h2>{%- endif -%}
+      {%- if section.settings.subtitulo != blank -%}<p class="tw-body tw-muted">{{ section.settings.subtitulo }}</p>{%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="tw-grid tw-grid-4 tw-confianza-grid tw-reveal-stagger">
+        {%- for block in section.blocks -%}
+          <div class="tw-trust-item" {{ block.shopify_attributes }}>
+            <div class="tw-trust-icon">{% render 'tw-icon', icon: block.settings.icono %}</div>
+            <div>
+              <h3 class="tw-h4-like">{{ block.settings.titulo }}</h3>
+              <p class="tw-body tw-muted">{{ block.settings.texto }}</p>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.pie != blank -%}
+      <p class="tw-confianza-pie tw-body tw-reveal">{{ section.settings.pie }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trotagua – Confianza",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Texto pequeño superior", "default": "Compra tranquilo" },
+    { "type": "text", "id": "titular", "label": "Título", "default": "Cuidamos cada pedido al detalle" },
+    { "type": "textarea", "id": "subtitulo", "label": "Subtítulo" },
+    { "type": "textarea", "id": "pie", "label": "Texto final (opcional)", "default": "¿Alguna duda antes de comprar? Escríbenos y te respondemos en menos de 24 horas." },
+    { "type": "header", "content": "Insignia de garantía" },
+    { "type": "checkbox", "id": "mostrar_insignia", "label": "Mostrar insignia circular", "default": true },
+    { "type": "text", "id": "insignia_numero", "label": "Número", "default": "30" },
+    { "type": "text", "id": "insignia_unidad", "label": "Unidad", "default": "DÍAS" },
+    { "type": "text", "id": "insignia_texto", "label": "Texto debajo", "default": "Garantía de confianza" },
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#EFEEDF" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 }
+  ],
+  "blocks": [
+    {
+      "type": "garantia",
+      "name": "Garantía",
+      "settings": [
+        { "type": "select", "id": "icono", "label": "Icono",
+          "options": [
+            {"value":"shield","label":"Escudo"},
+            {"value":"truck","label":"Envío"},
+            {"value":"return","label":"Devolución"},
+            {"value":"chat","label":"Conversación"},
+            {"value":"check","label":"Check"}
+          ], "default": "shield" },
+        { "type": "text", "id": "titulo", "label": "Título", "default": "Pago 100% seguro" },
+        { "type": "textarea", "id": "texto", "label": "Texto", "default": "Compra con tarjeta, PayPal o Bizum. Tus datos siempre protegidos." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trotagua – Confianza",
+      "blocks": [
+        { "type": "garantia", "settings": { "icono": "shield", "titulo": "Pago 100% seguro", "texto": "Compra con tarjeta, PayPal o Bizum. Tus datos siempre protegidos." } },
+        { "type": "garantia", "settings": { "icono": "truck", "titulo": "Envío rápido", "texto": "Preparamos y enviamos tu pedido en 24/48 horas laborables." } },
+        { "type": "garantia", "settings": { "icono": "return", "titulo": "30 días para decidir", "texto": "Si no os convence, te devolvemos el importe sin complicaciones." } },
+        { "type": "garantia", "settings": { "icono": "chat", "titulo": "Atención cercana", "texto": "¿Dudas antes de comprar? Escríbenos y te responde una persona, no un robot." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

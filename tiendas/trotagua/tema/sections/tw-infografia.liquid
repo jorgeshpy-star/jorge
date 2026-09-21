@@ -1,0 +1,62 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  #shopify-section-{{ section.id }} .tw-infografia-media {
+    max-width: {{ section.settings.max_width }}px;
+  }
+  #shopify-section-{{ section.id }} .tw-infografia-ratio {
+    aspect-ratio: {{ section.settings.aspect_ratio }};
+  }
+{% endstyle %}
+
+<section class="tw-section tw-infografia">
+  <div class="tw-infografia-media tw-reveal">
+    {%- if section.settings.imagen != blank -%}
+      <div class="tw-ratio tw-infografia-ratio">
+        <img
+          src="{{ section.settings.imagen | image_url: width: section.settings.max_width }}"
+          srcset="{{ section.settings.imagen | image_url: width: 500 }} 500w, {{ section.settings.imagen | image_url: width: section.settings.max_width }} {{ section.settings.max_width }}w"
+          sizes="(min-width: {{ section.settings.max_width }}px) {{ section.settings.max_width }}px, 100vw"
+          alt="{{ section.settings.imagen.alt | escape }}"
+          class="tw-img-cover"
+          width="{{ section.settings.imagen.width }}"
+          height="{{ section.settings.imagen.height }}"
+          loading="lazy"
+        >
+      </div>
+    {%- endif -%}
+  </div>
+  {%- if section.settings.caption != blank -%}
+    <p class="tw-body tw-muted tw-infografia-caption">{{ section.settings.caption }}</p>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Trotagua – Infografía",
+  "tag": "section",
+  "settings": [
+    { "type": "image_picker", "id": "imagen", "label": "Imagen" },
+    { "type": "text", "id": "caption", "label": "Pie de foto (opcional)" },
+    { "type": "header", "content": "Tamaño (evita que se vea borrosa)" },
+    { "type": "select", "id": "aspect_ratio", "label": "Proporción de la imagen",
+      "options": [
+        {"value":"1 / 1","label":"Cuadrada (1:1)"},
+        {"value":"3 / 4","label":"Vertical (3:4)"},
+        {"value":"4 / 5","label":"Vertical (4:5)"},
+        {"value":"4 / 3","label":"Horizontal (4:3)"},
+        {"value":"16 / 9","label":"Horizontal (16:9)"}
+      ], "default": "1 / 1" },
+    { "type": "range", "id": "max_width", "label": "Ancho máximo (px) — usa el ancho real de la imagen", "min": 400, "max": 1200, "step": 20, "default": 800 },
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#FFFFFF" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 56 }
+  ],
+  "presets": [ { "name": "Trotagua – Infografía" } ]
+}
+{% endschema %}
