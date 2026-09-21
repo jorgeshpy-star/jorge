@@ -1,0 +1,543 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-information",
+      "blocks": {
+        "media-gallery": {
+          "type": "_product-media-gallery",
+          "static": true,
+          "settings": {
+            "media_presentation": "carousel",
+            "media_columns": "two",
+            "image_gap": 4,
+            "large_first_image": false,
+            "slideshow_controls_style": "counter",
+            "slideshow_mobile_controls_style": "dots",
+            "thumbnail_position": "below",
+            "thumbnail_width": 44,
+            "thumbnail_radius": 12,
+            "aspect_ratio": "adapt",
+            "constrain_to_viewport": true,
+            "media_fit": "contain",
+            "media_radius": 20,
+            "extend_media": false,
+            "zoom": true,
+            "video_loop": false,
+            "hide_variants": true,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "product-details": {
+          "type": "_product-details",
+          "static": true,
+          "settings": {
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "details_position": "flex-start",
+            "gap": 24,
+            "sticky_details_desktop": true,
+            "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 24,
+            "padding-block-end": 24,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "banner": {
+              "type": "text",
+              "settings": {
+                "text": "<p>🐾 Sin fugas &nbsp;·&nbsp; 🚚 Envío 24/48h &nbsp;·&nbsp; 🛡️ Garantía 30 días</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "0.8rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#155650",
+                "background": true,
+                "background_color": "#DCEEEC",
+                "corner_radius": 50,
+                "padding-block-start": 8,
+                "padding-block-end": 8,
+                "padding-inline-start": 16,
+                "padding-inline-end": 16
+              },
+              "blocks": {}
+            },
+            "grupo_titulo": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 10,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "titulo": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<h1>{{ closest.product.title }}</h1>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h3",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "precio": {
+                  "type": "price",
+                  "settings": {
+                    "show_sale_price_first": true,
+                    "show_installments": false,
+                    "show_tax_info": false,
+                    "type_preset": "h5",
+                    "width": "100%",
+                    "alignment": "left",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "text_color": "",
+                    "padding-block-start": 2,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": ["titulo", "precio"]
+            },
+            "valoracion": {
+              "type": "text",
+              "settings": {
+                "text": "<p>★★★★★&nbsp;&nbsp;4,8/5 · más de 500 perros ya pasean con Trotagua</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "0.9rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#D6A94A",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "gancho": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Dale de beber a tu perro en cualquier paseo sin derramar nada: aprietas, tu perro bebe, y el agua sobrante vuelve sola a la botella.</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1.05rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "vinetas": {
+              "type": "text",
+              "settings": {
+                "text": "<ul><li>🐾 Sin fugas: cierre de silicona hermético</li><li>✋ Se usa con una sola mano, sin soltar la correa</li><li>♻️ El agua sobrante vuelve a la botella, no se desperdicia</li></ul>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "separador": {
+              "type": "_divider",
+              "settings": {
+                "thickness": 1,
+                "corner_radius": "square",
+                "divider_color": "{{ settings.color_palette.color2 }}",
+                "width_percent": 100,
+                "padding-block-start": 0,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
+            "selector": {
+              "type": "variant-picker",
+              "settings": {
+                "variant_style": "buttons",
+                "show_swatches": false,
+                "option_label_text_color": "",
+                "variant_style_class": "default",
+                "custom_variant_background": "{{ settings.color_palette.background }}",
+                "custom_variant_text": "{{ settings.color_palette.foreground }}",
+                "custom_variant_border": "{{ settings.color_palette.foreground }}",
+                "selected_variant_style_class": "default",
+                "custom_selected_variant_background": "{{ settings.color_palette.foreground }}",
+                "custom_selected_variant_text": "{{ settings.color_palette.background }}",
+                "custom_selected_variant_border": "{{ settings.color_palette.foreground }}",
+                "alignment": "left",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "botones": {
+              "type": "buy-buttons",
+              "settings": {
+                "stacking": true,
+                "text_color": "",
+                "show_pickup_availability": false,
+                "gift_card_form": true,
+                "recipient_button_style": "default",
+                "recipient_button_background": "{{ settings.color_palette.background }}",
+                "recipient_button_text": "{{ settings.color_palette.foreground }}",
+                "recipient_button_border": "{{ settings.color_palette.foreground }}",
+                "selected_recipient_button_style": "default",
+                "selected_recipient_button_background": "{{ settings.color_palette.foreground }}",
+                "selected_recipient_button_text": "{{ settings.color_palette.background }}",
+                "selected_recipient_button_border": "{{ settings.color_palette.foreground }}",
+                "input_style": "default",
+                "input_background_color": "{{ settings.color_palette.background }}",
+                "input_text_color": "{{ settings.color_palette.foreground }}",
+                "input_border_color": "{{ settings.color_palette.foreground }}",
+                "border_width": 1,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "static": true,
+                  "settings": {
+                    "input_style": "default",
+                    "input_background_color": "{{ settings.color_palette.background }}",
+                    "input_text_color": "{{ settings.color_palette.foreground }}",
+                    "input_border_color": "{{ settings.color_palette.foreground }}",
+                    "border_width": 1,
+                    "border_radius": 0
+                  },
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "static": true,
+                  "settings": {
+                    "style_class": "button",
+                    "custom_button_background": "{{ settings.color_palette.foreground }}",
+                    "custom_button_text": "{{ settings.color_palette.background }}",
+                    "custom_button_border": "{{ settings.color_palette.background }}"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": []
+            }
+          },
+          "block_order": ["banner", "valoracion", "grupo_titulo", "gancho", "vinetas", "separador", "selector", "botones"]
+        }
+      },
+      "settings": {
+        "content_width": "content-center-aligned",
+        "desktop_media_position": "left",
+        "equal_columns": false,
+        "limit_details_width": false,
+        "gap": 48,
+        "enable_sticky_add_to_cart": true,
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "tw_acordeon": {
+      "type": "tw-acordeon",
+      "blocks": {
+        "a1": { "type": "item", "settings": { "pregunta": "¿Cómo se usa?", "respuesta": "Levanta el panel de silicona, tira del tapón para abrirlo y presiona la botella: el agua llena el cuenco al momento. Suelta y el agua sobrante vuelve dentro, sin desperdiciar ni una gota." } },
+        "a2": { "type": "item", "settings": { "pregunta": "Nuestra garantía", "respuesta": "30 días desde la recepción para devolverlo si no os convence, sin complicaciones." } },
+        "a3": { "type": "item", "settings": { "pregunta": "Envío y entrega", "respuesta": "Preparamos y enviamos tu pedido en 24/48 horas laborables." } }
+      },
+      "block_order": ["a1", "a2", "a3"],
+      "settings": {}
+    },
+    "tw_problema_texto": {
+      "type": "tw-pas-texto",
+      "settings": {
+        "eyebrow": "El problema",
+        "titular": "¿De dónde bebe tu perro a mitad de paseo?",
+        "texto": "Salir sin agua significa que acaba bebiendo de un charco, de una fuente pública o directamente de nada. Y meter un cuenco suelto en la mochila moja todo lo que lleva al lado.",
+        "color_fondo": "#FFFFFF",
+        "color_titular": "#242A1F",
+        "color_acento": "#1F7A72",
+        "color_acento_fondo": "#DCEEEC",
+        "padding_top": 64,
+        "padding_bottom": 32
+      }
+    },
+    "tw_problema_info": {
+      "type": "tw-infografia",
+      "settings": {
+        "imagen": "shopify://shop_images/hero.png",
+        "caption": "Imagen de referencia del proveedor (texto original en inglés) — no es fotografía propia de Trotagua.",
+        "aspect_ratio": "1 / 1",
+        "max_width": 440,
+        "color_fondo": "#FFFFFF",
+        "padding_top": 0,
+        "padding_bottom": 64
+      }
+    },
+    "tw_divider_1": {
+      "type": "tw-divider",
+      "settings": { "color_fondo": "#FFFFFF", "color_linea": "#DEDCC5" }
+    },
+    "tw_agitacion_texto": {
+      "type": "tw-pas-texto",
+      "settings": {
+        "eyebrow": "No es solo hoy",
+        "titular": "En días de calor, el agua es lo primero que falta",
+        "texto": "Las rutas largas o el senderismo se acortan porque no hay dónde darle de beber. Y un cuenco plegable normal se llena de tierra o se vuelca entero dentro de la bolsa.",
+        "color_fondo": "#F7E6CE",
+        "color_titular": "#242A1F",
+        "color_acento": "#D98F3E",
+        "color_acento_fondo": "#FFFFFF",
+        "padding_top": 64,
+        "padding_bottom": 32
+      }
+    },
+    "tw_divider_2": {
+      "type": "tw-divider",
+      "settings": { "color_fondo": "#F7E6CE", "color_linea": "#EAD5AE" }
+    },
+    "tw_agitacion_info": {
+      "type": "tw-infografia",
+      "settings": {
+        "imagen": "shopify://shop_images/hero.png",
+        "caption": "Imagen de referencia del proveedor (texto original en inglés) — no es fotografía propia de Trotagua.",
+        "aspect_ratio": "1 / 1",
+        "max_width": 440,
+        "color_fondo": "#F7E6CE",
+        "padding_top": 32,
+        "padding_bottom": 64
+      }
+    },
+    "tw_solucion_texto": {
+      "type": "tw-pas-texto",
+      "settings": {
+        "eyebrow": "La solución",
+        "titular": "Trotagua va contigo y se abre en un segundo",
+        "texto": "Aprietas la botella, el cuenco de silicona se llena al momento y tu perro bebe directamente. Sueltas, el agua sobrante vuelve dentro, cierras y sigues andando — sin mochila extra, sin charcos.",
+        "color_fondo": "#DCEEEC",
+        "color_titular": "#242A1F",
+        "color_acento": "#1F7A72",
+        "color_acento_fondo": "#FFFFFF",
+        "padding_top": 64,
+        "padding_bottom": 32
+      }
+    },
+    "tw_solucion_info": {
+      "type": "tw-infografia",
+      "settings": {
+        "imagen": "shopify://shop_images/hero.png",
+        "caption": "Imagen de referencia del proveedor (texto original en inglés) — no es fotografía propia de Trotagua.",
+        "aspect_ratio": "1 / 1",
+        "max_width": 440,
+        "color_fondo": "#DCEEEC",
+        "padding_top": 0,
+        "padding_bottom": 64
+      }
+    },
+    "tw_divider_3": {
+      "type": "tw-divider",
+      "settings": { "color_fondo": "#DCEEEC", "color_linea": "#C3E0DC" }
+    },
+    "tw_ticker": {
+      "type": "tw-ticker",
+      "settings": {
+        "texto": "🐾 Sin fugas ✦ Una sola mano ✦ Aprovecha cada gota ✦ Paseos, rutas y viajes en coche ✦ Garantía 30 días ✦",
+        "velocidad": 22,
+        "color_fondo": "#242A1F",
+        "color_texto": "#F6F5EC",
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "tw_divider_4": {
+      "type": "tw-divider",
+      "settings": { "color_fondo": "#FFFFFF", "color_linea": "#DEDCC5" }
+    },
+    "tw_comparativa": {
+      "type": "tw-comparativa",
+      "blocks": {
+        "c1": { "type": "criterio", "settings": { "criterio": "Sin fugas dentro de la mochila" } },
+        "c2": { "type": "criterio", "settings": { "criterio": "Se usa con una sola mano" } },
+        "c3": { "type": "criterio", "settings": { "criterio": "El agua sobrante no se desperdicia" } }
+      },
+      "block_order": ["c1", "c2", "c3"],
+      "settings": {
+        "eyebrow": "Comparativa",
+        "titular": "Trotagua frente al cuenco plegable suelto",
+        "columna_trotagua": "Trotagua",
+        "columna_otros": "Cuenco suelto"
+      }
+    },
+    "tw_resenas": {
+      "type": "tw-resenas",
+      "blocks": {
+        "r1": { "type": "resena", "settings": { "estrellas": 5, "nombre": "Marta S.", "iniciales": "MS", "detalle": "Dueña de una golden de 2 años", "texto": "Mi perra se negaba a beber agua cuando salíamos de paseo y ahora bebe sola en cuanto le acerco el Trotagua. Un acierto total para las rutas largas." } },
+        "r2": { "type": "resena", "settings": { "estrellas": 5, "nombre": "Carlos R.", "iniciales": "CR", "detalle": "Dueño de un cocker de 4 años", "texto": "Lo compré para las rutas de fin de semana y ahora no salimos sin él. Se ve compacto pero aguanta más agua de la que parece." } },
+        "r3": { "type": "resena", "settings": { "estrellas": 4, "nombre": "Elena M.", "iniciales": "EM", "detalle": "", "texto": "Buena calidad y llegó rápido. Le pondría un punto más si trajera un mosquetón, pero muy contenta con la compra." } },
+        "r4": { "type": "resena", "settings": { "estrellas": 5, "nombre": "Andrea P.", "iniciales": "AP", "detalle": "Dueña de dos perros", "texto": "Compramos dos, uno para cada perro, y una ruta de 6 horas por el monte se nos hizo mucho más fácil: los dos bebieron sin parar gracias a su Trotagua." } }
+      },
+      "block_order": ["r1", "r2", "r3", "r4"],
+      "settings": { "color_fondo": "#FFFFFF" }
+    },
+    "tw_confianza": {
+      "type": "tw-confianza",
+      "blocks": {
+        "c1": { "type": "garantia", "settings": { "icono": "shield", "titulo": "Pago 100% seguro", "texto": "Compra con tarjeta, PayPal o Bizum. Tus datos siempre protegidos." } },
+        "c2": { "type": "garantia", "settings": { "icono": "truck", "titulo": "Envío rápido", "texto": "Preparamos y enviamos tu pedido en 24/48 horas laborables." } },
+        "c3": { "type": "garantia", "settings": { "icono": "return", "titulo": "30 días para decidir", "texto": "Si no os convence, te devolvemos el importe sin complicaciones." } },
+        "c4": { "type": "garantia", "settings": { "icono": "chat", "titulo": "Atención cercana", "texto": "¿Dudas antes de comprar? Escríbenos y te responde una persona, no un robot." } }
+      },
+      "block_order": ["c1", "c2", "c3", "c4"],
+      "settings": {}
+    },
+    "tw_faq": {
+      "type": "tw-faq",
+      "blocks": {
+        "q1": { "type": "pregunta", "settings": { "pregunta": "¿Trotagua sustituye el bebedero fijo de casa?", "respuesta": "No. Trotagua es un bebedero portátil pensado para paseos y viajes; en casa te recomendamos seguir usando su bebedero habitual." } },
+        "q2": { "type": "pregunta", "settings": { "pregunta": "¿Solo sirve para el coche?", "respuesta": "Es igual de práctico en el monte, la playa o el día a día: cualquier paseo en el que tu perro pueda tener sed." } },
+        "q3": { "type": "pregunta", "settings": { "pregunta": "¿Cómo se limpia?", "respuesta": "Se enjuaga con agua después de cada uso y admite un lavado a fondo con agua y jabón neutro cuando lo necesites." } },
+        "q4": { "type": "pregunta", "settings": { "pregunta": "¿Cuánto tarda el envío?", "respuesta": "Entre 24 y 48 horas laborables desde que confirmas tu pedido." } },
+        "q5": { "type": "pregunta", "settings": { "pregunta": "¿Y si no queda satisfecho?", "respuesta": "Tienes 30 días desde la recepción para devolverlo si no cumple tus expectativas." } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5"],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "tw_acordeon",
+    "tw_problema_texto",
+    "tw_problema_info",
+    "tw_divider_1",
+    "tw_agitacion_texto",
+    "tw_divider_2",
+    "tw_agitacion_info",
+    "tw_solucion_texto",
+    "tw_solucion_info",
+    "tw_divider_3",
+    "tw_ticker",
+    "tw_divider_4",
+    "tw_comparativa",
+    "tw_resenas",
+    "tw_confianza",
+    "tw_faq"
+  ]
+}

@@ -442,9 +442,9 @@
 #shopify-section-footer_m9NzUG li { margin: 0; }
 
 /* ---------- Escaparate (portada) ---------- */
-/* max-width y aspect-ratio 3/4 igualan el tamaño real de la foto (720x960)
+/* max-width y aspect-ratio 1/1 igualan el tamaño real de la foto (440x440)
    para que el navegador no la estire de más y se vea nítida */
-.tw-hero-teaser-media { width: 100%; max-width: 560px; margin: 0 auto; aspect-ratio: 3 / 4; overflow: hidden; }
+.tw-hero-teaser-media { width: 100%; max-width: 440px; margin: 0 auto; aspect-ratio: 1 / 1; overflow: hidden; }
 .tw-hero-teaser-copy {
   text-align: center;
   display: flex;

@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "tw_escaparate": {
+      "type": "tw-hero-teaser",
+      "settings": {
+        "imagen": "shopify://shop_images/hero.png",
+        "titular": "Más información, haz clic aquí",
+        "cta_texto": "Ver más",
+        "cta_enlace": "/products/trotagua-bebedero-portatil-para-perros"
+      }
+    }
+  },
+  "order": [
+    "tw_escaparate"
+  ]
+}
