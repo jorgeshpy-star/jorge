@@ -1,0 +1,35 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  #shopify-section-{{ section.id }} .tw-pas-texto-headline {
+    color: {{ section.settings.color_titulo }};
+  }
+{% endstyle %}
+
+<section class="tw-section tw-cta-final">
+  <div class="tw-container tw-pas-texto-inner tw-reveal">
+    {%- if section.settings.titular != blank -%}<h2 class="tw-h2 tw-pas-texto-headline">{{ section.settings.titular }}</h2>{%- endif -%}
+    {%- if section.settings.texto != blank -%}<p class="tw-body tw-muted">{{ section.settings.texto }}</p>{%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trotagua – Cierre",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "titular", "label": "Título", "default": "Que ningún paseo se quede sin agua" },
+    { "type": "textarea", "id": "texto", "label": "Texto", "default": "Saca tu Trotagua antes del próximo paseo y despreocúpate del agua." },
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#F6F5EC" },
+    { "type": "color", "id": "color_titulo", "label": "Color del título", "default": "#242A1F" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 56 }
+  ],
+  "presets": [ { "name": "Trotagua – Cierre" } ]
+}
+{% endschema %}
