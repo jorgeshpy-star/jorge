@@ -414,12 +414,14 @@
       "settings": { "color_fondo": "#F7E6CE", "color_linea": "#EAD5AE" }
     },
     "tw_agitacion_info": {
-      "type": "tw-infografia",
+      "type": "tw-pasos",
+      "blocks": {
+        "p1": { "type": "paso", "settings": { "texto": "Aprietas la botella" } },
+        "p2": { "type": "paso", "settings": { "texto": "El cuenco de silicona se llena al instante" } },
+        "p3": { "type": "paso", "settings": { "texto": "Sueltas y el agua sobrante vuelve dentro" } }
+      },
+      "block_order": ["p1", "p2", "p3"],
       "settings": {
-        "imagen": "shopify://shop_images/hero.png",
-        "caption": "Imagen de referencia del proveedor (texto original en inglés) — no es fotografía propia de Trotagua.",
-        "aspect_ratio": "1 / 1",
-        "max_width": 440,
         "color_fondo": "#F7E6CE",
         "padding_top": 32,
         "padding_bottom": 64

@@ -1,0 +1,55 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{% endstyle %}
+
+<section class="tw-section tw-pasos">
+  <div class="tw-container">
+    {%- if section.blocks.size > 0 -%}
+      <div class="tw-grid tw-grid-3 tw-reveal-stagger">
+        {%- for block in section.blocks -%}
+          <div class="tw-paso" {{ block.shopify_attributes }}>
+            <span class="tw-paso-num">{{ forloop.index }}</span>
+            <p class="tw-body tw-muted">{{ block.settings.texto }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trotagua – Pasos",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#F7E6CE" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 32 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 64 }
+  ],
+  "blocks": [
+    {
+      "type": "paso",
+      "name": "Paso",
+      "settings": [
+        { "type": "text", "id": "texto", "label": "Texto del paso", "default": "Descripción breve del paso" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trotagua – Pasos",
+      "blocks": [
+        { "type": "paso", "settings": { "texto": "Aprietas la botella" } },
+        { "type": "paso", "settings": { "texto": "El cuenco de silicona se llena al instante" } },
+        { "type": "paso", "settings": { "texto": "Sueltas y el agua sobrante vuelve dentro" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
