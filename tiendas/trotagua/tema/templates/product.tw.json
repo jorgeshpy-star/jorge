@@ -177,7 +177,7 @@
             "gancho": {
               "type": "text",
               "settings": {
-                "text": "<p>Dale de beber a tu perro en cualquier paseo sin derramar nada: aprietas, tu perro bebe, y el agua sobrante vuelve sola a la botella.</p>",
+                "text": "<p>Un bebedero redondo y compacto con cuenco integrado: rellenas de agua, tu perro bebe cómodo, y sigues el paseo sin mancharte ni derramar nada.</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -202,7 +202,7 @@
             "vinetas": {
               "type": "text",
               "settings": {
-                "text": "<ul><li>🐾 Sin fugas: cierre de silicona hermético</li><li>✋ Se usa con una sola mano, sin soltar la correa</li><li>♻️ El agua sobrante vuelve a la botella, no se desperdicia</li></ul>",
+                "text": "<ul><li>🐾 Cierre hermético: cero fugas en la mochila</li><li>🥤 Cuenco integrado, siempre a mano</li><li>🎨 Disponible en varios colores</li></ul>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
