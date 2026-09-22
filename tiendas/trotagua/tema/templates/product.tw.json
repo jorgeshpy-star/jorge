@@ -337,8 +337,7 @@
                   "settings": {},
                   "blocks": {}
                 }
-              },
-              "block_order": []
+              }
             }
           },
           "block_order": ["banner", "valoracion", "grupo_titulo", "gancho", "vinetas", "separador", "selector", "botones"]
