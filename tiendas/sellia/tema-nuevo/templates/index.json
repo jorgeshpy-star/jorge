@@ -35,9 +35,9 @@
           "settings": {
             "nombre": "1 unidad",
             "descripcion": "Para probarlo tú primero.",
-            "precio": "24,95 €",
+            "precio": "21,95 €",
             "precio_antes": "39,95 €",
-            "ahorro": "Ahorras 15 €",
+            "ahorro": "Ahorras 18 €",
             "texto_boton": "Lo quiero",
             "enlace": "/products/sellia-sellador-de-bolsas-portatil-con-pantalla-digital?variant=57142139158852",
             "destacado": false
@@ -48,9 +48,9 @@
           "settings": {
             "nombre": "Pack 2 unidades",
             "descripcion": "Uno para ti y otro para regalar o tener de repuesto.",
-            "precio": "44,91 €",
+            "precio": "39,50 €",
             "precio_antes": "79,90 €",
-            "ahorro": "Ahorras 34,99 €",
+            "ahorro": "Ahorras 40,40 €",
             "texto_boton": "Lo quiero",
             "enlace": "/products/sellia-sellador-de-bolsas-portatil-con-pantalla-digital?variant=57311482642756",
             "destacado": false
@@ -60,10 +60,10 @@
           "type": "pack",
           "settings": {
             "nombre": "Pack 3 unidades",
-            "descripcion": "Sale a 19,96 € la unidad — el que más se lleva la gente.",
-            "precio": "59,88 €",
+            "descripcion": "Sale a 17,65 € la unidad — el que más se lleva la gente.",
+            "precio": "52,95 €",
             "precio_antes": "119,85 €",
-            "ahorro": "Ahorras 59,97 €",
+            "ahorro": "Ahorras 66,90 €",
             "texto_boton": "Elegir el pack 3",
             "enlace": "/products/sellia-sellador-de-bolsas-portatil-con-pantalla-digital?variant=57311482675524",
             "destacado": true,
