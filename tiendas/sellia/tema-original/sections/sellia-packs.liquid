@@ -1,0 +1,105 @@
+{{ 'sellia-styles.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background: {{ section.settings.color_fondo }};
+    color: {{ section.settings.color_texto }};
+  }
+  #shopify-section-{{ section.id }} .sellia-eyebrow { color: {{ section.settings.color_acento }}; }
+  #shopify-section-{{ section.id }} .sellia-pack { border-color: {{ section.settings.color_borde }}; }
+  #shopify-section-{{ section.id }} .sellia-pack--featured { border-color: {{ section.settings.color_acento }}; }
+  #shopify-section-{{ section.id }} .sellia-pack__ribbon { background: {{ section.settings.color_acento }}; }
+  #shopify-section-{{ section.id }} .sellia-pack__ahorro { color: {{ section.settings.color_acento }}; background: {{ section.settings.color_acento }}1a; }
+  #shopify-section-{{ section.id }} .sellia-btn--primary { background: {{ section.settings.color_acento }}; }
+  #shopify-section-{{ section.id }} .sellia-btn--outline { color: {{ section.settings.color_texto }}; }
+{% endstyle %}
+
+<section class="sellia-section sellia-packs">
+  <div class="sellia-container">
+    <div class="sellia-container--narrow sellia-center sellia-reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="sellia-eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2 class="sellia-h2">{{ section.settings.titular }}</h2>
+      {%- if section.settings.subtitulo != blank -%}
+        <p class="sellia-sub">{{ section.settings.subtitulo }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="sellia-packs__grid">
+      {%- for block in section.blocks -%}
+        {%- assign i = forloop.index0 -%}
+        <div
+          class="sellia-pack sellia-reveal sellia-reveal--stagger{% if block.settings.destacado %} sellia-pack--featured{% endif %}"
+          style="--sellia-i: {{ i }};"
+          {{ block.shopify_attributes }}
+        >
+          {%- if block.settings.destacado and block.settings.cinta != blank -%}
+            <span class="sellia-pack__ribbon">{{ block.settings.cinta }}</span>
+          {%- endif -%}
+          <p class="sellia-pack__name">{{ block.settings.nombre }}</p>
+          <p class="sellia-pack__desc">{{ block.settings.descripcion }}</p>
+          <div class="sellia-pack__price-row">
+            <span class="sellia-pack__price">{{ block.settings.precio }}</span>
+            {%- if block.settings.precio_antes != blank -%}
+              <span class="sellia-pack__compare">{{ block.settings.precio_antes }}</span>
+            {%- endif -%}
+          </div>
+          {%- if block.settings.ahorro != blank -%}
+            <span class="sellia-pack__ahorro">{{ block.settings.ahorro }}</span>
+          {%- endif -%}
+          <div class="sellia-pack__spacer"></div>
+          <a href="{{ block.settings.enlace | default: '#' }}" class="sellia-btn {% if block.settings.destacado %}sellia-btn--primary{% else %}sellia-btn--outline{% endif %}">
+            {{ block.settings.texto_boton }}
+          </a>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sellia – Packs",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Texto pequeño superior", "default": "Ahorra por cantidad" },
+    { "type": "text", "id": "titular", "label": "Titular", "default": "Elige tu Sellia" },
+    { "type": "textarea", "id": "subtitulo", "label": "Subtítulo", "default": "Cuantos más selladores, más barato sale cada uno. El pack de 3 es el que más se lleva la gente." },
+    { "type": "header", "content": "Colores" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo", "default": "#FFFFFF" },
+    { "type": "color", "id": "color_texto", "label": "Texto", "default": "#221D17" },
+    { "type": "color", "id": "color_acento", "label": "Acento", "default": "#E8652B" },
+    { "type": "color", "id": "color_borde", "label": "Borde de las tarjetas", "default": "#E4DDCF" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 88 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 88 }
+  ],
+  "blocks": [
+    {
+      "type": "pack",
+      "name": "Pack",
+      "limit": 3,
+      "settings": [
+        { "type": "text", "id": "nombre", "label": "Nombre", "default": "1 unidad" },
+        { "type": "textarea", "id": "descripcion", "label": "Descripción corta", "default": "Ideal para probar." },
+        { "type": "text", "id": "precio", "label": "Precio", "default": "24,95 €" },
+        { "type": "text", "id": "precio_antes", "label": "Precio antes (opcional)", "default": "39,95 €" },
+        { "type": "text", "id": "ahorro", "label": "Etiqueta de ahorro (opcional)", "default": "Ahorras 15 €" },
+        { "type": "text", "id": "texto_boton", "label": "Texto del botón", "default": "Lo quiero" },
+        { "type": "url", "id": "enlace", "label": "Enlace del botón" },
+        { "type": "checkbox", "id": "destacado", "label": "Destacar este pack", "default": false },
+        { "type": "text", "id": "cinta", "label": "Etiqueta del destacado", "default": "Más vendido" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sellia – Packs",
+      "blocks": [ { "type": "pack" }, { "type": "pack" }, { "type": "pack" } ]
+    }
+  ]
+}
+{% endschema %}

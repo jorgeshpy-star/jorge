@@ -1,0 +1,95 @@
+{%- assign f = section.settings.fuente -%}
+
+<style>
+  {{ f | font_face: font_display: 'swap' }}
+
+  .aq-pasos-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    color: {{ section.settings.color_texto }};
+    padding: {{ section.settings.espacio_arriba }}px 20px {{ section.settings.espacio_abajo }}px;
+  }
+  .aq-pasos-{{ section.id }} .aq-wrap { max-width: 1000px; margin: 0 auto; }
+  .aq-pasos-{{ section.id }} h2 {
+    font-family: {{ f.family }}, {{ f.fallback_families }};
+    font-weight: {{ f.weight }};
+    font-style: {{ f.style }};
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    margin: 0 0 48px;
+    text-align: center;
+  }
+  .aq-pasos-{{ section.id }} .aq-fila {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 34px;
+  }
+  .aq-pasos-{{ section.id }} .aq-paso { text-align: center; }
+  .aq-pasos-{{ section.id }} .aq-num {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: {{ section.settings.color_acento }};
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 auto 18px;
+  }
+  .aq-pasos-{{ section.id }} .aq-paso strong { display: block; font-size: 18px; margin-bottom: 8px; font-weight: 600; }
+  .aq-pasos-{{ section.id }} .aq-paso p { margin: 0; font-size: 15.5px; line-height: 1.6; opacity: 0.72; }
+</style>
+
+<div class="aq-pasos-{{ section.id }}">
+  <div class="aq-wrap">
+    <h2>{{ section.settings.titular }}</h2>
+    <div class="aq-fila">
+      {%- for block in section.blocks -%}
+        <div class="aq-paso" {{ block.shopify_attributes }}>
+          <div class="aq-num">{{ forloop.index }}</div>
+          <strong>{{ block.settings.titulo }}</strong>
+          <p>{{ block.settings.texto }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Cómo se instala",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "titular", "label": "Titular", "default": "Listo en un minuto" },
+    { "type": "font_picker", "id": "fuente", "label": "Tipografía del titular", "default": "playfair_display_n4" },
+    { "type": "color", "id": "color_fondo", "label": "Color de fondo", "default": "#E4EDE6" },
+    { "type": "color", "id": "color_texto", "label": "Color del texto", "default": "#26241F" },
+    { "type": "color", "id": "color_acento", "label": "Color de los números", "default": "#4C6B5A" },
+    { "type": "range", "id": "espacio_arriba", "label": "Espacio arriba", "min": 0, "max": 140, "step": 4, "unit": "px", "default": 80 },
+    { "type": "range", "id": "espacio_abajo", "label": "Espacio abajo", "min": 0, "max": 140, "step": 4, "unit": "px", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "paso",
+      "name": "Paso",
+      "limit": 4,
+      "settings": [
+        { "type": "text", "id": "titulo", "label": "Título", "default": "Desenrosca" },
+        { "type": "textarea", "id": "texto", "label": "Texto", "default": "Quita tu cabezal de siempre con la mano." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cómo se instala",
+      "blocks": [
+        { "type": "paso" },
+        { "type": "paso" },
+        { "type": "paso" }
+      ]
+    }
+  ]
+}
+{% endschema %}

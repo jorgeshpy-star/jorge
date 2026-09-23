@@ -1,0 +1,107 @@
+{%- assign f = section.settings.fuente -%}
+
+<style>
+  {{ f | font_face: font_display: 'swap' }}
+
+  .aq-faq-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    color: {{ section.settings.color_texto }};
+    padding: {{ section.settings.espacio_arriba }}px 20px {{ section.settings.espacio_abajo }}px;
+  }
+  .aq-faq-{{ section.id }} .aq-wrap {
+    width: 100%;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .aq-faq-{{ section.id }} h2 {
+    font-family: {{ f.family }}, {{ f.fallback_families }};
+    font-weight: {{ f.weight }};
+    font-style: {{ f.style }};
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    margin: 0 0 44px;
+    text-align: center;
+  }
+  .aq-faq-{{ section.id }} details {
+    border-bottom: 1px solid rgba(0,0,0,0.11);
+    padding: 4px 0;
+  }
+  .aq-faq-{{ section.id }} summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 21px 46px 21px 0;
+    font-size: 17.5px;
+    font-weight: 500;
+    position: relative;
+  }
+  .aq-faq-{{ section.id }} summary::-webkit-details-marker { display: none; }
+  .aq-faq-{{ section.id }} summary::after {
+    content: '+';
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    line-height: 1;
+    opacity: 0.4;
+    transition: opacity 0.2s ease;
+  }
+  .aq-faq-{{ section.id }} summary:hover::after { opacity: 0.75; }
+  .aq-faq-{{ section.id }} details[open] summary::after { content: '–'; }
+  .aq-faq-{{ section.id }} .aq-resp {
+    padding: 0 40px 24px 0;
+    font-size: 15.5px;
+    line-height: 1.65;
+    opacity: 0.75;
+    margin: 0;
+  }
+</style>
+
+<div class="aq-faq-{{ section.id }}">
+  <div class="aq-wrap">
+    <h2>{{ section.settings.titular }}</h2>
+    {%- for block in section.blocks -%}
+      <details {{ block.shopify_attributes }}>
+        <summary>{{ block.settings.pregunta }}</summary>
+        <p class="aq-resp">{{ block.settings.respuesta }}</p>
+      </details>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Preguntas frecuentes",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "titular", "label": "Titular", "default": "Preguntas frecuentes" },
+    { "type": "font_picker", "id": "fuente", "label": "Tipografía del titular", "default": "playfair_display_n4" },
+    { "type": "color", "id": "color_fondo", "label": "Color de fondo", "default": "#FFFFFF" },
+    { "type": "color", "id": "color_texto", "label": "Color del texto", "default": "#26241F" },
+    { "type": "range", "id": "espacio_arriba", "label": "Espacio arriba", "min": 0, "max": 140, "step": 4, "unit": "px", "default": 80 },
+    { "type": "range", "id": "espacio_abajo", "label": "Espacio abajo", "min": 0, "max": 140, "step": 4, "unit": "px", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "pregunta",
+      "name": "Pregunta",
+      "settings": [
+        { "type": "text", "id": "pregunta", "label": "Pregunta", "default": "¿Vale para mi ducha?" },
+        { "type": "textarea", "id": "respuesta", "label": "Respuesta", "default": "Sí." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Preguntas frecuentes",
+      "blocks": [
+        { "type": "pregunta" },
+        { "type": "pregunta" },
+        { "type": "pregunta" }
+      ]
+    }
+  ]
+}
+{% endschema %}

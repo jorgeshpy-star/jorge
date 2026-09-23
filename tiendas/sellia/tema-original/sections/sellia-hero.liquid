@@ -1,0 +1,107 @@
+{{ 'sellia-styles.css' | asset_url | stylesheet_tag }}
+{{ 'sellia-scripts.js' | asset_url | script_tag }}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background: {{ section.settings.color_fondo }};
+    color: {{ section.settings.color_texto }};
+  }
+  #shopify-section-{{ section.id }} .sellia-eyebrow { color: {{ section.settings.color_acento }}; }
+  #shopify-section-{{ section.id }} .sellia-hero__headline {
+    font-size: clamp({{ section.settings.headline_size_mobile }}px, 4.6vw, {{ section.settings.headline_size }}px);
+  }
+  #shopify-section-{{ section.id }} .sellia-hero__sub {
+    font-size: {{ section.settings.sub_size }}px;
+    max-width: 480px;
+  }
+  #shopify-section-{{ section.id }} .sellia-hero__media { background: {{ section.settings.color_acento }}; }
+  #shopify-section-{{ section.id }} .sellia-hero__stars { color: {{ section.settings.color_acento }}; }
+{% endstyle %}
+
+<section class="sellia-section sellia-hero">
+  <div class="sellia-container">
+    <div class="sellia-hero__grid">
+      <div class="sellia-reveal">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="sellia-eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        <h1 class="sellia-h2 sellia-hero__headline">{{ section.settings.headline }}</h1>
+        <p class="sellia-sub sellia-hero__sub">{{ section.settings.subheadline | newline_to_br }}</p>
+        {%- if section.settings.cta_texto != blank or section.settings.cta2_texto != blank -%}
+          <div class="sellia-hero__ctas">
+            {%- if section.settings.cta_texto != blank -%}
+              <a href="{{ section.settings.cta_enlace | default: '#' }}" class="sellia-btn sellia-btn--primary">
+                {{ section.settings.cta_texto }}
+              </a>
+            {%- endif -%}
+            {%- if section.settings.cta2_texto != blank -%}
+              <a href="{{ section.settings.cta2_enlace | default: '#' }}" class="sellia-btn sellia-btn--outline">
+                {{ section.settings.cta2_texto }}
+              </a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+        {%- if section.settings.mostrar_valoracion -%}
+          <div class="sellia-hero__rating">
+            <span class="sellia-hero__stars" aria-hidden="true">
+              {%- for i in (1..5) -%}
+                <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M10 1.5l2.47 5.13 5.53.65-4.1 3.85 1.1 5.52L10 13.9l-4.99 2.75 1.09-5.52-4.1-3.85 5.53-.65L10 1.5Z"/></svg>
+              {%- endfor -%}
+            </span>
+            {%- if section.settings.valoracion_texto != blank -%}
+              <span class="sellia-hero__rating-text">{{ section.settings.valoracion_texto }}</span>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+      <div class="sellia-hero__media sellia-reveal">
+        {%- if section.settings.imagen != blank -%}
+          <img
+            class="sellia-img"
+            src="{{ section.settings.imagen | image_url: width: 1400 }}"
+            alt="{{ section.settings.imagen.alt | default: section.settings.headline | escape }}"
+            loading="eager"
+            fetchpriority="high"
+            width="{{ section.settings.imagen.width }}"
+            height="{{ section.settings.imagen.height }}"
+          >
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sellia – Portada",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Texto pequeño superior", "default": "Cocina sin líos" },
+    { "type": "text", "id": "headline", "label": "Titular", "default": "Se acabó pelear con gomas y pinzas en tu cocina" },
+    { "type": "textarea", "id": "subheadline", "label": "Subtítulo", "default": "Sellia sella cualquier bolsa en segundos, sin precalentar y sin que se te humedezca ni una miga más." },
+    { "type": "image_picker", "id": "imagen", "label": "Imagen principal" },
+    { "type": "header", "content": "Botones" },
+    { "type": "text", "id": "cta_texto", "label": "Texto del botón principal", "default": "Descubre Sellia" },
+    { "type": "url", "id": "cta_enlace", "label": "Enlace del botón principal" },
+    { "type": "text", "id": "cta2_texto", "label": "Texto del botón secundario (opcional)" },
+    { "type": "url", "id": "cta2_enlace", "label": "Enlace del botón secundario" },
+    { "type": "header", "content": "Valoración (bajo los botones)" },
+    { "type": "checkbox", "id": "mostrar_valoracion", "label": "Mostrar estrellas de calidad", "default": true },
+    { "type": "text", "id": "valoracion_texto", "label": "Texto junto a las estrellas", "info": "No pongas un número de reseñas si todavía no tienes reseñas reales.", "default": "Calidad premium" },
+    { "type": "header", "content": "Colores" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo", "default": "#F7F1E6" },
+    { "type": "color", "id": "color_texto", "label": "Texto", "default": "#221D17" },
+    { "type": "color", "id": "color_acento", "label": "Acento", "default": "#E8652B" },
+    { "type": "header", "content": "Tipografía" },
+    { "type": "range", "id": "headline_size", "label": "Tamaño del titular en escritorio (px)", "min": 32, "max": 80, "step": 2, "unit": "px", "default": 58 },
+    { "type": "range", "id": "headline_size_mobile", "label": "Tamaño del titular en móvil (px)", "min": 24, "max": 48, "step": 2, "unit": "px", "default": 32 },
+    { "type": "range", "id": "sub_size", "label": "Tamaño del subtítulo (px)", "min": 13, "max": 24, "step": 1, "unit": "px", "default": 17 },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 64 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 64 }
+  ],
+  "presets": [ { "name": "Sellia – Portada" } ]
+}
+{% endschema %}

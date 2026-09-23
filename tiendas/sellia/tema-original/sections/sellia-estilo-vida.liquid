@@ -1,0 +1,93 @@
+{{ 'sellia-styles.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background: {{ section.settings.color_fondo }};
+    color: {{ section.settings.color_texto }};
+  }
+  #shopify-section-{{ section.id }} .sellia-eyebrow { color: {{ section.settings.color_acento }}; }
+{% endstyle %}
+
+<section class="sellia-section sellia-vida">
+  <div class="sellia-container">
+    <div class="sellia-container--narrow sellia-center sellia-reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="sellia-eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2 class="sellia-h2">{{ section.settings.titular }}</h2>
+      {%- if section.settings.subtitulo != blank -%}
+        <p class="sellia-sub">{{ section.settings.subtitulo }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="sellia-vida__grid">
+      {%- for block in section.blocks -%}
+        {%- assign i = forloop.index0 -%}
+        <div class="sellia-vida__item sellia-reveal sellia-reveal--stagger" style="--sellia-i: {{ i }};" {{ block.shopify_attributes }}>
+          {%- if block.settings.imagen != blank -%}
+            <button
+              type="button"
+              class="sellia-vida__zoom-btn"
+              data-sellia-lightbox
+              data-full="{{ block.settings.imagen | image_url: width: 2000 }}"
+              data-alt="{{ block.settings.imagen.alt | default: block.settings.texto | escape }}"
+              data-aclarar="{% if block.settings.aclarar_a_blanco %}1{% endif %}"
+              aria-label="Ver foto ampliada"
+            >
+              <img
+                class="sellia-img{% if block.settings.aclarar_a_blanco %} sellia-img--aclarada{% endif %}"
+                src="{{ block.settings.imagen | image_url: width: 1200 }}"
+                alt="{{ block.settings.imagen.alt | default: block.settings.texto | escape }}"
+                loading="lazy"
+                width="{{ block.settings.imagen.width }}"
+                height="{{ block.settings.imagen.height }}"
+              >
+            </button>
+          {%- endif -%}
+          {%- if block.settings.texto != blank -%}
+            <span class="sellia-vida__caption">{{ block.settings.texto }}</span>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sellia – Estilo de vida",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Texto pequeño superior", "default": "En tu cocina" },
+    { "type": "text", "id": "titular", "label": "Titular", "default": "Una despensa ordenada, sin esfuerzo" },
+    { "type": "textarea", "id": "subtitulo", "label": "Subtítulo", "default": "Sellia se queda pegado a la nevera con su base magnética, listo para sellar en cuanto lo necesites." },
+    { "type": "header", "content": "Colores" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo", "default": "#F7F1E6" },
+    { "type": "color", "id": "color_texto", "label": "Texto", "default": "#221D17" },
+    { "type": "color", "id": "color_acento", "label": "Acento", "default": "#E8652B" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 88 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 88 }
+  ],
+  "blocks": [
+    {
+      "type": "imagen",
+      "name": "Imagen",
+      "limit": 3,
+      "settings": [
+        { "type": "image_picker", "id": "imagen", "label": "Imagen" },
+        { "type": "text", "id": "texto", "label": "Texto sobre la imagen (opcional)" },
+        { "type": "checkbox", "id": "aclarar_a_blanco", "label": "Mostrar este producto en blanco", "info": "Actívalo si esta foto muestra el aparato en un tono oscuro y quieres que se vea claro/blanco en la web.", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sellia – Estilo de vida",
+      "blocks": [ { "type": "imagen" }, { "type": "imagen" }, { "type": "imagen" } ]
+    }
+  ]
+}
+{% endschema %}

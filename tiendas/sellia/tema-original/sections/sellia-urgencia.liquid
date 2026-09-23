@@ -1,0 +1,40 @@
+{{ 'sellia-styles.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background: {{ section.settings.color_fondo_seccion }};
+  }
+  #shopify-section-{{ section.id }} .sellia-urgencia__box {
+    background: {{ section.settings.color_fondo }};
+    color: {{ section.settings.color_texto }};
+  }
+{% endstyle %}
+
+<section class="sellia-section sellia-urgencia">
+  <div class="sellia-container">
+    <div class="sellia-urgencia__box sellia-reveal">
+      <span class="sellia-urgencia__dot"></span>
+      {{ section.settings.texto }}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sellia – Aviso de stock",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "texto", "label": "Texto del aviso", "default": "Quedan pocas unidades del pack de 3 en este lote — la próxima reposición tarda unas semanas." },
+    { "type": "header", "content": "Colores" },
+    { "type": "color", "id": "color_fondo_seccion", "label": "Fondo de la sección", "default": "#FFFFFF" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo del aviso", "default": "#FCEDE4" },
+    { "type": "color", "id": "color_texto", "label": "Texto del aviso", "default": "#C4501E" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 8 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 40 }
+  ],
+  "presets": [ { "name": "Sellia – Aviso de stock" } ]
+}
+{% endschema %}

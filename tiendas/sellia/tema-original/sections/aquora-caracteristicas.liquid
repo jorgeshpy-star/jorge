@@ -1,0 +1,102 @@
+{%- assign f = section.settings.fuente -%}
+
+<style>
+  {{ f | font_face: font_display: 'swap' }}
+
+  .aq-esp-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    color: {{ section.settings.color_texto }};
+    padding: {{ section.settings.espacio_arriba }}px 20px {{ section.settings.espacio_abajo }}px;
+  }
+  .aq-esp-{{ section.id }} .aq-wrap {
+    max-width: {% if section.settings.imagen != blank %}1040{% else %}760{% endif %}px;
+    margin: 0 auto;
+    {% if section.settings.imagen != blank %}
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+    {% endif %}
+  }
+  .aq-esp-{{ section.id }} h2 {
+    font-family: {{ f.family }}, {{ f.fallback_families }};
+    font-weight: {{ f.weight }};
+    font-style: {{ f.style }};
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    margin: 0 0 30px;
+    {% if section.settings.imagen == blank %}text-align: center;{% endif %}
+  }
+  .aq-esp-{{ section.id }} .aq-tabla { width: 100%; border-collapse: collapse; }
+  .aq-esp-{{ section.id }} .aq-tabla tr { border-bottom: 1px solid rgba(0,0,0,0.1); }
+  .aq-esp-{{ section.id }} .aq-tabla td {
+    padding: 16px 0;
+    font-size: 15.5px;
+    line-height: 1.5;
+    vertical-align: top;
+  }
+  .aq-esp-{{ section.id }} .aq-tabla td:first-child { opacity: 0.6; width: 45%; padding-right: 16px; }
+  .aq-esp-{{ section.id }} .aq-tabla td:last-child { font-weight: 500; }
+  .aq-esp-{{ section.id }} .aq-foto img { width: 100%; height: auto; display: block; border-radius: 18px; }
+  @media (max-width: 860px) {
+    .aq-esp-{{ section.id }} .aq-wrap { grid-template-columns: 1fr; gap: 34px; }
+  }
+</style>
+
+<div class="aq-esp-{{ section.id }}">
+  <div class="aq-wrap">
+    {%- if section.settings.imagen != blank -%}
+      <div class="aq-foto">
+        <img src="{{ section.settings.imagen | image_url: width: 1000 }}" alt="{{ section.settings.imagen.alt | escape }}" width="{{ section.settings.imagen.width }}" height="{{ section.settings.imagen.height }}" loading="lazy">
+      </div>
+    {%- endif -%}
+    <div>
+      <h2>{{ section.settings.titular }}</h2>
+      <table class="aq-tabla">
+        {%- for block in section.blocks -%}
+          <tr {{ block.shopify_attributes }}>
+            <td>{{ block.settings.campo }}</td>
+            <td>{{ block.settings.valor }}</td>
+          </tr>
+        {%- endfor -%}
+      </table>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Características",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "titular", "label": "Titular", "default": "Las características, sin letra pequeña" },
+    { "type": "font_picker", "id": "fuente", "label": "Tipografía del titular", "default": "playfair_display_n4" },
+    { "type": "image_picker", "id": "imagen", "label": "Foto", "info": "Si la dejas vacía, la tabla se muestra centrada y a página completa." },
+    { "type": "color", "id": "color_fondo", "label": "Color de fondo", "default": "#FFFFFF" },
+    { "type": "color", "id": "color_texto", "label": "Color del texto", "default": "#26241F" },
+    { "type": "range", "id": "espacio_arriba", "label": "Espacio arriba", "min": 0, "max": 140, "step": 4, "unit": "px", "default": 88 },
+    { "type": "range", "id": "espacio_abajo", "label": "Espacio abajo", "min": 0, "max": 140, "step": 4, "unit": "px", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "fila",
+      "name": "Característica",
+      "settings": [
+        { "type": "text", "id": "campo", "label": "Nombre", "default": "Material" },
+        { "type": "text", "id": "valor", "label": "Valor", "default": "Complétalo con el dato real" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Características",
+      "blocks": [
+        { "type": "fila" },
+        { "type": "fila" },
+        { "type": "fila" }
+      ]
+    }
+  ]
+}
+{% endschema %}

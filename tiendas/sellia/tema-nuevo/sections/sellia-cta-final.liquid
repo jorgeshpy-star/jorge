@@ -1,0 +1,37 @@
+{{ 'sellia-styles.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  #shopify-section-{{ section.id }} .sellia-h2 {
+    color: {{ section.settings.color_titulo }};
+  }
+{% endstyle %}
+
+<section class="sellia-section sellia-cta-final">
+  <div class="sellia-container sellia-container--narrow sellia-center sellia-reveal">
+    {%- if section.settings.titular != blank -%}<h2 class="sellia-h2">{{ section.settings.titular }}</h2>{%- endif -%}
+    {%- if section.settings.texto != blank -%}<p class="sellia-sub">{{ section.settings.texto }}</p>{%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sellia – Cierre",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "titular", "label": "Título", "default": "Que tu cocina no vuelva a pelear con gomas y pinzas" },
+    { "type": "textarea", "id": "texto", "label": "Texto", "default": "Consigue tu Sellia antes de la próxima compra y sella cualquier bolsa en segundos." },
+    { "type": "header", "content": "Color" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#F7F1E6" },
+    { "type": "color", "id": "color_titulo", "label": "Color del título", "default": "#221D17" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 64 }
+  ],
+  "presets": [ { "name": "Sellia – Cierre" } ]
+}
+{% endschema %}

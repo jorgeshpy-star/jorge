@@ -1,0 +1,93 @@
+{{ 'sellia-styles.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background: {{ section.settings.color_fondo }};
+    color: {{ section.settings.color_texto }};
+  }
+  #shopify-section-{{ section.id }} .sellia-eyebrow { color: {{ section.settings.color_acento }}; }
+  #shopify-section-{{ section.id }} .sellia-dif__row { border-color: {{ section.settings.color_borde }}; }
+  #shopify-section-{{ section.id }} .sellia-dif__cell--yes { color: {{ section.settings.color_acento }}; }
+{% endstyle %}
+
+<section class="sellia-section sellia-dif">
+  <div class="sellia-container">
+    <div class="sellia-container--narrow sellia-center sellia-reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="sellia-eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2 class="sellia-h2">{{ section.settings.titular }}</h2>
+      {%- if section.settings.subtitulo != blank -%}
+        <p class="sellia-sub">{{ section.settings.subtitulo }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="sellia-dif__grid">
+      <div class="sellia-dif__row sellia-dif__row--header">
+        <span></span>
+        <span class="sellia-dif__head">{{ section.settings.columna_sin }}</span>
+        <span class="sellia-dif__head">{{ section.settings.columna_con }}</span>
+      </div>
+      {%- for block in section.blocks -%}
+        {%- assign i = forloop.index0 -%}
+        <div class="sellia-dif__row sellia-reveal sellia-reveal--stagger" style="--sellia-i: {{ i }};" {{ block.shopify_attributes }}>
+          <span class="sellia-dif__label">{{ block.settings.aspecto }}</span>
+          <span class="sellia-dif__cell sellia-dif__cell--no">
+            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 5l10 10M15 5 5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            {{ block.settings.sin_sellia }}
+          </span>
+          <span class="sellia-dif__cell sellia-dif__cell--yes">
+            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.6 5.3 8.3 13.6 4 9.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            {{ block.settings.con_sellia }}
+          </span>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sellia – Diferencia",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Texto pequeño superior", "default": "La comparación" },
+    { "type": "text", "id": "titular", "label": "Titular", "default": "Por qué Sellia es diferente" },
+    { "type": "textarea", "id": "subtitulo", "label": "Subtítulo (opcional)" },
+    { "type": "text", "id": "columna_sin", "label": "Título columna izquierda", "default": "Gomas y pinzas" },
+    { "type": "text", "id": "columna_con", "label": "Título columna derecha", "default": "Con Sellia" },
+    { "type": "header", "content": "Colores" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo", "default": "#F7F1E6" },
+    { "type": "color", "id": "color_texto", "label": "Texto", "default": "#221D17" },
+    { "type": "color", "id": "color_acento", "label": "Acento", "default": "#E8652B" },
+    { "type": "color", "id": "color_borde", "label": "Borde de las filas", "default": "#E4DDCF" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 88 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 88 }
+  ],
+  "blocks": [
+    {
+      "type": "punto",
+      "name": "Punto de comparación",
+      "settings": [
+        { "type": "text", "id": "aspecto", "label": "Aspecto", "default": "Sellado" },
+        { "type": "text", "id": "sin_sellia", "label": "Sin Sellia", "default": "Nudos y pinzas que se sueltan" },
+        { "type": "text", "id": "con_sellia", "label": "Con Sellia", "default": "Sellado hermético al instante" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sellia – Diferencia",
+      "blocks": [
+        { "type": "punto" },
+        { "type": "punto" },
+        { "type": "punto" },
+        { "type": "punto" }
+      ]
+    }
+  ]
+}
+{% endschema %}

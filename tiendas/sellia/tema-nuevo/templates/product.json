@@ -1,0 +1,551 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-information",
+      "blocks": {
+        "media-gallery": {
+          "type": "_product-media-gallery",
+          "static": true,
+          "settings": {
+            "media_presentation": "carousel",
+            "media_columns": "two",
+            "image_gap": 4,
+            "large_first_image": false,
+            "slideshow_controls_style": "counter",
+            "slideshow_mobile_controls_style": "dots",
+            "thumbnail_position": "below",
+            "thumbnail_width": 44,
+            "thumbnail_radius": 0,
+            "aspect_ratio": "adapt",
+            "constrain_to_viewport": true,
+            "media_fit": "contain",
+            "media_radius": 0,
+            "extend_media": false,
+            "zoom": true,
+            "video_loop": false,
+            "hide_variants": true,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "product-details": {
+          "type": "_product-details",
+          "static": true,
+          "settings": {
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "details_position": "flex-start",
+            "gap": 24,
+            "sticky_details_desktop": true,
+            "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 24,
+            "padding-block-end": 24,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "grupo_titulo": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 10,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "titulo": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<h1>{{ closest.product.title }}</h1>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h3",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": ["titulo"]
+            },
+            "valoracion": {
+              "type": "text",
+              "settings": {
+                "text": "<p>★★★★★&nbsp;&nbsp;Calidad premium</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "0.9rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#E8652B",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "banner": {
+              "type": "text",
+              "settings": {
+                "text": "<p>🔒 Pago 100% seguro &nbsp;·&nbsp; 🚚 Envío 7-14 días &nbsp;·&nbsp; ✅ Garantía 30 días</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "0.8rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#C4501E",
+                "background": true,
+                "background_color": "#FCEDE4",
+                "corner_radius": 50,
+                "padding-block-start": 8,
+                "padding-block-end": 8,
+                "padding-inline-start": 16,
+                "padding-inline-end": 16
+              },
+              "blocks": {}
+            },
+            "gancho": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Sella cualquier bolsa en 2-3 segundos, sin precalentar. Base magnética, corte oculto integrado y apagado automático — todo en un diseño compacto de 12 x 5 x 4 cm.</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1.05rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "vinetas": {
+              "type": "text",
+              "settings": {
+                "text": "<ul><li>⚡ Sella en 2-3 segundos, sin precalentar</li><li>🧲 Base magnética: se queda pegada a la nevera</li><li>✂️ Corte oculto integrado para abrir cuando haga falta</li></ul>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "separador": {
+              "type": "_divider",
+              "settings": {
+                "thickness": 1,
+                "corner_radius": "square",
+                "divider_color": "{{ settings.color_palette.color2 }}",
+                "width_percent": 100,
+                "padding-block-start": 4,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
+            "pack_label": {
+              "type": "text",
+              "settings": {
+                "text": "<p>🎁 Ahorra por cantidad</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "0.85rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#71765F",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "selector": {
+              "type": "variant-picker",
+              "settings": {
+                "variant_style": "buttons",
+                "show_swatches": false,
+                "option_label_text_color": "",
+                "variant_style_class": "default",
+                "custom_variant_background": "{{ settings.color_palette.background }}",
+                "custom_variant_text": "{{ settings.color_palette.foreground }}",
+                "custom_variant_border": "{{ settings.color_palette.foreground }}",
+                "selected_variant_style_class": "default",
+                "custom_selected_variant_background": "{{ settings.color_palette.foreground }}",
+                "custom_selected_variant_text": "{{ settings.color_palette.background }}",
+                "custom_selected_variant_border": "{{ settings.color_palette.foreground }}",
+                "alignment": "left",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "precio": {
+              "type": "price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "h5",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1.25rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "text_color": "",
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "botones": {
+              "type": "buy-buttons",
+              "settings": {
+                "stacking": true,
+                "text_color": "",
+                "show_pickup_availability": false,
+                "gift_card_form": true,
+                "recipient_button_style": "default",
+                "recipient_button_background": "{{ settings.color_palette.background }}",
+                "recipient_button_text": "{{ settings.color_palette.foreground }}",
+                "recipient_button_border": "{{ settings.color_palette.foreground }}",
+                "selected_recipient_button_style": "default",
+                "selected_recipient_button_background": "{{ settings.color_palette.foreground }}",
+                "selected_recipient_button_text": "{{ settings.color_palette.background }}",
+                "selected_recipient_button_border": "{{ settings.color_palette.foreground }}",
+                "input_style": "default",
+                "input_background_color": "{{ settings.color_palette.background }}",
+                "input_text_color": "{{ settings.color_palette.foreground }}",
+                "input_border_color": "{{ settings.color_palette.foreground }}",
+                "border_width": 1,
+                "border_radius": 0,
+                "padding-block-start": 8,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "static": true,
+                  "settings": {
+                    "input_style": "default",
+                    "input_background_color": "{{ settings.color_palette.background }}",
+                    "input_text_color": "{{ settings.color_palette.foreground }}",
+                    "input_border_color": "{{ settings.color_palette.foreground }}",
+                    "border_width": 1,
+                    "border_radius": 0
+                  },
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "static": true,
+                  "settings": {
+                    "style_class": "button",
+                    "custom_button_background": "{{ settings.color_palette.foreground }}",
+                    "custom_button_text": "{{ settings.color_palette.background }}",
+                    "custom_button_border": "{{ settings.color_palette.background }}"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              }
+            },
+            "payment_icons": {
+              "type": "payment-icons",
+              "settings": {
+                "horizontal_alignment": "flex-start",
+                "gap": 12,
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "testimonio": {
+              "type": "text",
+              "settings": {
+                "text": "<p>\"Lo tengo pegado a la nevera y lo uso casi a diario. Se acabó pelear con las pinzas del pan de molde.\"</p><p><strong>Marta G.</strong> · ★★★★★</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "0.9rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": true,
+                "background_color": "#F2F0EA",
+                "corner_radius": 16,
+                "padding-block-start": 16,
+                "padding-block-end": 16,
+                "padding-inline-start": 18,
+                "padding-inline-end": 18
+              },
+              "blocks": {}
+            },
+            "acordeon_confianza": {
+              "type": "accordion",
+              "settings": {
+                "icon": "plus",
+                "dividers": true,
+                "type_preset": "h6"
+              },
+              "blocks": {
+                "row1": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Envío y entrega"
+                  },
+                  "blocks": {
+                    "t1": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Envío en 7-14 días laborables, con seguimiento incluido en todos los pedidos.</p>",
+                        "width": "100%"
+                      }
+                    }
+                  },
+                  "block_order": ["t1"]
+                },
+                "row2": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Garantía"
+                  },
+                  "blocks": {
+                    "t1": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Tienes 30 días desde la recepción para devolverlo si no te convence: te devolvemos el dinero.</p>",
+                        "width": "100%"
+                      }
+                    }
+                  },
+                  "block_order": ["t1"]
+                }
+              },
+              "block_order": ["row1", "row2"]
+            }
+          },
+          "block_order": ["grupo_titulo", "valoracion", "banner", "gancho", "vinetas", "separador", "pack_label", "selector", "precio", "botones", "payment_icons", "testimonio", "acordeon_confianza"]
+        }
+      },
+      "settings": {
+        "content_width": "content-center-aligned",
+        "desktop_media_position": "left",
+        "equal_columns": false,
+        "limit_details_width": false,
+        "gap": 48,
+        "enable_sticky_add_to_cart": true,
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "sellia_resenas": {
+      "type": "sellia-testimonios",
+      "blocks": {
+        "t1": {
+          "type": "testimonio",
+          "settings": {
+            "foto": "shopify://shop_images/S18cbd0d0926b47afb337b665bce14f70T.webp",
+            "estrellas": 5,
+            "texto": "Lo tengo pegado a la nevera y lo uso casi a diario. Se acabó pelear con las pinzas del pan de molde.",
+            "nombre": "Marta G.",
+            "detalle": "Compradora verificada"
+          }
+        },
+        "t2": {
+          "type": "testimonio",
+          "settings": {
+            "foto": "shopify://shop_images/S18cbd0d0926b47afb337b665bce14f70T.webp",
+            "estrellas": 5,
+            "texto": "Sella al momento, sin esperar a que se caliente nada. Y el corte oculto para abrir la bolsa es un acierto que no esperaba.",
+            "nombre": "Javier R.",
+            "detalle": "Comprador verificado"
+          }
+        },
+        "t3": {
+          "type": "testimonio",
+          "settings": {
+            "foto": "shopify://shop_images/Sa1ff9f82b3034d1390599b837bcaff4ai.webp",
+            "estrellas": 4,
+            "texto": "Muy compacto, cabe en cualquier cajón. Con los 6 niveles de calor lo uso igual para bolsas finas que para las más gruesas del congelador.",
+            "nombre": "Lucía P.",
+            "detalle": "Compradora verificada"
+          }
+        }
+      },
+      "block_order": ["t1", "t2", "t3"],
+      "settings": {
+        "eyebrow": "Opiniones",
+        "titular": "Lo que dicen quienes ya lo usan"
+      }
+    },
+    "sellia_faq": {
+      "type": "aquora-faq",
+      "blocks": {
+        "q1": { "type": "pregunta", "settings": { "pregunta": "¿Vale para cualquier tipo de bolsa?", "respuesta": "Sí. Tiene 6 niveles de calor para ajustar el sellado desde bolsas finas hasta las más gruesas del congelador." } },
+        "q2": { "type": "pregunta", "settings": { "pregunta": "¿Hay que precalentarlo?", "respuesta": "No. Presionas y sella al instante, en 2-3 segundos." } },
+        "q3": { "type": "pregunta", "settings": { "pregunta": "¿Dónde lo guardo?", "respuesta": "Tiene una base magnética, así que se queda pegado a la nevera o a cualquier superficie metálica. Y es tan compacto (12 x 5 x 4 cm) que cabe en cualquier cajón." } },
+        "q4": { "type": "pregunta", "settings": { "pregunta": "¿Sirve también para abrir la bolsa?", "respuesta": "Sí, tiene un cortador oculto integrado para abrir el paquete cuando lo necesites." } },
+        "q5": { "type": "pregunta", "settings": { "pregunta": "¿Se apaga solo?", "respuesta": "Sí, tiene apagado automático." } },
+        "q6": { "type": "pregunta", "settings": { "pregunta": "¿Cómo sé qué nivel usar?", "respuesta": "La pantalla LED muestra el nivel elegido: empieza bajo para bolsas finas y sube para las más gruesas." } },
+        "q7": { "type": "pregunta", "settings": { "pregunta": "¿Cuánto tarda el envío?", "respuesta": "Entre 7 y 14 días laborables, con seguimiento incluido." } },
+        "q8": { "type": "pregunta", "settings": { "pregunta": "¿Y si no me convence?", "respuesta": "Tienes 30 días para devolverlo." } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8"],
+      "settings": {
+        "color_fondo": "#FFFFFF",
+        "color_texto": "#221D17"
+      }
+    },
+    "sellia_cta_final": {
+      "type": "sellia-cta-final",
+      "settings": {
+        "titular": "Que tu cocina no vuelva a pelear con gomas y pinzas",
+        "texto": "Consigue tu Sellia antes de la próxima compra y sella cualquier bolsa en segundos.",
+        "color_fondo": "#F7F1E6",
+        "color_titulo": "#221D17",
+        "padding_top": 80,
+        "padding_bottom": 64
+      }
+    },
+    "sellia_confianza_extendida": {
+      "type": "aquora-confianza",
+      "blocks": {
+        "g1": { "type": "garantia", "settings": { "titulo": "Pago 100% seguro", "texto": "Tarjeta, Bizum o PayPal. Tus datos nunca pasan por nuestras manos." } },
+        "g2": { "type": "garantia", "settings": { "titulo": "Envío en 7-14 días", "texto": "Pedido con seguimiento incluido, para que sepas en todo momento dónde está." } },
+        "g3": { "type": "garantia", "settings": { "titulo": "Garantía de 30 días", "texto": "Si no te convence, te devolvemos el dinero." } },
+        "g4": { "type": "garantia", "settings": { "titulo": "Trato cercano", "texto": "¿Dudas antes de comprar? Escríbenos y te contesta una persona, no un robot." } }
+      },
+      "block_order": ["g1", "g2", "g3", "g4"],
+      "settings": {
+        "titular": "Compra tranquilo",
+        "subtitulo": "Empezamos hace poco, así que cuidamos cada pedido al detalle.",
+        "pie": "¿Alguna duda antes de comprar? Escríbenos y te respondemos en menos de 24 horas.",
+        "color_fondo": "#F2F0EA",
+        "color_texto": "#221D17"
+      }
+    }
+  },
+  "order": ["main", "sellia_resenas", "sellia_faq", "sellia_cta_final", "sellia_confianza_extendida"]
+}

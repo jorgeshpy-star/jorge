@@ -1,0 +1,106 @@
+{%- assign f = section.settings.fuente -%}
+
+<style>
+  {{ f | font_face: font_display: 'swap' }}
+
+  .aq-conf-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    color: {{ section.settings.color_texto }};
+    padding: {{ section.settings.espacio_arriba }}px 20px {{ section.settings.espacio_abajo }}px;
+  }
+  .aq-conf-{{ section.id }} .aq-wrap { max-width: 1000px; margin: 0 auto; }
+  .aq-conf-{{ section.id }} .aq-cab { text-align: center; max-width: 640px; margin: 0 auto 46px; }
+  .aq-conf-{{ section.id }} h2 {
+    font-family: {{ f.family }}, {{ f.fallback_families }};
+    font-weight: {{ f.weight }};
+    font-style: {{ f.style }};
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    margin: 0 0 16px;
+  }
+  .aq-conf-{{ section.id }} .aq-sub { font-size: 17px; line-height: 1.6; opacity: 0.75; margin: 0; }
+  .aq-conf-{{ section.id }} .aq-fila {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+  }
+  .aq-conf-{{ section.id }} .aq-item {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px 26px;
+    text-align: center;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.05);
+  }
+  .aq-conf-{{ section.id }} .aq-item strong { display: block; font-size: 17.5px; margin-bottom: 9px; font-weight: 600; }
+  .aq-conf-{{ section.id }} .aq-item p { margin: 0; font-size: 15px; line-height: 1.6; opacity: 0.72; }
+  .aq-conf-{{ section.id }} .aq-pie {
+    text-align: center;
+    margin: 40px auto 0;
+    max-width: 560px;
+    font-size: 15px;
+    line-height: 1.6;
+    opacity: 0.7;
+  }
+</style>
+
+<div class="aq-conf-{{ section.id }}">
+  <div class="aq-wrap">
+    <div class="aq-cab">
+      <h2>{{ section.settings.titular }}</h2>
+      {%- if section.settings.subtitulo != blank -%}
+        <p class="aq-sub">{{ section.settings.subtitulo }}</p>
+      {%- endif -%}
+    </div>
+    <div class="aq-fila">
+      {%- for block in section.blocks -%}
+        <div class="aq-item" {{ block.shopify_attributes }}>
+          <strong>{{ block.settings.titulo }}</strong>
+          <p>{{ block.settings.texto }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+    {%- if section.settings.pie != blank -%}
+      <p class="aq-pie">{{ section.settings.pie }}</p>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Por qué fiarte",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "titular", "label": "Titular", "default": "Compra tranquilo" },
+    { "type": "textarea", "id": "subtitulo", "label": "Texto debajo", "default": "Somos nuevos y lo sabemos. Por eso te lo ponemos fácil." },
+    { "type": "font_picker", "id": "fuente", "label": "Tipografía del titular", "default": "playfair_display_n4" },
+    { "type": "textarea", "id": "pie", "label": "Texto final", "default": "¿Alguna duda antes de comprar? Escríbenos y te respondemos en menos de 24 horas." },
+    { "type": "color", "id": "color_fondo", "label": "Color de fondo", "default": "#F2F0EA" },
+    { "type": "color", "id": "color_texto", "label": "Color del texto", "default": "#26241F" },
+    { "type": "range", "id": "espacio_arriba", "label": "Espacio arriba", "min": 0, "max": 140, "step": 4, "unit": "px", "default": 80 },
+    { "type": "range", "id": "espacio_abajo", "label": "Espacio abajo", "min": 0, "max": 140, "step": 4, "unit": "px", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "garantia",
+      "name": "Garantía",
+      "limit": 4,
+      "settings": [
+        { "type": "text", "id": "titulo", "label": "Título", "default": "30 días de prueba" },
+        { "type": "textarea", "id": "texto", "label": "Texto", "default": "Si no notas la diferencia, te devolvemos el dinero." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Por qué fiarte",
+      "blocks": [
+        { "type": "garantia" },
+        { "type": "garantia" },
+        { "type": "garantia" },
+        { "type": "garantia" }
+      ]
+    }
+  ]
+}
+{% endschema %}

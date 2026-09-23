@@ -1,0 +1,285 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "sellia_hero": {
+      "type": "sellia-hero",
+      "settings": {
+        "eyebrow": "Cocina sin líos",
+        "headline": "Se acabó pelear con gomas y pinzas en tu cocina",
+        "subheadline": "Sellia sella cualquier bolsa en 2-3 segundos, sin precalentar y sin que se te humedezca ni una miga más.",
+        "imagen": "shopify://shop_images/S18cbd0d0926b47afb337b665bce14f70T.webp",
+        "cta_texto": "",
+        "cta_enlace": "/products/sellia-sellador-de-bolsas-portatil-con-pantalla-digital",
+        "mostrar_valoracion": true,
+        "valoracion_texto": "Calidad premium",
+        "color_fondo": "#F7F1E6",
+        "color_texto": "#221D17",
+        "color_acento": "#E8652B"
+      }
+    },
+    "sellia_descuento": {
+      "type": "sellia-descuento",
+      "settings": {
+        "porcentaje": "-10%",
+        "titulo": "Consigue un 10% en tu primer Sellia",
+        "texto": "Solo por entrar hoy. Aplica el código al elegir tu pack en el siguiente paso.",
+        "codigo": "SELLIA10",
+        "cta_texto": "Quiero mi 10%",
+        "cta_enlace": "/products/sellia-sellador-de-bolsas-portatil-con-pantalla-digital"
+      }
+    },
+    "sellia_packs": {
+      "type": "sellia-packs",
+      "blocks": {
+        "p1": {
+          "type": "pack",
+          "settings": {
+            "nombre": "1 unidad",
+            "descripcion": "Para probarlo tú primero.",
+            "precio": "24,95 €",
+            "precio_antes": "39,95 €",
+            "ahorro": "Ahorras 15 €",
+            "texto_boton": "Lo quiero",
+            "enlace": "/products/sellia-sellador-de-bolsas-portatil-con-pantalla-digital",
+            "destacado": false
+          }
+        },
+        "p2": {
+          "type": "pack",
+          "settings": {
+            "nombre": "Pack 2 unidades",
+            "descripcion": "Uno para ti y otro para regalar o tener de repuesto.",
+            "precio": "44,91 €",
+            "precio_antes": "79,90 €",
+            "ahorro": "Ahorras 34,99 €",
+            "texto_boton": "Lo quiero",
+            "enlace": "/products/sellia-pack-2-unidades",
+            "destacado": false
+          }
+        },
+        "p3": {
+          "type": "pack",
+          "settings": {
+            "nombre": "Pack 3 unidades",
+            "descripcion": "Sale a 19,96 € la unidad — el que más se lleva la gente.",
+            "precio": "59,88 €",
+            "precio_antes": "119,85 €",
+            "ahorro": "Ahorras 59,97 €",
+            "texto_boton": "Elegir el pack 3",
+            "enlace": "/products/sellia-pack-3-unidades",
+            "destacado": true,
+            "cinta": "Más vendido"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "settings": {
+        "eyebrow": "Ahorra por cantidad",
+        "titular": "Elige tu Sellia",
+        "subtitulo": "Cuantos más selladores, más barato sale cada uno. El pack de 3 es el que más se lleva la gente."
+      }
+    },
+    "sellia_urgencia": {
+      "type": "sellia-urgencia",
+      "settings": {
+        "texto": "Quedan pocas unidades del pack de 3 en este lote — la próxima reposición tarda unas semanas."
+      }
+    },
+    "sellia_vida": {
+      "type": "sellia-estilo-vida",
+      "blocks": {
+        "v1": {
+          "type": "imagen",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_23_ago_2026_06_15_12.png",
+            "texto": "Sella en segundos, justo donde cocinas"
+          }
+        },
+        "v2": {
+          "type": "imagen",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_23_ago_2026_06_15_22.png",
+            "texto": "Se queda pegado a la nevera con su base magnética"
+          }
+        },
+        "v3": {
+          "type": "imagen",
+          "settings": {
+            "imagen": "shopify://shop_images/Sa1ff9f82b3034d1390599b837bcaff4ai.webp",
+            "texto": "Tan compacto que cabe en cualquier cajón",
+            "aclarar_a_blanco": true
+          }
+        }
+      },
+      "block_order": [
+        "v1",
+        "v2",
+        "v3"
+      ],
+      "settings": {
+        "eyebrow": "En tu cocina",
+        "titular": "Una despensa ordenada, sin esfuerzo",
+        "subtitulo": "Nada de bolsas a medio cerrar ni pinzas perdidas: Sellia siempre está a mano cuando lo necesitas."
+      }
+    },
+    "sellia_testimonios": {
+      "type": "sellia-testimonios",
+      "blocks": {
+        "t1": {
+          "type": "testimonio",
+          "settings": {
+            "foto": "shopify://shop_images/S18cbd0d0926b47afb337b665bce14f70T.webp",
+            "estrellas": 5,
+            "texto": "Lo tengo pegado a la nevera y lo uso casi a diario. Se acabó pelear con las pinzas del pan de molde.",
+            "nombre": "Marta G.",
+            "detalle": "Compradora verificada"
+          }
+        },
+        "t2": {
+          "type": "testimonio",
+          "settings": {
+            "foto": "shopify://shop_images/S18cbd0d0926b47afb337b665bce14f70T.webp",
+            "estrellas": 5,
+            "texto": "Sella al momento, sin esperar a que se caliente nada. Y el corte oculto para abrir la bolsa es un acierto que no esperaba.",
+            "nombre": "Javier R.",
+            "detalle": "Comprador verificado"
+          }
+        },
+        "t3": {
+          "type": "testimonio",
+          "settings": {
+            "foto": "shopify://shop_images/Sa1ff9f82b3034d1390599b837bcaff4ai.webp",
+            "estrellas": 4,
+            "texto": "Muy compacto, cabe en cualquier cajón. Con los 6 niveles de calor lo uso igual para bolsas finas que para las más gruesas del congelador.",
+            "nombre": "Lucía P.",
+            "detalle": "Compradora verificada"
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3"
+      ],
+      "settings": {
+        "eyebrow": "Opiniones",
+        "titular": "Lo que dicen quienes ya lo usan"
+      }
+    },
+    "sellia_diferencia": {
+      "type": "sellia-diferencia",
+      "blocks": {
+        "d1": {
+          "type": "punto",
+          "settings": {
+            "aspecto": "Sellado",
+            "sin_sellia": "Nudos y pinzas que se sueltan",
+            "con_sellia": "Sellado hermético en 2-3 segundos"
+          }
+        },
+        "d2": {
+          "type": "punto",
+          "settings": {
+            "aspecto": "Preparación",
+            "sin_sellia": "Esperar a que un aparato se precaliente",
+            "con_sellia": "Listo para sellar al instante, sin esperas"
+          }
+        },
+        "d3": {
+          "type": "punto",
+          "settings": {
+            "aspecto": "Ajuste de calor",
+            "sin_sellia": "Un único nivel para todo tipo de bolsa",
+            "con_sellia": "6 niveles, de bolsas finas a gruesas"
+          }
+        },
+        "d4": {
+          "type": "punto",
+          "settings": {
+            "aspecto": "Dónde vive",
+            "sin_sellia": "Ocupa un cajón entero o se pierde en un armario",
+            "con_sellia": "Base magnética: siempre a mano en la nevera"
+          }
+        }
+      },
+      "block_order": [
+        "d1",
+        "d2",
+        "d3",
+        "d4"
+      ],
+      "settings": {
+        "eyebrow": "La comparación",
+        "titular": "Por qué Sellia es diferente",
+        "columna_sin": "Gomas y pinzas",
+        "columna_con": "Con Sellia"
+      }
+    },
+    "sellia_ritual": {
+      "type": "sellia-ritual",
+      "blocks": {
+        "r1": {
+          "type": "paso",
+          "settings": {
+            "titulo": "Coloca la bolsa",
+            "texto": "Pon el extremo abierto entre las pinzas de Sellia."
+          }
+        },
+        "r2": {
+          "type": "paso",
+          "settings": {
+            "titulo": "Elige el nivel",
+            "texto": "6 niveles de calor: más bajo para bolsas finas, más alto para las gruesas."
+          }
+        },
+        "r3": {
+          "type": "paso",
+          "settings": {
+            "titulo": "Presiona y sella",
+            "texto": "Sin esperas ni precalentado: en 2-3 segundos queda hermético."
+          }
+        },
+        "r4": {
+          "type": "paso",
+          "settings": {
+            "titulo": "Corta si hace falta",
+            "texto": "Usa el corte oculto integrado para abrirla de nuevo sin tijeras."
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "settings": {
+        "eyebrow": "En 4 pasos",
+        "titular": "Tu ritual de sellado",
+        "subtitulo": "Sin precalentar, sin líos. Presiona y listo."
+      }
+    }
+  },
+  "order": [
+    "sellia_hero",
+    "sellia_descuento",
+    "sellia_packs",
+    "sellia_urgencia",
+    "sellia_vida",
+    "sellia_testimonios",
+    "sellia_diferencia",
+    "sellia_ritual"
+  ]
+}

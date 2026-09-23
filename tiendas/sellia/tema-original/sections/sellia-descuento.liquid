@@ -1,0 +1,56 @@
+{{ 'sellia-styles.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background: {{ section.settings.color_fondo_seccion }};
+  }
+  #shopify-section-{{ section.id }} .sellia-descuento__box {
+    background: {{ section.settings.color_fondo }};
+    color: {{ section.settings.color_texto }};
+  }
+  #shopify-section-{{ section.id }} .sellia-descuento__pill { color: {{ section.settings.color_acento }}; }
+{% endstyle %}
+
+<section class="sellia-section sellia-descuento">
+  <div class="sellia-container">
+    <div class="sellia-descuento__box sellia-reveal">
+      <div class="sellia-descuento__pill">{{ section.settings.porcentaje }}</div>
+      <div class="sellia-descuento__text">
+        <h3>{{ section.settings.titulo }}</h3>
+        <p>{{ section.settings.texto }}</p>
+        {%- if section.settings.codigo != blank -%}
+          <span class="sellia-descuento__code">{{ section.settings.codigo }}</span>
+        {%- endif -%}
+      </div>
+      <a href="{{ section.settings.cta_enlace | default: '#' }}" class="sellia-btn sellia-btn--primary">
+        {{ section.settings.cta_texto }}
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sellia – Descuento",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "porcentaje", "label": "Texto dentro del círculo", "default": "-10%" },
+    { "type": "text", "id": "titulo", "label": "Título", "default": "Consigue un 10% en tu primer Sellia" },
+    { "type": "textarea", "id": "texto", "label": "Texto", "default": "Solo por entrar hoy. Aplica el código al elegir tu pack en el siguiente paso." },
+    { "type": "text", "id": "codigo", "label": "Código (opcional, déjalo vacío para ocultarlo)", "default": "SELLIA10" },
+    { "type": "text", "id": "cta_texto", "label": "Texto del botón", "default": "Quiero mi 10%" },
+    { "type": "url", "id": "cta_enlace", "label": "Enlace del botón" },
+    { "type": "header", "content": "Colores" },
+    { "type": "color", "id": "color_fondo_seccion", "label": "Fondo de la sección", "default": "#FFFFFF" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo del bloque", "default": "#1E1A16" },
+    { "type": "color", "id": "color_texto", "label": "Texto del bloque", "default": "#F5EFE6" },
+    { "type": "color", "id": "color_acento", "label": "Acento", "default": "#E8652B" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 32 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 32 }
+  ],
+  "presets": [ { "name": "Sellia – Descuento" } ]
+}
+{% endschema %}

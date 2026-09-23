@@ -1,0 +1,90 @@
+{{ 'sellia-styles.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background: {{ section.settings.color_fondo }};
+    color: {{ section.settings.color_texto }};
+  }
+  #shopify-section-{{ section.id }} .sellia-eyebrow { color: {{ section.settings.color_acento }}; }
+  #shopify-section-{{ section.id }} .sellia-ritual__num { color: {{ section.settings.color_acento }}; border-color: {{ section.settings.color_acento }}; }
+{% endstyle %}
+
+<section class="sellia-section sellia-ritual">
+  <div class="sellia-container">
+    <div class="sellia-container--narrow sellia-center sellia-reveal">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="sellia-eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2 class="sellia-h2">{{ section.settings.titular }}</h2>
+      {%- if section.settings.subtitulo != blank -%}
+        <p class="sellia-sub">{{ section.settings.subtitulo }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="sellia-ritual__grid">
+      {%- for block in section.blocks -%}
+        {%- assign i = forloop.index0 -%}
+        <div class="sellia-ritual__step sellia-reveal sellia-reveal--stagger" style="--sellia-i: {{ i }};" {{ block.shopify_attributes }}>
+          {%- if block.settings.icono != blank -%}
+            <div class="sellia-ritual__icon">
+              <img
+                class="sellia-img"
+                src="{{ block.settings.icono | image_url: width: 200 }}"
+                alt=""
+                loading="lazy"
+                width="56" height="56"
+              >
+            </div>
+          {%- else -%}
+            <div class="sellia-ritual__num">{{ forloop.index }}</div>
+          {%- endif -%}
+          <p class="sellia-ritual__title">{{ block.settings.titulo }}</p>
+          <p class="sellia-ritual__text">{{ block.settings.texto }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sellia – Cómo se usa",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Texto pequeño superior", "default": "En 4 pasos" },
+    { "type": "text", "id": "titular", "label": "Titular", "default": "Tu ritual de sellado" },
+    { "type": "textarea", "id": "subtitulo", "label": "Subtítulo", "default": "Sin precalentar, sin líos. Presiona y listo." },
+    { "type": "header", "content": "Colores" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo", "default": "#FFFFFF" },
+    { "type": "color", "id": "color_texto", "label": "Texto", "default": "#221D17" },
+    { "type": "color", "id": "color_acento", "label": "Acento", "default": "#E8652B" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 88 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 88 }
+  ],
+  "blocks": [
+    {
+      "type": "paso",
+      "name": "Paso",
+      "settings": [
+        { "type": "image_picker", "id": "icono", "label": "Icono o mini-imagen (opcional)" },
+        { "type": "text", "id": "titulo", "label": "Título", "default": "Coloca la bolsa" },
+        { "type": "textarea", "id": "texto", "label": "Texto", "default": "Pon el extremo abierto entre las pinzas de Sellia." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sellia – Cómo se usa",
+      "blocks": [
+        { "type": "paso", "settings": { "titulo": "Coloca la bolsa", "texto": "Pon el extremo abierto entre las pinzas de Sellia." } },
+        { "type": "paso", "settings": { "titulo": "Elige el nivel", "texto": "6 niveles de calor: más bajo para bolsas finas, más alto para las gruesas." } },
+        { "type": "paso", "settings": { "titulo": "Presiona y sella", "texto": "Sin esperas ni precalentado: en 2-3 segundos queda hermético." } },
+        { "type": "paso", "settings": { "titulo": "Corta si hace falta", "texto": "Usa el corte oculto integrado para abrirla de nuevo sin tijeras." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
