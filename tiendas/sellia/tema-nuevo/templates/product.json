@@ -127,7 +127,7 @@
             "valoracion": {
               "type": "text",
               "settings": {
-                "text": "<p>★★★★★&nbsp;&nbsp;Calidad premium</p>",
+                "text": "<p>★★★★★&nbsp;&nbsp;4,7/5 · Opiniones de nuestros primeros clientes</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -461,35 +461,35 @@
       }
     },
     "sellia_resenas": {
-      "type": "sellia-testimonios",
+      "type": "sellia-resenas",
       "blocks": {
         "t1": {
-          "type": "testimonio",
+          "type": "resena",
           "settings": {
-            "foto": "shopify://shop_images/S18cbd0d0926b47afb337b665bce14f70T.webp",
             "estrellas": 5,
             "texto": "Lo tengo pegado a la nevera y lo uso casi a diario. Se acabó pelear con las pinzas del pan de molde.",
             "nombre": "Marta G.",
+            "iniciales": "MG",
             "detalle": "Compradora verificada"
           }
         },
         "t2": {
-          "type": "testimonio",
+          "type": "resena",
           "settings": {
-            "foto": "shopify://shop_images/S18cbd0d0926b47afb337b665bce14f70T.webp",
             "estrellas": 5,
             "texto": "Sella al momento, sin esperar a que se caliente nada. Y el corte oculto para abrir la bolsa es un acierto que no esperaba.",
             "nombre": "Javier R.",
+            "iniciales": "JR",
             "detalle": "Comprador verificado"
           }
         },
         "t3": {
-          "type": "testimonio",
+          "type": "resena",
           "settings": {
-            "foto": "shopify://shop_images/Sa1ff9f82b3034d1390599b837bcaff4ai.webp",
             "estrellas": 4,
             "texto": "Muy compacto, cabe en cualquier cajón. Con los 6 niveles de calor lo uso igual para bolsas finas que para las más gruesas del congelador.",
             "nombre": "Lucía P.",
+            "iniciales": "LP",
             "detalle": "Compradora verificada"
           }
         }
@@ -497,7 +497,11 @@
       "block_order": ["t1", "t2", "t3"],
       "settings": {
         "eyebrow": "Opiniones",
-        "titular": "Lo que dicen quienes ya lo usan"
+        "titular": "Lo que dicen quienes ya lo usan",
+        "mostrar_resumen": true,
+        "valoracion_media": 4.7,
+        "pie_valoracion": "Opiniones de nuestros primeros clientes",
+        "color_fondo": "#FFFFFF"
       }
     },
     "sellia_faq": {
@@ -530,20 +534,24 @@
       }
     },
     "sellia_confianza_extendida": {
-      "type": "aquora-confianza",
+      "type": "sellia-confianza-extendida",
       "blocks": {
-        "g1": { "type": "garantia", "settings": { "titulo": "Pago 100% seguro", "texto": "Tarjeta, Bizum o PayPal. Tus datos nunca pasan por nuestras manos." } },
-        "g2": { "type": "garantia", "settings": { "titulo": "Envío en 7-14 días", "texto": "Pedido con seguimiento incluido, para que sepas en todo momento dónde está." } },
-        "g3": { "type": "garantia", "settings": { "titulo": "Garantía de 30 días", "texto": "Si no te convence, te devolvemos el dinero." } },
-        "g4": { "type": "garantia", "settings": { "titulo": "Trato cercano", "texto": "¿Dudas antes de comprar? Escríbenos y te contesta una persona, no un robot." } }
+        "g1": { "type": "garantia", "settings": { "icono": "shield", "titulo": "Pago 100% seguro", "texto": "Tarjeta, Bizum o PayPal. Tus datos nunca pasan por nuestras manos." } },
+        "g2": { "type": "garantia", "settings": { "icono": "truck", "titulo": "Envío en 7-14 días", "texto": "Pedido con seguimiento incluido, para que sepas en todo momento dónde está." } },
+        "g3": { "type": "garantia", "settings": { "icono": "return", "titulo": "Garantía de 30 días", "texto": "Si no te convence, te devolvemos el dinero." } },
+        "g4": { "type": "garantia", "settings": { "icono": "chat", "titulo": "Trato cercano", "texto": "¿Dudas antes de comprar? Escríbenos y te contesta una persona, no un robot." } }
       },
       "block_order": ["g1", "g2", "g3", "g4"],
       "settings": {
+        "eyebrow": "Compra tranquilo",
         "titular": "Compra tranquilo",
         "subtitulo": "Empezamos hace poco, así que cuidamos cada pedido al detalle.",
         "pie": "¿Alguna duda antes de comprar? Escríbenos y te respondemos en menos de 24 horas.",
-        "color_fondo": "#F2F0EA",
-        "color_texto": "#221D17"
+        "mostrar_insignia": true,
+        "insignia_numero": "30",
+        "insignia_unidad": "DÍAS",
+        "insignia_texto": "Garantía de confianza",
+        "color_fondo": "#F2F0EA"
       }
     }
   },

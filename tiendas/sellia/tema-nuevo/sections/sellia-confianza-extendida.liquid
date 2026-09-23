@@ -1,0 +1,140 @@
+<style>
+  .sc-{{ section.id }} {
+    background: {{ section.settings.color_fondo }};
+    padding: {{ section.settings.padding_top }}px 20px {{ section.settings.padding_bottom }}px;
+  }
+  .sc-{{ section.id }} .sc-wrap { max-width: 1000px; margin: 0 auto; text-align: center; }
+  .sc-{{ section.id }} .sc-badge { display: inline-flex; flex-direction: column; align-items: center; margin-bottom: 28px; }
+  .sc-{{ section.id }} .sc-circle {
+    width: 84px; height: 84px; border-radius: 50%;
+    border: 2px solid {{ section.settings.color_acento }};
+    color: {{ section.settings.color_acento }};
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    line-height: 1; margin-bottom: 10px;
+  }
+  .sc-{{ section.id }} .sc-num { font-size: 26px; font-weight: 700; }
+  .sc-{{ section.id }} .sc-unit { font-size: 10px; letter-spacing: 0.08em; font-weight: 600; margin-top: 2px; }
+  .sc-{{ section.id }} .sc-badge-label { font-size: 13.5px; font-weight: 600; opacity: 0.8; }
+  .sc-{{ section.id }} .sc-eyebrow { display: block; color: {{ section.settings.color_acento }}; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+  .sc-{{ section.id }} h2 { font-size: clamp(26px, 3.4vw, 38px); line-height: 1.15; margin: 0 0 12px; }
+  .sc-{{ section.id }} .sc-sub { font-size: 15.5px; opacity: 0.7; max-width: 560px; margin: 0 auto 44px; }
+  .sc-{{ section.id }} .sc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 28px;
+    text-align: left;
+  }
+  .sc-{{ section.id }} .sc-item { display: flex; gap: 14px; align-items: flex-start; }
+  .sc-{{ section.id }} .sc-icon {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: {{ section.settings.color_acento }}1a;
+    color: {{ section.settings.color_acento }};
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .sc-{{ section.id }} .sc-icon svg { width: 20px; height: 20px; }
+  .sc-{{ section.id }} .sc-item h3 { font-size: 15.5px; font-weight: 600; margin: 0 0 4px; }
+  .sc-{{ section.id }} .sc-item p { font-size: 14px; line-height: 1.55; opacity: 0.7; margin: 0; }
+  .sc-{{ section.id }} .sc-pie { margin: 40px auto 0; max-width: 520px; font-size: 14.5px; opacity: 0.65; }
+</style>
+
+<section class="sc-{{ section.id }}">
+  <div class="sc-wrap">
+    {%- if section.settings.mostrar_insignia -%}
+      <div class="sc-badge">
+        <div class="sc-circle">
+          <span class="sc-num">{{ section.settings.insignia_numero }}</span>
+          <span class="sc-unit">{{ section.settings.insignia_unidad }}</span>
+        </div>
+        <span class="sc-badge-label">{{ section.settings.insignia_texto }}</span>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.eyebrow != blank -%}<span class="sc-eyebrow">{{ section.settings.eyebrow }}</span>{%- endif -%}
+    {%- if section.settings.titular != blank -%}<h2>{{ section.settings.titular }}</h2>{%- endif -%}
+    {%- if section.settings.subtitulo != blank -%}<p class="sc-sub">{{ section.settings.subtitulo }}</p>{%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="sc-grid">
+        {%- for block in section.blocks -%}
+          <div class="sc-item" {{ block.shopify_attributes }}>
+            <div class="sc-icon">
+              {%- case block.settings.icono -%}
+                {%- when 'shield' -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+                {%- when 'truck' -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h11v9H2z"/><path d="M13 10h4l3 3v3h-7z"/><circle cx="6" cy="18" r="1.6"/><circle cx="16.5" cy="18" r="1.6"/></svg>
+                {%- when 'return' -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9a8 8 0 1 1 1.5 6.5"/><path d="M4 4v5h5"/></svg>
+                {%- when 'chat' -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 20l1.2-4.3A8 8 0 1 1 21 12z"/></svg>
+                {%- else -%}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>
+              {%- endcase -%}
+            </div>
+            <div>
+              <h3>{{ block.settings.titulo }}</h3>
+              <p>{{ block.settings.texto }}</p>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.pie != blank -%}
+      <p class="sc-pie">{{ section.settings.pie }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sellia – Confianza",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Texto pequeño superior", "default": "Compra tranquilo" },
+    { "type": "text", "id": "titular", "label": "Título", "default": "Compra tranquilo" },
+    { "type": "textarea", "id": "subtitulo", "label": "Subtítulo", "default": "Empezamos hace poco, así que cuidamos cada pedido al detalle." },
+    { "type": "textarea", "id": "pie", "label": "Texto final (opcional)", "default": "¿Alguna duda antes de comprar? Escríbenos y te respondemos en menos de 24 horas." },
+    { "type": "header", "content": "Insignia de garantía" },
+    { "type": "checkbox", "id": "mostrar_insignia", "label": "Mostrar insignia circular", "default": true },
+    { "type": "text", "id": "insignia_numero", "label": "Número", "default": "30" },
+    { "type": "text", "id": "insignia_unidad", "label": "Unidad", "default": "DÍAS" },
+    { "type": "text", "id": "insignia_texto", "label": "Texto debajo", "default": "Garantía de confianza" },
+    { "type": "header", "content": "Colores" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo de la sección", "default": "#F2F0EA" },
+    { "type": "color", "id": "color_acento", "label": "Acento", "default": "#E8652B" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior (px)", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "garantia",
+      "name": "Garantía",
+      "limit": 4,
+      "settings": [
+        { "type": "select", "id": "icono", "label": "Icono",
+          "options": [
+            {"value":"shield","label":"Escudo"},
+            {"value":"truck","label":"Envío"},
+            {"value":"return","label":"Devolución"},
+            {"value":"chat","label":"Conversación"}
+          ], "default": "shield" },
+        { "type": "text", "id": "titulo", "label": "Título", "default": "Pago 100% seguro" },
+        { "type": "textarea", "id": "texto", "label": "Texto", "default": "Tarjeta, Bizum o PayPal. Tus datos nunca pasan por nuestras manos." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sellia – Confianza",
+      "blocks": [
+        { "type": "garantia", "settings": { "icono": "shield", "titulo": "Pago 100% seguro", "texto": "Tarjeta, Bizum o PayPal. Tus datos nunca pasan por nuestras manos." } },
+        { "type": "garantia", "settings": { "icono": "truck", "titulo": "Envío en 7-14 días", "texto": "Pedido con seguimiento incluido, para que sepas en todo momento dónde está." } },
+        { "type": "garantia", "settings": { "icono": "return", "titulo": "Garantía de 30 días", "texto": "Si no te convence, te devolvemos el dinero." } },
+        { "type": "garantia", "settings": { "icono": "chat", "titulo": "Trato cercano", "texto": "¿Dudas antes de comprar? Escríbenos y te contesta una persona, no un robot." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
