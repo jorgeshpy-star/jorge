@@ -460,6 +460,28 @@
         "padding-block-end": 0
       }
     },
+    "sellia_problemas": {
+      "type": "sellia-diferencia",
+      "blocks": {
+        "d1": { "type": "punto", "settings": { "aspecto": "Cierre de la bolsa", "sin_sellia": "Gomas y pinzas que se sueltan y dejan entrar aire", "con_sellia": "Cierre hermético en 2-3 segundos" } },
+        "d2": { "type": "punto", "settings": { "aspecto": "Tiempo de preparación", "sin_sellia": "Aparatos que hay que precalentar y esperar", "con_sellia": "Sella al instante, sin espera" } },
+        "d3": { "type": "punto", "settings": { "aspecto": "Tipos de bolsa", "sin_sellia": "Un único nivel que rompe las finas o no cierra bien las gruesas", "con_sellia": "6 niveles de calor ajustables" } },
+        "d4": { "type": "punto", "settings": { "aspecto": "Control del sellado", "sin_sellia": "No saber en qué nivel estás sellando", "con_sellia": "Pantalla digital que lo muestra siempre" } },
+        "d5": { "type": "punto", "settings": { "aspecto": "Abrir el paquete", "sin_sellia": "Buscar tijeras cada vez", "con_sellia": "Corte oculto integrado" } },
+        "d6": { "type": "punto", "settings": { "aspecto": "Espacio", "sin_sellia": "Aparatos que ocupan cajón y se pierden entre otros trastos", "con_sellia": "Diseño ultra compacto (12 x 5 x 4 cm)" } },
+        "d7": { "type": "punto", "settings": { "aspecto": "Dónde guardarlo", "sin_sellia": "Tener que buscarlo cada vez que lo necesitas", "con_sellia": "Base magnética: siempre a mano en la nevera" } },
+        "d8": { "type": "punto", "settings": { "aspecto": "Seguridad", "sin_sellia": "Dejarlo encendido sin querer", "con_sellia": "Apagado automático" } },
+        "d9": { "type": "punto", "settings": { "aspecto": "Comprar en una tienda nueva", "sin_sellia": "Desconfianza, miedo a que no funcione", "con_sellia": "Pago seguro, 30 días de garantía y atención cercana" } }
+      },
+      "block_order": ["d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9"],
+      "settings": {
+        "eyebrow": "Por qué Sellia",
+        "titular": "Todo lo que Sellia soluciona por ti",
+        "columna_sin": "Sin Sellia",
+        "columna_con": "Con Sellia",
+        "color_fondo": "#FFFFFF"
+      }
+    },
     "sellia_resenas": {
       "type": "sellia-resenas",
       "blocks": {
@@ -556,5 +578,5 @@
       }
     }
   },
-  "order": ["main", "sellia_resenas", "sellia_faq", "sellia_cta_final", "sellia_confianza_extendida"]
+  "order": ["main", "sellia_problemas", "sellia_resenas", "sellia_faq", "sellia_cta_final", "sellia_confianza_extendida"]
 }
