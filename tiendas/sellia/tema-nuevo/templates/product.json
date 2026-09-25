@@ -519,7 +519,8 @@
       "block_order": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8"],
       "settings": {
         "color_fondo": "#FFFFFF",
-        "color_texto": "#221D17"
+        "color_texto": "#221D17",
+        "fuente": "inter_n7"
       }
     },
     "sellia_cta_final": {
